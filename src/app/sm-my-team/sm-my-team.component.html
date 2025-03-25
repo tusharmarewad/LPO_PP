@@ -1,0 +1,62 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0">
+      <app-sidebar></app-sidebar>
+    </div>
+  
+  
+    <div class="col-md-10">
+  
+      <app-header></app-header>
+
+
+<div class="container mt-4">
+    <h3 class="fw-bold">< My Team</h3>
+    <table class="table table-bordered  mt-3 shadow">
+      <thead class="thead-light">
+        <tr>
+          <th>RM's ID</th>
+          <th>Name</th>
+          <th>
+            Project Name
+            <button class="btn btn-sm btn-outline-dark ml-2" (click)="addColumn('projectName')">+</button>
+          </th>
+          <th>
+            Phase
+            <button class="btn btn-sm btn-outline-dark ml-2" (click)="addColumn('phase')">+</button>
+          </th>
+          <th>
+            Wing
+            <button class="btn btn-sm btn-outline-dark ml-2" (click)="addColumn('wing')">+</button>
+          </th>
+          <th>
+            Building
+            <button class="btn btn-sm btn-outline-dark ml-2" (click)="addColumn('building')">+</button>
+          </th>
+          <th>No. of Units Sold</th>
+          <th>Performance % till date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of rows">
+          <td>{{ row.rmId }}</td>
+          <td>{{ row.name }}</td>
+          <td>{{ row.projectName }}</td>
+          <td>{{ row.phase }}</td>
+          <td>{{ row.wing }}</td>
+          <td>{{ row.building }}</td>
+          <td>{{ row.unitsSold }}</td>
+          <td>{{ row.performance }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-end mt-5">
+      <button class="btn next">Next ></button>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+
+
+

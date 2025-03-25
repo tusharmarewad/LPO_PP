@@ -1,0 +1,260 @@
+
+/* General Sidebar Styling */
+.sidebar {
+    background-color: #2B3C4E; /* Background color */
+    color: white;
+    height: 100%; /* Ensure it fills the parent container's height */
+    width: auto;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Ensures it positions correctly in the layout */
+    box-sizing: border-box;
+}
+
+/* Sidebar Header Styling */
+.sidebar_header {
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Navigation Styling */
+nav {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 5px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #fff;
+    color: #2B3C4E;
+}
+
+/* Icon Styling */
+.Icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 10px;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: margin-top 0.3s ease; /* Smooth transition */
+}
+
+.Icons:hover {
+    background-color: #fff;
+    color: #2B3C4E;
+    cursor: pointer;
+}
+
+.Icons > img {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+
+.Icons .hover-img {
+    display: none;
+}
+
+.Icons:hover .default-img {
+    display: none;
+}
+
+.Icons:hover .hover-img {
+    display: block;
+}
+
+.Icons > img:hover {
+    transform: scale(1.1);
+}
+
+/* Policy Item Styling */
+.policy_item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+/* Sub-modules Dropdown */
+.sub-modules {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    color: #2B3C4E;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 100%;
+}
+
+.sub-modules li {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* background-color: white;
+    color: black; */
+    text-align: start;
+    margin-top: 10px; /* Space between Lead and submodules */
+  margin-left: 20px; /* Indent submodules */
+}
+
+/* Push down other modules when submodules are visible */
+.push-down {
+    margin-top: 80px; /* Adjust this value based on the height of the submodules */
+  }
+
+.sub-modules li:hover {
+    background-color: #2B3C4E;
+    color: white;
+}
+
+.agreements:hover .sub-modules {
+    display: block;
+}
+
+/* Button Styling */
+.button_div {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+.logout {
+    margin-top: 3rem;
+    width: 10em;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.logout:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0;
+}
+
+/* Remove Scrollbar for Sidebar */
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Sub-modules Dropdown */
+.sub-modules {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100%; /* Position below the parent element */
+    left: 0;
+    background-color: #2B3C4E;
+    color: #fff;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 150px; /* Ensures consistent dropdown width */
+}
+
+/* Styling for Sub-Module Items */
+.sub-modules li {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sub-modules li:hover {
+    background-color: white  ;
+    color:#2B3C4E;
+}
+
+/* Display Sub-Modules on Hover */
+.agreements:hover .sub-modules {
+    display: block;
+    visibility: visible; /* Ensures visibility */
+    opacity: 1; /* For smooth animations */
+    transition: opacity 0.3s ease;
+}
+
+/* Parent Element (Agreements) */
+.agreements {
+    position: relative; /* Required for positioning child dropdown */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        z-index: 10;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+}
+
+
+.sub-modules {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .sub-modules li {
+    cursor: pointer;
+    padding: 5px 10px;
+  } 
+
+
+
+
+  

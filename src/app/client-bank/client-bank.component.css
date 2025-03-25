@@ -1,0 +1,117 @@
+/* General container styling */
+.container {
+    margin: 0 auto;
+  }
+  .container-fluid{
+    margin-top: 1rem;
+  }
+  
+  /* Header section */
+  h4 {
+    margin: 0;
+    font-weight: bold;
+    color: #2B3C4E;
+  }
+  
+  p {
+    margin: 0;
+    color: #6c757d; /* Bootstrap muted text color */
+  }
+  .main{
+    gap: 17px;
+  }
+  /* Search bar and filter button */
+  .input-group {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  
+  .input-group input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  
+  .input-group span {
+    background-color: transparent;
+    border: none;
+  }
+  
+  .btn-outline-secondary {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #dee2e6;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .table-light {
+    background-color: #f8f9fa;
+  }
+  
+  th {
+    font-weight: bold;
+    background-color: #e9ecef; /* Light gray for header */
+  }
+  
+  td {
+    white-space: nowrap;
+  }
+  
+  th i,
+  td i {
+    font-size: 0.85rem;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  /* Pagination styling */
+  .pagination {
+    margin-top: 20px;
+    margin-left: 52rem;
+  }
+  
+  .page-item .page-link {
+    color: #2B3C4E;
+  }
+  
+  .page-item.active .page-link {
+    background-color: #2B3C4E;
+    border-color: #2B3C4E;
+    color: #fff;
+  }
+  
+  .page-item.disabled .page-link {
+    color: #6c757d;
+  }
+  .btn{
+    width: 9rem;
+  }
+  .filter{
+    margin-left: 67px;
+  }
+  
+  
+  
+  .btn_next {
+    background-color: #2B3C4E;
+    color: white;
+    width: 6rem;
+   
+    margin-bottom: 10px;
+  }
+  .page{
+    margin-top: 180px;
+  }
+  
+  

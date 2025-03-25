@@ -1,0 +1,207 @@
+<div class="row container-fluid p-0">
+    <div class="col-md-2 p-0 m-0">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+
+        <div>
+            <h3><span style="color: #2B3C4E80;">New Draft ></span> Create</h3> 
+            <div class="d-flex g-2 menu">
+                <h3 (click)="selectedTab = 'draft'" [class.active]="selectedTab === 'draft'">Draft</h3>
+                <h3 (click)="selectedTab = 'agreements'" [class.active]="selectedTab === 'agreements'">Project Agreements</h3>
+            </div>
+
+
+            <div class="table-responsive mt-2" *ngIf="selectedTab === 'draft'">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <!-- <th>Client’s ID</th> -->
+                            <th>ARN</th>
+                            <th>Draft Type</th>
+                            <th>Client Name</th>
+                            <th>Assigned by</th>
+                            <th>Date</th>
+                            <th>TAT</th>
+                            <th>Current Status</th>
+                            <th>Update</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let draft of drafts" (click)="populateForm(draft)">
+                            <td>{{ draft.arn }}</td>
+                            <td>{{ draft.draft_type }}</td>
+                            <td>{{ draft.client_name }}</td>
+                            <td>{{ draft.assigned_by_name }}</td>
+                            <td>{{ draft.created_at | date:'dd/MM/YYYY' }}</td>
+                            <td>{{ draft.tat | date:'dd/MM/YYYY' }}</td>
+                            <td>{{ draft.status }}</td>  
+                            <td><button class="btn btn-link" (click)="populateForm(draft); $event.stopPropagation();">View</button></td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
+
+                <div class="row mb-4 p-0 m-0">
+                    <div class="col-2">
+                        <label for="srn" class="form-label">ARN</label>
+                        <input type="text" id="srn" class="form-control" [(ngModel)]="selectedDraft.arn" readonly />
+                    </div>
+                    <div class="col-2">
+                        <label for="clientId" class="form-label">Draft Type</label>
+                        <input type="text" id="clientId" class="form-control" [(ngModel)]="selectedDraft.draft_type" readonly />
+                    </div>
+                    <div class="col-2">
+                        <label for="clientName" class="form-label">Client Name</label>
+                        <input type="text" id="clientName" class="form-control" [(ngModel)]="selectedDraft.client_name" readonly />
+                    </div>
+                </div>
+                
+
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-bold text-center"> Resubmission Remark</h5>
+                                    <p class="card-text text-center">{{ selectedDraft.remark || 'No Remark Available' }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-4">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-bold text-center"> Update Remark</h5>
+                                    <textarea cols="35" [(ngModel)]="updateRemark" placeholder="Enter your text here"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-3" style="margin-top: 3rem;">
+
+                            <div class="d-flex main ">
+                                <div style="width: 10rem;">
+                                    <select class="form-select" [(ngModel)]="selectedStatus">
+                                        <option disabled selected>Update Status</option>
+                                        <option>Executed</option>
+                                        <option>Pending from Client</option>
+                                        <option>Pending from Government</option>
+                                        <option>Cancelled</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <button class="btn btn_submit" (click)="submitUpdate()">Submit</button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="table-responsive mt-2" *ngIf="selectedTab === 'agreements'">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <!-- <th>Client’s ID</th> -->
+                            <th>Project Id</th>
+                            <th>Assigned by</th>
+                            <th>Date</th>
+                            <th>Builder name</th>
+                            <th>TAT</th>
+                            <th>Current Status</th>
+                            <th>Update</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let agreement of agreements" (click)="populateForm2(agreement)">
+                            <td>{{ agreement.project_id }}</td>
+                            <td>{{ agreement.assigned_by_name }}</td>
+                            <td>{{ agreement.created_at | date:'dd/MM/YYYY' }}</td>
+                            <td>{{ agreement.builder_name }}</td>
+                            <td>{{ agreement.tat | date:'dd/MM/YYYY' }}</td>
+                            <td>{{ agreement.status }}</td>  
+                            <td><button class="btn btn-link" (click)="populateForm2(agreement); $event.stopPropagation();">View</button></td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
+
+                <div class="row mb-4 p-0 m-0">
+                    <div class="col-2">
+                        <label for="projectId" class="form-label">Project ID</label>
+                        <input type="text" id="projectId" class="form-control" [(ngModel)]="selectedAgreement.project_id" readonly />
+                    </div>
+                    <div class="col-2">
+                        <label for="assignedBy" class="form-label">Assigned By</label>
+                        <input type="text" id="assignedBy" class="form-control" [(ngModel)]="selectedAgreement.assigned_by_name" readonly />
+                    </div>
+                    <div class="col-2">
+                        <label for="builderName" class="form-label">Builder Name</label>
+                        <input type="text" id="builderName" class="form-control" [(ngModel)]="selectedAgreement.builder_name" readonly />
+                    </div>
+                </div>
+                
+                
+
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-bold text-center"> Resubmission Remark</h5>
+                                    <p class="card-text text-center">{{ selectedAgreement.remark || 'No Remark Available' }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-4">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title font-weight-bold text-center"> Update Remark</h5>
+                                    <textarea cols="35" [(ngModel)]="updateRemark" placeholder="Enter your text here"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-3" style="margin-top: 3rem;">
+
+                            <div class="d-flex main ">
+                                <div style="width: 10rem;">
+                                    <select class="form-select" [(ngModel)]="selectedStatus">
+                                        <option disabled selected>Update Status</option>
+                                        <option>Executed</option>
+                                        <option>Pending from Client</option>
+                                        <option>Pending from Government</option>
+                                        <option>Cancelled</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <button class="btn btn_submit" (click)="submit()">Submit</button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

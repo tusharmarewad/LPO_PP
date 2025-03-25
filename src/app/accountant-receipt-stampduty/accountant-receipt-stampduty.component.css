@@ -1,0 +1,26 @@
+
+.table thead th {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .table td, .table th {
+    text-align: center;
+    vertical-align: middle;
+  }
+  .btn{
+    background-color: #2B3C4E;
+    color: white;
+    padding: 8px 20px;
+  }
+  label{
+    font-weight: bold;
+    color:#2B3C4E ;
+  }
+  h3{
+    color:#2B3C4E ;
+  }
+  th{
+    background-color: #F5F3F3;
+    color:#2B3C4E ;
+  }

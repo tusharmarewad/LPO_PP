@@ -1,0 +1,111 @@
+
+  .card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 8px;
+  }
+
+
+  
+  .table th,
+  .table td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+  }
+  
+  .thead-light th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  
+  h5 {
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .btn-outline-primary {
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  
+ 
+ 
+  
+  
+  
+  .card-header {
+    background-color: #f8f9fa;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  
+ 
+  .no-gutters > .col-10 {
+    padding: 0;
+  }
+  
+ 
+
+
+  .table-container {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table {
+    margin-bottom: 0;
+  }
+  
+ 
+  
+
+  
+  .sai_nagari{
+    font-size: 2.1rem;
+    position: absolute;
+    margin-bottom: 10px;
+    top: 3rem;
+    left: 3rem;
+    color: white;
+    font-style: Quando;
+  }
+
+.card_description{
+    color: #2B3C4E;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.card_description_header{
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+.card_footer{
+    background-color: #2B3C4E;
+    color: white;
+    font-size: x-large;
+    text-align: center;
+}
+.card_header{
+    border-radius: 10px;
+    padding: 0;
+}
+.last_div{
+    gap: 12px;
+}
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.last_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+

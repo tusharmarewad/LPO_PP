@@ -1,0 +1,36 @@
+
+.container {
+    max-width: 900px;
+  }
+  
+  h2 {
+    font-weight: bold;
+  }
+  
+  .text-muted {
+    font-size: 0.9rem;
+  }
+  
+  .btn-outline-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    gap: 5px;
+  }
+  
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+ .rm{
+    background-color: #2B3C4E;
+    margin-left: 3rem;
+
+ }
+ .form-check-label{
+    margin-right: 3rem;
+ }
+ h3{
+    color: #2B3C4E ;
+ }

@@ -1,0 +1,112 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0 m-0">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+<h3>< Agreements > New Agreements</h3>
+        <div class="table-responsive mt-2">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <!-- <th>Client’s ID</th> -->
+                        <th>Project ID</th>
+                        <th>Project Name</th>
+                        <th>Phase</th>
+                        <th>Unit Type</th>
+                        <th>Created By</th>
+                        <th>Assigned To Jr Lawyer</th>
+                        <th>Last Modified Status</th>
+                        <th>Action</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let agreement of agreements">
+                    <td>{{ agreement.project_id }}</td>
+                    <td>{{ agreement.project_name }}</td>
+                    <td>{{ agreement.phase }}</td>
+                    <td>{{ agreement.unit_type }}</td>
+                    <td>{{ agreement.created_by_name }}</td>
+                    <td>{{ agreement.drafted_by_name }}</td>
+                    <td><strong>{{ agreement.status}}</strong></td>
+                    <td>
+                      <!-- <button class="btn btn-primary" (click)="onViewClick(agreement)">edit</button> -->
+                      <a href="#" class="text-primary" (click)="selectRow(agreement, $event)">edit</a>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+
+        <div *ngIf="selectedAgreement" class="mt-4">
+          <!-- First Row -->
+          <div class="row mb-4">
+            <div class="col-3">
+              <label for="srn" class="form-label">Project ID</label>
+              <input type="text" id="srn" class="form-control" [(ngModel)]="selectedAgreement.project_id" readonly />
+            </div>
+            <div class="col-3">
+              <label for="clientId" class="form-label">Project Name</label>
+              <input type="text" id="clientId" class="form-control" [(ngModel)]="selectedAgreement.project_name" />
+            </div>
+            <div class="col-3">
+              <label for="clientName" class="form-label">Phase</label>
+              <input type="text" id="clientName" class="form-control" [(ngModel)]="selectedAgreement.phase" />
+            </div>
+            <div class="col-md-3">
+              <label for="clientName" class="form-label">Status</label>
+              <select id="status" class="form-select mb-2" [(ngModel)]="selectedAgreement.status">
+                <option value="" disabled>Select Status</option>
+                <option value="Initiated">Initiated</option>
+                <option value="Work in Progress">Work in Progress</option>
+                <option value="Pending for collection">Pending for collection</option>
+                <option value="Completed">Completed</option>
+                <option value="Cancelled">Cancelled</option>
+               
+              </select>
+            </div>
+          </div>
+        
+          <div class="row mb-4">
+            <!-- <div class="col-3">
+              <label for="srn" class="form-label">Unit Type</label>
+              <input type="text" id="srn" class="form-control" [(ngModel)]="selectedAgreement.unit_type" />
+            </div> -->
+            <div class="col-md-3">
+              <label for="paidBy" class="form-label">Unit Type</label>
+              <select id="paidBy" class="form-select" [(ngModel)]="selectedAgreement.unit_type">
+                <option selected>select</option>
+                <option value="Shop">Shop</option>
+                <option value="Office">Office</option>
+                <option value="Warehouse">Warehouse</option>
+                <option value="Penthouse">Penthouse</option>
+                <option value="Duplex">Duplex</option>
+              </select>
+            </div>
+            <div class="col-3">
+              <label for="clientId" class="form-label">Remark</label>
+              <input type="text" id="clientId" class="form-control" [(ngModel)]="selectedAgreement.remark" />
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Assigned to</label>
+              <select class="form-select" [(ngModel)]="selectedAgreement.drafted_by">
+                <option value="" selected disabled>Lawyer 2 Name</option>
+                <option *ngFor="let lawyer of jrLawyerData" [value]="lawyer.id">{{ lawyer.name }}</option>
+              </select>
+            </div>
+            <div class="col-2 d-flex align-items-end">
+              <!-- <button class="btn submit w-100" (click)="onSubmit()">Modify</button> -->
+              <button type="button" class="btn btn-primary w-100" (click)="onSubmit()">Modify</button>
+            </div>
+          </div>
+        </div>
+      
+  
+</div>
+</div>

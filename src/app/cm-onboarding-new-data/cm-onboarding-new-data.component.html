@@ -1,0 +1,328 @@
+
+
+
+<div class="container-fluid">
+    <div class="row p-0">
+        <div class="col-md-2 p-0">
+            <app-sidebar></app-sidebar>
+           
+        </div>
+        <div class="col-md-10">
+            <app-header></app-header>
+
+
+            <h4 class="name">< Onboarding > New Data</h4>
+     <!-- First Row -->
+<div class="row mb-4">
+  <div class="col-3">
+      <label class="form-label">Project ID</label>
+      <select class="form-select" formControlName="project_id" (change)="onProjectSelect($event)">
+          <option value="" selected disabled>Select Project ID</option>
+          <option *ngFor="let project of projects" [value]="project.project_id">{{ project.project_id }}</option>
+      </select>
+  </div>
+  <div class="col-md-3">
+      <label for="project_name" class="form-label">Project Name</label>
+      <input type="text" id="project_name" class="form-control" [value]="selectedProject?.project_name" placeholder="Project Name" readonly />
+  </div>
+  <div class="col-md-3">
+      <label for="location" class="form-label">Location</label>
+      <input type="text" id="location" class="form-control" [value]="selectedProject?.location" placeholder="Location" readonly />
+  </div>
+  <div class="col-md-3">
+      <div class="project_add">
+          <button class="btn submit">
+              Start
+          </button>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+          <div class="container mt-4">
+            <!-- Tab navigation -->
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link" [class.active]="activeTab === 'Login_Details'" (click)="setActiveTab('Login_Details')"
+                  href="javascript:void(0)">Login Details</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [class.active]="activeTab === 'Project_Details'" (click)="setActiveTab('Project_Details')"
+                  href="javascript:void(0)">Project Details</a>
+              </li>
+            </ul>
+          </div>
+
+
+            <div  *ngIf="activeTab === 'Login_Details'">
+
+          <div class="row mt-4">
+           
+                <div class="col-3">
+                    <label for="Upload_Login_Details" class="form-label">Upload Login Details</label>
+                    <input type="file" id="Upload_Login_Details" class="form-control" value="" placeholder="XYZ"/>
+                </div>
+
+                <div class="col-3">
+                    <div class="project_add">
+                        <button class="btn submit">
+                        Submit
+                        </button>
+                    </div>
+                </div>
+          
+        
+
+
+
+
+
+          <div class="container mt-4">
+            <div class="table-responsive  shadow">
+              <table class="table table-bordered">
+                <thead class="table-light">
+                  <tr>
+                    <th>Employee No.</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Role</th>
+                    <th colspan="2">Project Name</th>
+                    <th colspan="2">Project Name</th>
+                    <th>Email ID</th>
+                    <th>Phone No.</th>
+                  </tr>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Phase</th>
+                    <th>Building</th>
+                    <th>Phase</th>
+                    <th>Building</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>SM</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>RM</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Accountant</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Admin</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Builder</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="d-flex justify-content-end p-2">
+              <button class="btn submit">Approve</button>
+            </div>
+          </div>
+          
+            </div>
+        </div>
+
+
+
+
+
+
+       <!-- 
+  This section shows your existing dynamic form for:
+  Project Full Name, Number of Phases, 
+  Then each Phase with Number of Buildings, 
+  Then each Building with a file upload field.
+-->
+<div class="container mt-4" *ngIf="activeTab === 'Project_Details'">
+  <div>
+  
+
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="container mt-4" *ngIf="activeTab === 'Project_Details'">
+  <div>
+    <!-- Row for Project ID and Project Name -->
+    <div class="row mb-3">
+    
+      <div class="col-md-3">
+        <label for="projectFullName" class="form-label">Project Full Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="projectFullName"
+          placeholder="Enter project name"
+          [(ngModel)]="projectName"
+          name="projectName"
+        />
+      </div>
+      <div class="col-md-3">
+        <label for="noOfPhases" class="form-label">No. of Phases</label>
+        <select
+          id="noOfPhases"
+          class="form-select"
+          [(ngModel)]="numberOfPhases"
+          name="numberOfPhases"
+          (change)="onPhasesChange()"
+        >
+          <option *ngFor="let n of [1, 2, 3]" [value]="n">{{ n }}</option>
+        </select>
+      </div>
+      <div class="col-md-2 d-flex align-items-end">
+        <!-- <button class="btn btn-primary w-100" (click)="goAhead()">Go Ahead</button> -->
+      </div>
+    </div>
+
+    <!-- Loop over each phase and directly integrate buildings -->
+    <div *ngFor="let phase of phases; let i = index" class="phase-section mb-4">
+      <h5>Phase {{ i + 1 }}</h5>
+
+      <div class="row g-3">
+        <!-- Phase Number input -->
+        <div class="col-md-3">
+          <label [for]="'phaseNumber' + i" class="form-label">Phase Number</label>
+          <input
+            type="text"
+            class="form-control"
+            [id]="'phaseNumber' + i"
+            placeholder="Enter phase number"
+            [(ngModel)]="phase.phase_number"
+            [name]="'phaseNumber' + i"
+          />
+        </div>
+
+        <!-- Number of Buildings select -->
+        <div class="col-md-3">
+          <label [for]="'noOfBuildings' + i" class="form-label">No. of Buildings</label>
+          <select
+            [id]="'noOfBuildings' + i"
+            class="form-select"
+            [(ngModel)]="phase.numberOfBuildings"
+            [name]="'noOfBuildings' + i"
+            (change)="onBuildingsChange(i)"
+          >
+            <option *ngFor="let n of [1, 2, 3]" [value]="n">{{ n }}</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Loop over the buildings inside this phase -->
+      <div class="mt-3">
+        <div class="row g-3" *ngFor="let building of phase.buildings; let j = index">
+          <!-- Building Name -->
+          <div class="col-md-3">
+            <label [for]="'buildingName' + i + '-' + j" class="form-label">Building {{ j + 1 }} Name</label>
+            <input
+              type="text"
+              class="form-control"
+              [id]="'buildingName' + i + '-' + j"
+              placeholder="Enter building name"
+              [(ngModel)]="building.building_name"
+              [name]="'buildingName' + i + '-' + j"
+            />
+          </div>
+
+          <!-- Upload Details (CSV) -->
+          <div class="col-md-3">
+            <label [for]="'uploadDetails' + i + '-' + j" class="form-label">Upload Details</label>
+            <input
+              type="file"
+              class="form-control"
+              [id]="'uploadDetails' + i + '-' + j"
+              (change)="onFileChange($event, i, j)"
+            />
+          </div>
+
+          <!-- Submit button for each building -->
+          <div class="col-md-2 d-flex align-items-end">
+            <button class="btn btn-success w-100" (click)="submitBuilding(i, j)">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+        
+              
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,198 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 p-0">
+      <app-sidebar></app-sidebar>
+      <!-- <h1> ihuiuu</h1> -->
+    </div>
+    <div class="col-md-10">
+      <app-header></app-header>
+
+      <h4><img src="../assets/Icons/back_arrow.svg" alt="Edit" class=""> Add Leads</h4>
+      
+      <!-- <div class="container mt-4">
+      
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 'create-lead'" (click)="setActiveTab('create-lead')"
+              href="javascript:void(0)">Create Lead</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 'my-leads'" (click)="setActiveTab('my-leads')"
+              href="javascript:void(0)">My Leads</a>
+          </li>
+        </ul>
+      </div> -->
+
+
+
+
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="heading">Lead Details</h5>
+          <p class="text-muted">Input essential information about leads</p>
+          <form [formGroup]="addLeadForm" (ngSubmit)="onSubmit()">
+            <div class="row g-2 mt-3">
+              <!-- Name Field -->
+              <div class="col-md-3">
+                <label for="name" class="form-label fw-bold">Name</label>
+                <input type="text" class="form-control" id="name" formControlName="name" placeholder="Type here" />
+                <small class="text-danger" *ngIf="addLeadForm.controls['name'].invalid && addLeadForm.controls['name'].touched">
+                  Name is required (min 3 chars)
+                </small>
+              </div>
+              <!-- Mobile Number Field -->
+              <div class="col-md-2">
+                <label for="mobile" class="form-label fw-bold">Mobile Number</label>
+                <input type="text" class="form-control" id="mobile" formControlName="mobile" placeholder="9876543210" />
+                <small class="text-danger" *ngIf="addLeadForm.controls['mobile'].invalid && addLeadForm.controls['mobile'].touched">
+                  Enter a valid 10-digit mobile number
+                </small>
+              </div>
+              <!-- Email Field -->
+              <div class="col-md-3">
+                <label for="email" class="form-label fw-bold">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email" placeholder="accounts@in" />
+                <small class="text-danger" *ngIf="addLeadForm.controls['email'].invalid && addLeadForm.controls['email'].touched">
+                  Enter a valid email address
+                </small>
+              </div>
+              <!-- Type Field -->
+              <div class="col-md-3">
+                <label for="type" class="form-label fw-bold">Type</label>
+                <select id="type" class="form-select" formControlName="type">
+                  <option selected disabled>Select Type</option>
+                  <option value="1 BHK">1 BHK</option>
+                  <option value="2 BHK">2 BHK</option>
+                  <option value="3 BHK">3 BHK</option>
+                  <option value="Shop">Shop</option>
+                  <option value="Office">Office</option>
+                  <option value="Warehouse">Warehouse</option>
+                  <option value="Penthouse">Penthouse</option>
+                  <option value="Duplex">Duplex</option>
+                </select>
+                <small class="text-danger" *ngIf="addLeadForm.controls['type'].invalid && addLeadForm.controls['type'].touched">
+                  Please select a type
+                </small>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mt-4">
+              <button type="submit" class="btn1" [disabled]="addLeadForm.invalid">
+                Submit & Proceed
+                <img src="../assets/Icons/next_arrow.svg" alt="Arrow" class="arrow-Icons" />
+              </button>
+            </div>
+          </form>
+          
+
+        </div>
+      </div>
+
+
+      <div class="container mt-4 ">
+        <div class=" d-flex justify-content-between align-items-center mb-3">
+          <div>
+            <h4>My Leads</h4>
+            <p>Find your leads</p>
+          </div>
+
+          <div class="d-flex main">
+            <!-- Search Input -->
+            <div class="input-group">
+              <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Search" 
+                [(ngModel)]="searchText" 
+                (input)="applyFilter()" 
+              />
+              <span class="input-group-text">
+                <i class="bi bi-search"></i>
+              </span>
+            </div>
+          
+            <!-- Filter Dropdown -->
+            <select class="form-select" [(ngModel)]="selectedFilter" (change)="applyFilter()">
+              <option value="name">Name</option>
+              <option value="mobile">Phone No.</option>
+              <option value="email">Email ID</option>
+              <option value="type">Unit</option>
+              <option value="status">Status</option>
+              <option value="remark">Remark</option>
+            </select>
+          </div>
+        </div>
+
+
+
+
+        <table class="table table-bordered ">
+          <thead class="table-light">
+            <tr>
+              <th>
+                Sr. No
+              </th>
+              <th>Name</th>
+              <th>Phone No.</th>
+              <th>Email ID</th>
+              <th>Unit</th>
+              <th>
+                Status <img src="../assets/Icons/status.svg" alt="Edit" class="Icons-pencil">
+              </th>
+
+              <th>
+                Remark <img src="../assets/Icons/remark.svg" alt="Edit" class="Icons-pencil">
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let lead of filteredLeads; let i = index">
+              <td>
+                <input type="checkbox" /> {{i + 1}}
+              </td>
+              <td>{{ lead.name }}</td>
+              <td>{{ lead.mobile }}</td>
+              <td>{{ lead.email }}</td>
+              <td>{{ lead.type }}</td>
+              <!-- Dynamic Status Dropdown -->
+              <td>
+                <select [ngClass]="{
+                  'bg-green': lead.status === 'Completed',
+                  'bg-red': lead.status === 'Canceled',
+                  'bg-yellow': lead.status === 'Pending'
+                }"
+                 [(ngModel)]="lead.status" (change)="updateStatus(lead)">
+                  <option value="Interested">Interested</option>
+                  <option value="Not Interested">Not Interested</option>
+                  <option value="Call Pending">Call Pending</option>
+                  <option value="In Follow Up">In Follow Up</option>
+                  <option value="Contracted">Contracted</option>
+                </select>
+              </td>
+              
+              <td>{{ lead.remark }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-center">
+            <li class="page-item" [class.disabled]="currentPage === 1" (click)="goToPage(currentPage - 1)">
+              <a class="page-link">Previous</a>
+            </li>
+            <li class="page-item" *ngFor="let page of totalPages" [class.active]="currentPage === page"
+              (click)="goToPage(page)">
+              <a class="page-link">{{ page }}</a>
+            </li>
+            <li class="page-item" [class.disabled]="currentPage === totalPages.length"
+              (click)="goToPage(currentPage + 1)">
+              <a class="page-link">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>

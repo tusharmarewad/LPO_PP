@@ -1,0 +1,701 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 p-0">
+        <app-sidebar></app-sidebar>
+        
+      </div>
+      <div class="col-md-10">
+        <app-header></app-header>
+
+
+
+        
+
+
+
+
+
+<div class="mt-4 no-print">
+    <!-- Tab navigation -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [class.active]="activeTab === 'Check_Availability'"
+          (click)="setActiveTab('Check_Availability')"
+          href="javascript:void(0)"
+          >Check Availability</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [class.active]="activeTab === 'Owner_Details'"
+          (click)="setActiveTab('Owner_Details')"
+          href="javascript:void(0)"
+          >Owner Details</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [class.active]="activeTab === 'Cost_Sheet'"
+          (click)="setActiveTab('Cost_Sheet')"
+          href="javascript:void(0)"
+          >Cost Sheet</a
+        >
+      </li>
+
+
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [class.active]="activeTab === 'Loan_Details'"
+          (click)="setActiveTab('Loan_Details')"
+          href="javascript:void(0)"
+          >Loan & Authority Approval</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [class.active]="activeTab === 'Upload_Documents'"
+          (click)="setActiveTab('Upload_Documents')"
+          href="javascript:void(0)"
+          >Upload Documents</a
+        >
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="container mt-5" *ngIf="activeTab === 'Check_Availability'">
+    <div class="row">
+      <!-- Project Details Section -->
+      <div class="col-md-6">
+        <h5 class="section-title">Project Details</h5>
+        <p class="section-subtitle">Check Unit Availability</p>
+  
+        <div class="form-group row mb-3">
+          <label for="projectName" class="col-sm-4 col-form-label text-right">Project Name</label>
+          <div class="col-sm-8 position-relative">
+              
+            <select id="projectName" class="form-control custom-select-box">
+             
+              <option value="" selected disabled>Select Project</option>
+              <option value="Sai Nagari">Sai Nagari</option>
+              <option value="Privilege">Privilege</option>
+            </select>
+            <img src="../assets/Icons/down_arrow.svg" alt="Arrow" class="custom-arrow">
+          </div>
+        </div>
+        
+  
+        <div class="form-group row mb-3">
+          <label for="phase" class="col-sm-4 col-form-label text-right">Phase</label>
+          <div class="col-sm-8 position-relative">
+            <select id="phase" class="form-control  custom-select-box">
+              <option value="" selected disabled></option>
+            </select>
+            <img src="../assets/Icons/down_arrow.svg" alt="Arrow" class="custom-arrow">
+          </div>
+        </div>
+  
+        <div class="form-group row mb-3">
+          <label for="buildingName" class="col-sm-4 col-form-label text-right">Building Name / No.</label>
+          <div class="col-sm-8 position-relative">
+            <select id="buildingName" class="form-control custom-select-box">
+              <option value="" selected disabled></option>
+            </select>
+            <img src="../assets/Icons/down_arrow.svg" alt="Arrow" class="custom-arrow">
+          </div>
+        </div>
+  
+        <div class="form-group row mb-3">
+          <label for="floorNo" class="col-sm-4 col-form-label text-right">Floor No.</label>
+          <div class="col-sm-8 position-relative">
+            <select id="floorNo" class="form-control custom-select-box">
+              <option value="" selected disabled></option>
+            </select>
+            <img src="../assets/Icons/down_arrow.svg" alt="Arrow" class="custom-arrow">
+          </div>
+        </div>
+  
+        <div class="form-group row mb-3">
+          <label for="unitNo" class="col-sm-4 col-form-label text-right">Unit No.</label>
+          <div class="col-sm-8 position-relative">
+            <select id="unitNo" class="form-control custom-select-box">
+              <option value="" selected disabled></option>
+            </select>
+            <img src="../assets/Icons/down_arrow.svg" alt="Arrow" class="custom-arrow">
+          </div>
+        </div>
+      </div>
+  
+      <!-- Unit Details Section -->
+      <div class="col-md-6 ">
+        <h5 class="section-title">Unit Details</h5>
+  <div class="unit_details">
+    <div class="form-group mb-3">
+        <div class="input-group w-75">
+          <span class="input-group-text label-box">Unit Gross Area</span>
+          <input id="unitGrossArea" type="text" class="form-control" />
+          <span class="input-group-text unit-box sqmt">sqmt</span>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <div class="input-group w-75">
+          <span class="input-group-text label-box">Unit Area</span>
+          <input id="unitArea" type="text" class="form-control"  />
+          <span class="input-group-text unit-box sqmt">sqmt</span>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <div class="input-group w-75">
+          <span class="input-group-text label-box">Terrace</span>
+          <input id="terrace" type="text" class="form-control" />
+          <span class="input-group-text unit-box sqmt">sqmt</span>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <div class="input-group w-75">
+          <span class="input-group-text label-box">Balcony</span>
+          <input id="balcony" type="text" class="form-control" />
+          <span class="input-group-text unit-box sqmt">sqmt</span>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center mb-3">
+        <label for="ownersCount" class="form-label me-2 mb-0">Parking</label>
+        <select id="ownersCount" class="form-select w-auto">
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+          <!-- <option value="3">3</option> -->
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+  </div>
+        
+        </div>
+  
+        <button class="btn btn_button ">Save & Proceed</button>
+      </div>
+    </div>
+  
+  
+  
+
+
+
+  <div class="container mt-4" *ngIf="activeTab === 'Owner_Details'">
+    <h3 class="mb-3 heading1">Owner Details</h3>
+    <p class="text-muted mb-4">Add Owner Information</p>
+    <div class="d-flex align-items-center mb-4">
+        <label for="ownersCount" class="form-label me-2 mb-0">How many owners will own this property?</label>
+        <select id="ownersCount" class="form-select w-auto">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+    <!-- Owner 1 Details -->
+    <div class="mb-4">
+      <h5 class="heading1">1st Owner's Details</h5>
+      <div class="row g-3">
+        <div class="col-md-1">
+          <label for="prefix1" class="form-label">Prefix</label>
+          <select id="prefix1" class="form-select">
+            <option value="Mr">Mr</option>
+            <option value="Miss">Miss</option>
+            <option value="Mrs">Mrs</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="firstName1" class="form-label">First Name</label>
+          <input type="text" id="firstName1" class="form-control" placeholder="First Name">
+        </div>
+        <div class="col-md-3">
+          <label for="middleName1" class="form-label">Middle Name</label>
+          <input type="text" id="middleName1" class="form-control" placeholder="Middle Name">
+        </div>
+        <div class="col-md-3">
+          <label for="lastName1" class="form-label">Last Name</label>
+          <input type="text" id="lastName1" class="form-control" placeholder="Last Name">
+        </div>
+        <div class="col-md-7">
+          <input type="text" id="address1" class="form-control" placeholder="Address">
+        </div>
+        <div class="col-md-2">
+          <select id="pincode1" class="form-select" style="width: auto;" placeholder="Pincode">
+            <option value="">Pincode</option>
+            <option value="400001">400001</option>
+            <option value="400002">400002</option>
+            <option value="400003">400003</option>
+            <!-- Add more options as needed -->
+          </select>
+        </div>
+      </div>
+  
+      <h6 class="mt-3 heading1">1st Owner's Documents</h6>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label for="panCard1" class="form-label">PAN Card</label>
+          <input type="file" id="panCard1" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label for="aadhaarCard1" class="form-label">Aadhaar Card</label>
+          <input type="file" id="aadhaarCard1" class="form-control">
+        </div>
+      </div>
+    </div>
+  
+    <hr class="my-4">
+  
+    <!-- Owner 2 Details -->
+    <div class="mb-4">
+      <h5 class="heading1">2nd Owner's Details</h5>
+      <div class="row g-3">
+        <div class="col-md-1">
+          <label for="prefix2" class="form-label">Prefix</label>
+          <select id="prefix2" class="form-select">
+            <option value="Mr">Mr</option>
+            <option value="Miss">Miss</option>
+            <option value="Mrs">Mrs</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="firstName2" class="form-label">First Name</label>
+          <input type="text" id="firstName2" class="form-control" placeholder="First Name">
+        </div>
+        <div class="col-md-3">
+          <label for="middleName2" class="form-label">Middle Name</label>
+          <input type="text" id="middleName2" class="form-control" placeholder="Middle Name">
+        </div>
+        <div class="col-md-3">
+          <label for="lastName2" class="form-label">Last Name</label>
+          <input type="text" id="lastName2" class="form-control" placeholder="Last Name">
+        </div>
+        <div class="col-md-7">
+          <input type="text" id="address2" class="form-control" placeholder="Address">
+        </div>
+        <div class="col-md-2">
+          <select id="pincode2" class="form-select" style="width: auto;" placeholder="Pincode">
+            <option value="">Pincode</option>
+            <option value="400001">400001</option>
+            <option value="400002">400002</option>
+            <option value="400003">400003</option>
+            <!-- Add more options as needed -->
+          </select>
+        </div>
+      </div>
+  
+      <h6 class="mt-3 heading1">2nd Owner's Documents</h6>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label for="panCard2" class="form-label">PAN Card</label>
+          <input type="file" id="panCard2" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label for="aadhaarCard2" class="form-label">Aadhaar Card</label>
+          <input type="file" id="aadhaarCard2" class="form-control">
+        </div>
+      </div>
+    </div>
+  
+    <div class="text-end">
+      <button class="button">Save & Proceed</button><br><br>
+    </div>
+  </div>
+
+
+
+
+  <!-- COST SHEET HTML -->
+<!-- <div class="container mt-2  p-4"  *ngIf="activeTab === 'Cost_Sheet'">
+    <div class="row">
+      <div class="col-6">
+        <h6 class="head">Miss Kiran R Chilwery</h6>
+        <h6 class="head">Project - Sai Nagari</h6>
+        <h6 class="head">Unit - A808</h6>
+      </div>
+      <div class="col-6 text-end">
+        <button class="btn print" (click)="printPage()">Print <img src="../assets/Icons/print.svg" alt=""></button>
+      </div>
+      
+    </div>
+  
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="text-danger fw-bold note">Kindly Read the mentioned note</p>
+      </div>
+    </div>
+  
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+            <th></th>
+          <th class="head">Mark Up Value</th>
+          <th class="head">Agreement Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Unit Area</td>
+          <td>40 sqmt0 sqmt</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Unit Price</td>
+          <td>₹10,000,00</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Parking</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Society</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MSEB</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Infra</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="total">Total Amount-</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="row">
+      <div class="col-12">
+        <p class="border p-4 text">Dummy text here</p>
+      </div>
+    </div>
+  
+    <div class="row mt-3">
+      <div class="col-12 text-end">
+        <button class="btn  submit_btn">Save & Proceed</button>
+      </div>
+    </div>
+</div> -->
+
+<div class="container mt-2 p-4" *ngIf="activeTab === 'Cost_Sheet'" id="print-section">
+    <div class="row">
+      <div class="col-6">
+        <h6 class="head">Miss Kiran R Chilwery</h6>
+        <h6 class="head">Project - Sai Nagari</h6>
+        <h6 class="head">Unit - A808</h6>
+      </div>
+      <div class="col-6 text-end">
+        <button class="btn print" (click)="printPage()">Print <img src="../assets/Icons/print.svg" alt="" /></button>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="text-danger fw-bold note">Kindly Read the mentioned note</p>
+      </div>
+    </div>
+  
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="head">Mark Up Value</th>
+          <th class="head">Agreement Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Unit Area</td>
+          <td>40 sqmt0 sqmt</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Unit Price</td>
+          <td>₹10,000,00</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Parking</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Society</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MSEB</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Infra</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="total">Total Amount-</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="row">
+      <div class="col-12">
+        <p class="border p-4 text">Dummy text here</p>
+      </div>
+    </div>
+  
+    <div class="row mt-3">
+      <div class="col-12 text-end">
+        <button class="btn submit_btn">Save & Proceed</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="container mt-2 p-4" *ngIf="activeTab === 'Loan_Details'" id="print-section">
+    <div>
+      <h3>Loan Details</h3>
+      <p style="font-size: large;">Add Loan information</p>
+    </div>
+    <div class="loan_question">
+      <h5 class="loan">Does the Client need a loan?</h5>
+      <div class="buttons">
+        <input type="radio" id="yes" name="option" />
+        <label for="yes">Yes</label>
+      
+        <input type="radio" id="no" name="option" />
+        <label for="no">No</label>
+      </div>    
+    </div>
+    <div class="loan_question">
+      <h5 class="loan">Is client’s Loan already sanctioned ?</h5>
+      <div class="buttons">
+        <input type="radio" id="yes" name="option" />
+        <label for="yes">Yes</label>
+      
+        <input type="radio" id="no" name="option" />
+        <label for="no">No</label>
+      </div>
+    </div>
+    <div class="loan_question">
+      <h5 class="loan">Does the client want to apply for loan from our team ?</h5>
+      <div class="buttons">
+        <input type="radio" id="yes" name="option" />
+        <label for="yes">Yes</label>
+      
+        <input type="radio" id="no" name="option" />
+        <label for="no">No</label>
+      </div>
+    </div>
+    <div class="loan_question">
+      <h5 class="" style="margin: 0;">RM has to take follow up & sanction letter from client within 15 days </h5>
+     <button class="btn btn-dark">Ok ></button>
+    </div>
+    <div class="loan_question">
+      <h5 class="loan">Is authority approval needed ?</h5>
+      <div class="buttons">
+        <input type="radio" id="yes" name="option" />
+        <label for="yes">Yes</label>
+      
+        <input type="radio" id="no" name="option" />
+        <label for="no">No</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-2 p-4" *ngIf="activeTab === 'Upload_Documents'" id="print-section">
+    <div>
+
+      <div class="container mt-5">
+        <h4 class="mb-3" style="color: #2B3C4E;">Upload Documents</h4>
+        <p>Upload owner's necessary documents</p>
+
+        <!-- 1st Owner's Documents -->
+        <div class="mb-4">
+            <h5 class="head" style="color: #2B3C4E;">1st Owner's Documents</h5>
+            <div class="row">
+                <div class="col-md-2 col-sm-6 mb-3">
+                    <div class="d-flex card">
+                        <div class="d-flex justify-content-around">
+                            <div>
+                                <p class="mt-2 align-items-center">Drag / Upload</p>
+                                <label class="mb-1">Aadhar Card</label>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <img src="../assets/Icons/upload_file.svg" alt="Aadhar Card" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6 mb-3">
+                    <div class="d-flex card">
+                        <div class="d-flex justify-content-around">
+                            <div>
+                                <p class="mt-2 align-items-center">Drag / Upload</p>
+                                <label class="mb-1">PAN Card</label>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <img src="../assets/Icons/upload_file.svg" alt="PAN Card" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2nd Owner's Documents -->
+        <div class="mb-4">
+            <h5 class="head" style="color: #2B3C4E;">2nd Owner's Documents</h5>
+            <div class="row">
+                <div class="col-md-2 col-sm-6 mb-3">
+                    <div class="d-flex card">
+                        <div class="d-flex justify-content-around">
+                            <div>
+                                <p class="mt-2 align-items-center">Drag / Upload</p>
+                                <label class="mb-1">Aadhar Card</label>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <img src="../assets/Icons/upload_file.svg" alt="Aadhar Card" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6 mb-3">
+                    <div class="d-flex card">
+                        <div class="d-flex justify-content-around">
+                            <div>
+                                <p class="mt-2 align-items-center">Drag / Upload</p>
+                                <label class="mb-1">PAN Card</label>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <img src="../assets/Icons/upload_file.svg" alt="PAN Card" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Common Documents -->
+        <div class="mb-4">
+            <h5 class="head" style="color: #2B3C4E;">Common Documents</h5>
+            <div class="common_document">
+                <div class="col-md-3 mb-3">
+                    <div class="d-flex card11">
+                     
+                            <div>
+                                <p class="align-items-center">Drag / Upload</p>
+                                <label class="mb-1 heading22">Loan Sanction Letter</label>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <img src="../assets/Icons/upload_file.svg" alt="Loan Sanction Letter" class="img-fluid">
+                            </div>
+                       
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="d-flex card11">
+                     
+                            <div>
+                                <p class="align-items-center">Drag / Upload</p>
+                                <label class="mb-1 heading22">Self Contribution Declaration</label>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <img src="../assets/Icons/upload_file.svg" alt="Self Contribution Declaration" class="img-fluid">
+                            </div>
+                       
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="d-flex card11">
+                     
+                            <div>
+                                <p class="align-items-center">Drag / Upload</p>
+                                <label class="mb-1 heading22">Authority Approval Letter</label>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <img src="../assets/Icons/upload_file.svg" alt="Authority Approval Letter" class="img-fluid">
+                            </div>
+                       
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="d-flex card11">
+                     
+                            <div>
+                                <p class="align-items-center">Drag / Upload</p>
+                                <label class="mb-1 heading22">Power of  Attorney Letter</label>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <img src="../assets/Icons/upload_file.svg" alt="Loan Sanction Letter" class="img-fluid">
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="text-center">
+            <button class="btn1 btn-primary me-3">Upload</button>
+            <button class="btn1 btn-secondary">Upload Later</button>
+        </div>
+    </div>
+  
+
+
+
+
+
+
+  </div>
+  </div>
+  </div>
+
+
+
+<!-- Modal -->
+<div
+  class="custom-modal"
+  *ngIf="isModalOpen"
+  (click)="closeModal($event)"
+>
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <img
+      src="../assets/Icons/loan_popup.svg"
+      alt="Declaration Illustration"
+      class="img-fluid"
+    />
+    <h4 class="mt-4 text-danger">Declaration Form Needed!</h4>
+    <p>Upload Declaration form to proceed</p>
+    <div class="d-flex justify-content-center mt-4">
+      <button class="btn me-3 upload">Upload Now</button>
+      <button class="btn" style="background-color: #2B3C4E;color: white;" (click)="closeModal()">Remind me later</button>
+    </div>
+  </div>
+</div>

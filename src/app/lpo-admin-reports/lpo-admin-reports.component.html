@@ -1,0 +1,210 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0">
+      <app-sidebar></app-sidebar>
+    </div>
+  
+    <div class="col-md-10">
+      <div>
+        <app-header></app-header>
+      </div>
+  
+      <div class="container mt-4">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h3 class="fw-bold"> < Reports</h3>
+        </div>
+  
+        <!-- Filters Section -->
+        <div class="row mb-4 g-3">
+          <!-- Row 1: 6 Inputs -->
+          <div class="col-auto d-flex align-items-center">
+            <label for="dateFrom" class="form-label me-2">From:</label>
+            <input type="date" id="dateFrom" class="form-control" placeholder="From Date" />
+          </div>
+          <div class="col-md-2 d-flex align-items-center me-4" >
+            <label for="dateTo" class="form-label me-2">To:</label>
+            <input type="date" id="dateTo" class="form-control" placeholder="To Date" />
+          </div>
+         
+          <div class="col-md-2 me-3">
+            <select id="project" class="form-select">
+              <option selected disabled>Project</option>
+              <option>Project 1</option>
+              <option>Project 2</option>
+              <option>Project 3</option>
+            </select>
+          </div>
+          <div class="col-md-2 me-2">
+            <select id="loanSanctioned" class="form-select">
+              <option selected disabled>Loan Sanctioned</option>
+              <option>Online</option>
+              <option>Offline</option>
+            </select>
+          </div>
+          <div class="col-md-2 me-2">
+            <select id="createdBy" class="form-select">
+              <option selected disabled>Created by</option>
+              <option>Name 1</option>
+              <option>Name 2</option>
+              <option>Name 3</option>
+            </select>
+          </div>
+          
+        </div>
+         
+          <div class="row mb-4 g-3">
+          <!-- Row 2: 5 Inputs -->
+          <div class="col-md-2">
+            <select id="bdmName" class="form-select">
+              <option selected disabled>BDM Name</option>
+              <option>BDM 1</option>
+              <option>BDM 2</option>
+              <option>All</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <select id="typesOfAgreements" class="form-select">
+              <option selected disabled>Types of Agreements</option>
+              <option>Online</option>
+              <option>Offline</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <select id="phase" class="form-select">
+              <option selected>Phase</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <select id="loanDisbursed" class="form-select">
+              <option selected disabled>Loan Disbursed</option>
+              <option>Online</option>
+              <option>Offline</option>
+            </select>
+          </div>
+  
+          <div class="col-md-2">
+            <select id="draftedBy" class="form-select">
+              <option selected disabled>Drafted by</option>
+              <option>Name 1</option>
+              <option>Name 2</option>
+              <option>Name 3</option>
+            </select>
+          </div>
+          
+          <div class="col-md-2">
+            <select id="draftType" class="form-select">
+              <option selected disabled>Draft Type</option>
+              <option>New Draft</option>
+              <option>Ad-hoc</option>
+            </select>
+          </div>
+         
+         
+         
+          
+        </div>
+        
+          <!-- Row 3: 5 Inputs -->
+          <div class="row mb-4 g-3">
+          <div class="col-md-3">
+            <select id="authorityApprovalReceived" class="form-select">
+              <option selected disabled>Authority Approval Received</option>
+              <option>Online</option>
+              <option>Offline</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <select id="building" class="form-select">
+              <option selected disabled>Building</option>
+              <option>Building 1</option>
+              <option>Building 2</option>
+              <option>Building 3</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select id="onboardingStatus" class="form-select">
+              <option selected disabled>Onboarding Status</option>
+              <option>Contracted</option>
+              <option>Onboarded</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <select id="mode" class="form-select">
+              <option selected disabled>Mode</option>
+              <option>Online</option>
+              <option>Offline</option>
+              <option>Both</option>
+            </select>
+          </div>
+         
+          <div class="col-md-2">
+            <select id="bankName" class="form-select">
+              <option selected disabled>Bank Name</option>
+              <option>Bank A</option>
+              <option>Bank B</option>
+              <option>Bank C</option>
+              <option>All Banks</option>
+            </select>
+          </div>
+        </div>
+          <!-- Row 4: 5 Inputs -->
+          <div class="row mb-4 g-3">
+          <div class="col-md-2">
+            <select id="status" class="form-select">
+              <option selected>Status</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select id="Agreement Done" class="form-select">
+              <option selected disabled>Agreement Done</option>
+              <option>Online</option>
+              <option>Offline</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <select id="Booked" class="form-select">
+              <option selected disabled>Booked</option>
+              <option>Online</option>
+              <option>Offline</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <select id="events" class="form-select">
+              <option selected>Events</option>
+            </select>
+          </div>
+          <div class="col-md-2 d-flex ">
+            <button class="btn w-100" >Submit</button>
+          </div>
+        </div>
+        
+  
+        <!-- Table -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+                <th>Column 5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="5" class="text-center">No Data Available</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+        <!-- Action Buttons -->
+        <div class="d-flex justify-content-end align-items-center mt-3">
+          
+          <button class="btn btn-secondary">Download</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,139 @@
+<div class="row m-0">
+    <div class="col-md-2 p-0">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+
+        <div>
+            <h3><span style="color: #2B3C4E80;"></span>Client Report</h3>
+            <div class="container mt-2">
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input type="text" id="clientName" class="form-control" placeholder="Search Client ID/ Name"
+                                style="border-radius: 5px;">
+                            <img src="/assets/Icons/search.svg" alt="Search Icon"
+                                style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); width: 16px; pointer-events: none;">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" placeholder="Project" />
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" placeholder="Unit" />
+                    </div>
+                    <div class=" col-md-2 d-flex justify-content-end ">
+                        <button class="btn" style="background-color: #2B3C4E;color: white;">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <h3>Generate Reports by...</h3>
+                <p>Select all the respective fields to generate a report</p>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Client’s ID</th>                   
+                            <th>Name</th>    
+                            <th>Project</th>
+                            <th>Phase</th>
+                            <th>Building</th>
+                            <th>Unit</th>
+                            <th>Last Update</th>
+                            <th>Agreement Value</th>
+                            <th>Amount Received</th>
+                            <th>Amount Due</th>
+                            <th>Agreement Status</th>
+                            <th>Project completion status</th>
+                            <th>Date RM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>      
+                            <td></td>
+                            <td></td> 
+                            <td></td>      
+                            <td></td>
+                            <td></td> 
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <div>
+
+                <!-- HTML Template for the Form -->
+                <div class="container mt-4">
+                    <form>
+
+                        <div class="box p-3">
+                            <div class="row mb-3">
+                                <div class="col-md-3">
+                                    <label for="clientIdRefund" class="form-label">Client ID</label>
+                                    <input type="text" id="clientIdRefund" class="form-control" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="projectRefund" class="form-label">Project</label>
+                                    <input type="text" id="projectRefund" class="form-control" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="agreementValueRefund" class="form-label">Agreement Value</label>
+                                    <input type="text" id="agreementValueRefund" class="form-control" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="stampDutyRefund" class="form-label">Loan Status & Legal Fees</label>
+                                    <input type="text" id="stampDutyRefund" class="form-control" placeholder="Paid / Unpaid" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-3">
+                                    <label for="nameRefund" class="form-label">Name</label>
+                                    <input type="text" id="nameRefund" class="form-control" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="unitRefund" class="form-label">Unit</label>
+                                    <input type="text" id="unitRefund" class="form-control" />
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="amountPaidRefund" class="form-label">Amount Paid Till Date</label>
+                                    <input type="text" id="amountPaidRefund" class="form-control" />
+                                </div>
+                                <!-- <div class="col-md-3">
+                                    <label for="stampDutyRefund" class="form-label">Bank NOC</label>
+                                    <input type="text" id="stampDutyRefund" class="form-control" />
+                                </div> -->
+
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary mt-3" style="background-color: #2B3C4E;" >Generate Report</button>
+                         </div>
+
+                        
+
+                       
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>

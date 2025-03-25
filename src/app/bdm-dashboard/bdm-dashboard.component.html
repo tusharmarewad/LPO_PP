@@ -1,0 +1,150 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0">
+      <app-sidebar></app-sidebar>
+    </div>
+  
+  
+    <div class="col-md-10">
+  
+      <app-header></app-header>
+
+<h3>BDM Dashboard</h3>
+      <div class="table-responsive mt-2">
+        <table class="w-auto table table-bordered text-center align-middle sites">
+          <thead class="table-light">
+            <tr>
+            
+              <th colspan="4" class="align-middle">Current Month Projects</th>
+            </tr>
+            <tr>
+              <th>Leads</th>
+              <th>Contracted</th>
+              <th>Onboarded</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-bold fs-5">7</td>
+              <td class="fw-bold fs-5">7</td>
+              <td class="fw-bold fs-5">7</td>   
+            </tr>
+          </tbody>
+        </table>
+
+       
+              <div class="pie_chart_container col-md-6 text-center">
+                <!-- Pie Chart -->
+                <div class="pie-chart">
+                  <div class="segment segment-leads"></div>
+                  <div class="segment segment-contracted"></div>
+                  <div class="segment segment-onboarded"></div>
+                </div>
+                <!-- Legend -->
+                <div class="legend">
+                  <div class="legend-item">
+                    <span class="dot dot-leads"></span> <b>Project Leads</b>
+                  </div>
+                  <div class="legend-item">
+                    <span class="dot dot-contracted"></span> <b>Project Contracted</b>
+                  </div>
+                  <div class="legend-item">
+                    <span class="dot dot-onboarded"></span> <b>Project Onboarded</b>
+                  </div>
+                </div>
+              </div>
+          
+          
+          
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+                <th>Client’s ID</th>
+                <th>Project</th>
+                <th>Location</th>
+                <th>Total No. of Unit</th>
+                <th>Units for Agreement</th>
+                <th>Project completion status</th>
+                <!-- <th>Onboarding Status</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let project of projects">
+              <td>{{ project.project_id }}</td>
+              <td>{{ project.project_name }}</td>
+              <td>{{ project.location }}</td>
+              <td>{{ project.total_units }}</td>
+              <td>{{ project.units_for_agreements }}</td>
+              <td>{{ project.project_completion_status }}</td>
+            </tr>
+           
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h2>Leads in Pipeline</h2>
+        <div class="table-responsive">
+          
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+              
+                  <th>Lead ID</th>
+                  <th>Project</th>
+                  <th>Location</th>
+                  <th>Total No. of Unit</th>
+                  <th>Email ID</th>
+                  <th>Phone No.</th>
+                  <th>Status</th>
+    
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let lead of leads">
+                  <td>{{ lead.lead_id }}</td>
+                  <td>{{ lead.project_name }}</td>
+                  <td>{{ lead.location }}</td>
+                  <td>{{ lead.no_of_units }}</td>
+                  <td>{{ lead.email_id }}</td>
+                  <td>{{ lead.phone_no }}</td>
+                  <td>{{ lead.status }}</td>
+                </tr>
+               
+              </tbody>
+            </table>
+          </div>
+      </div>
+
+      <div>
+        <h2>Meeting Schedule</h2>
+        <div class="table-responsive w-50">
+          
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+              
+                  <th>Name</th>
+                  <th>Date</th>
+                  <th>Mode</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let schedules of schedule">
+                  <td>{{ schedules.meeting_with }}</td>
+                  <td>{{ schedules.meeting_date | date:'dd/MM/YYYY' }}</td>
+                  <td>{{ schedules.mode_of_meeting }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+
+
+      
+      </div>
+      </div>

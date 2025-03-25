@@ -1,0 +1,191 @@
+<div class="row container-fluid ">
+    <div class="col-md-2 p-0">
+      <app-sidebar></app-sidebar>
+    </div>
+  
+    <div class="col-md-10">
+      <div>
+        <app-header></app-header>
+      </div>
+  
+  
+   <h3>< Client Ledger </h3>
+      <div class="container mt-4">
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <div class="input-group">
+              <input type="text" id="clientName" class="form-control" placeholder="Search Client ID/ Name"
+                style="border-radius: 5px;">
+              <img src="/assets/Icons/search.svg" alt="Search Icon"
+                style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); width: 16px; pointer-events: none;">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Project"
+            />
+          </div>
+          <div class="col-md-2">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Unit"
+            />
+          </div>
+          <div class=" col-md-2 d-flex justify-content-end ">
+            <button class="btn" style="background-color: #2B3C4E;color: white;">Submit</button>
+          </div>
+      </div>
+
+
+      <div class="table-container mt-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Client’s ID</th>
+              <th>Name</th>
+              <th>Project</th>
+              <th>Unit</th>
+              <th>Agreement Value</th>
+              <th>Received Amount</th>
+              <th>Last Updated Status</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td><strong>Kiran C</strong></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><span class="text-danger">Cancelled</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><strong>Kiran C</strong></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="box mb-4 p-3">
+        <div class="row mb-3">
+          <div class="col-md-3">
+            <label for="clientId" class="form-label">Client</label>
+            <input type="text" id="clientId" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="project" class="form-label">Project</label>
+            <input type="text" id="project" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="agreementValue" class="form-label">Agreement Value</label>
+            <input type="text" id="agreementValue" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="stampDuty" class="form-label">Stamp Duty & Legal Fees</label>
+            <input type="text" id="stampDuty" class="form-control" placeholder="paid/unpaid">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="unit" class="form-label">Unit</label>
+            <input type="text" id="unit" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="amountPaid" class="form-label">Amount Paid Till Date</label>
+            <input type="text" id="amountPaid" class="form-control" />
+          </div>
+          <!-- <div class="col-md-3">
+            <label for="legalFees" class="form-label">Legal Fees</label>
+            <input type="text" id="legalFees" class="form-control" />
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="container mt-4">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Client Ledger</th>
+                <th>Credit Amount</th>
+                <th>Debit Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>DD/MM/YY</td>
+                <td>Booking Amount</td>
+                <td>Rs 100000</td>
+                <td>Rs 100000</td>
+              </tr>
+              <tr>
+                <td>DD/MM/YY</td>
+                <td>Cheque No.</td>
+                <td>Rs 100000</td>
+                <td>Rs 100000</td>
+              </tr>
+              <tr>
+                <td>DD/MM/YY</td>
+                <td>Stamp Duty</td>
+                <td>Rs 1000</td>
+                <td>Rs 1000</td>
+              </tr>
+              <tr>
+                <td>DD/MM/YY</td>
+                <td>Legal Fees</td>
+                <td>Rs 1000</td>
+                <td>Rs 1000</td>
+              </tr>
+              <tr>
+                <td>DD/MM/YY</td>
+                <td>Payment Received</td>
+                <td>Rs 100000</td>
+                <td>Rs 100000</td>
+              </tr>
+              <tr>
+                <td>DD/MM/YY</td>
+                <td>Refund</td>
+                <td>Rs 100000</td>
+                <td>Rs 100000</td>
+              </tr>
+              <tr class="table-dark">
+                <td colspan="2">Total</td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="text-end mt-3">
+          <button class="btn btn-dark">
+            <i class="bi bi-download"></i> Download
+            <img src="/assets/Icons/pdowmload.svg" alt="pdowmload Icon">
+          </button>
+          <button class="btn btn-dark ms-2">
+            <i class="bi bi-envelope"></i> Email >
+          </button>
+        </div>
+      </div>
+      
+
+
+      </div>

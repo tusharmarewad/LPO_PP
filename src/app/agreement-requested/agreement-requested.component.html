@@ -1,0 +1,352 @@
+<div class="row m-0">
+    <div class="col-md-2 p-0">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+
+        <div>
+            <h3><span style="color: #2B3C4E80;">Agreements ></span> Requested</h3>
+            <div class="table-responsive mt-2">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Client’s ID</th>
+                            <th>SRN</th>
+                            <th>Name</th>
+                            <th>Unit</th>
+                            <th>Agreement Value</th>
+                            <th>Stampduty</th>
+                            <th>Registeration
+                                Fees</th>
+                            <th>Agreement Status <img src="./assets/Icons/down_arrow.svg" /></th>
+                            <th>Update <img src="./assets/Icons/down_arrow.svg" /></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Approved</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="nav-bar">
+                <div class="nav-item" *ngFor="let item of navItems; let i = index" [class.active]="activeIndex === i"
+                    (click)="setActive(i)">
+                    {{ item }}
+                </div>
+            </div>
+
+            <div>
+
+<!-- HTML Template for the Form -->
+<div class="container mt-4" *ngIf="activeIndex === 0">
+    <form>
+      <div class="row">
+        <!-- Prefix, First Name, Middle Name, Last Name -->
+        <div class="col-md-2 mb-3">
+            <select class="form-control form-select">
+              <option value="" disabled selected>Prefix</option>
+              <option value="Mr.">Mr.</option>
+              <option value="Ms.">Ms.</option>
+              <option value="Mrs.">Mrs.</option>
+             
+            </select>
+          </div>
+          
+        <div class="col-md-2 mb-3">
+          <input type="text" class="form-control" placeholder="First Name" />
+        </div>
+        <div class="col-md-2 mb-3">
+          <input type="text" class="form-control" placeholder="Middle Name" />
+        </div>
+        <div class="col-md-2 mb-3">
+          <input type="text" class="form-control" placeholder="Last Name" />
+        </div>
+        <div class="d-flex flex-column col-md-2 mb-3">
+            <label>SRH -</label>
+            <label>Client ID -</label>
+        </div>
+      </div>
+  
+      <!-- Address -->
+      <div class="row">
+        <div class="col-md-11 mb-3">
+          <input type="text" class="form-control" placeholder="Address" />
+        </div>
+      </div>
+  
+      <!-- Mobile Number, Email ID, Date, Age -->
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <div class="input-group">
+            <span class="inputbox">
+              <img src="../assets/Icons/mobile.svg" alt="Mobile" width="20" />
+            </span>
+            <input type="text" class="form-control" placeholder="Mobile Number" />
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="input-group">
+            <span class="inputbox">
+              <img src="../assets/Icons/ic_baseline-email.svg" alt="Email" width="20" />
+            </span>
+            <input type="email" class="form-control" placeholder="Email ID" />
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="input-group">
+            <span class="inputbox">
+              <img src="../assets/Icons/uis_calender.svg" alt="DOB" width="20" />
+            </span>
+            <input type="date" class="form-control" placeholder="DD/MM/YYYY" />
+          </div>
+        </div>
+        <div class="col-md-2 mb-3">
+          <select class="form-select">
+            <option selected>Age</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+          </select>
+        </div>
+      </div>
+  
+      <!-- Pincode, City, State, Aadhar No, PAN No -->
+      <div class="row">
+        <div class="col-md-2 mb-2">
+          <select class="form-select">
+            <option selected>Pincode</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+          </select>
+        </div>
+        <div class="col-md-2 mb-2">
+          <select class="form-select">
+            <option selected>City</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+          </select>
+        </div>
+        <div class="col-md-2 mb-2">
+          <select class="form-select">
+            <option selected>State</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+          </select>
+        </div>
+        <div class="col-md-2 mb-3">
+          <input type="text" class="form-control" placeholder="Aadhar No." />
+        </div>
+        <div class="col-md-2 mb-3">
+          <input type="text" class="form-control" placeholder="PAN No." />
+        </div>
+      </div>
+  
+      <!-- Upload PAN Card, Aadhar Card -->
+      <div class="row">
+          <!-- PAN Card -->
+          <div class="col-md-3 mb-3">
+            <div class="d-flex align-items-center border rounded ">
+              <img src="../assets/Icons/file_upload.svg" alt="PAN Icon" class="me-2" style="width: 20px; height: 20px;     margin-left: 2rem;" />
+              <input
+                type="text"
+                class="form-control border-0 "
+                placeholder="PAN Card"
+                style="font-size: 14px;"
+              />
+            </div>
+          </div>
+          <!-- Aadhar Card -->
+          <div class="col-md-3">
+            <div class="d-flex align-items-center border rounded ">
+              <img src="../assets/Icons/file_upload.svg" alt="Aadhar Icon" class="me-2" style="width: 20px; height: 20px;     margin-left: 2rem;" />
+              <input
+                type="text"
+                class="form-control border-0 "
+                placeholder="Aadhar Card"
+                style="font-size: 14px;"
+              />
+            </div>
+          </div>
+        </div>
+        
+        
+  
+      <!-- Power of Attorney Holder -->
+      <div class="row">
+        <div class="col-md-12">
+          <label class="form-label">Is there a Power of Attorney Holder?</label>
+          <div>
+            <button type="button" class="btn btn-success me-2">Yes</button>
+            <button type="button" class="btn btn-danger">No</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+          
+       
+
+
+                <div class="container mt-3 p-0" *ngIf="activeIndex === 3">
+                    <!-- Top Section -->
+
+                    <div class="row d-flex justify-content-between ">
+
+                        <div class="col-9">
+                            <div class=" d-flex  gap-3 ">
+                                <div class="form-group col-md-3">
+                                    <label for="project">Project</label>
+                                    <select id="project" class="form-control">
+                                        <option>Select Project</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="unit">Unit</label>
+                                    <select id="unit" class="form-control">
+                                        <option>Select Unit</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="agreementValue">Agreement Value</label>
+                                    <input id="agreementValue" type="text" class="form-control" placeholder="Rs -" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="stampDuty">Stampduty</label>
+                                    <input id="stampDuty" type="text" class="form-control" placeholder="Rs -" />
+                                </div>
+
+
+                            </div>
+                            <div class="form-group col-md-3 mt-3">
+                                <label for="register">Registeration Fees</label>
+                                <input id="register" type="text" class="form-control" placeholder="Rs -" />
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div>
+                                <p class="d-flex flex-column mt-3"><strong>SRH -</strong> <strong>Client ID -</strong>
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Details Section -->
+                    <div class="row mt-4">
+                        <!-- Details of Amount Paid -->
+                        <div class="col-md-6">
+                            <h2 class="tbl_head">Details of Amount Paid</h2>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Particulars</th>
+                                        <th>Cheque No.</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let payment of payments">
+                                        <td>{{ payment.particulars }}</td>
+                                        <td>{{ payment.chequeNo }}</td>
+                                        <td>{{ payment.date }}</td>
+                                        <td>{{ payment.amount }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="cus_style">Total</td>
+                                        <td>{{ totalAmount }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Property Area Details -->
+                        <div class="col-md-6">
+                            <h2 class="tbl_head">Property Area Details</h2>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Project Name</th>
+                                        <th>Sai Nagari</th>
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody>
+                                
+                                    <tr>
+                                        <td>Unit No.</td>
+                                        <td>108</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Parking Space</td>
+                                        <td>---- sqmt</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Terrace</td>
+                                        <td>---- sqmt</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Balcony</td>
+                                        <td>---- sqmt</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="footer_btns">
+                            <button class="btnclr ">&lt; Back</button>
+                            <button class="btnclr ">Next &gt;</button>
+                    </div>
+                </div>
+
+                <div class="container d-flex justify-content-center align-items-center vh-100" *ngIf=" activeIndex === 4">
+                    <div class="card shadow-lg p-4 confirm-agreement-box">
+                      <h4 class="text-center mb-4">Confirm Agreement Details</h4>
+                      <ul class="list-unstyled">
+                        <li><strong>1st Owner:</strong> Kiran C</li>
+                        <li><strong>2nd Owner:</strong> Kiran C</li>
+                        <li><strong>3rd Owner:</strong> Kiran C</li>
+                        <li><strong>Agreement Value:</strong></li>
+                        <li><strong>Unit Details:</strong></li>
+                      </ul>
+                      <br>
+                      <br>
+                      <div class="d-flex justify-content-between mt-4">
+                        <button type="button" class="btn btn-dark" (click)="edit()">
+                          Edit <i class="bi bi-pencil"></i>
+                        </button>
+                        <button type="button" class="btn btn-dark" (click)="sendForConfirmation()">
+                          Send for Confirmation <i class="bi bi-arrow-right"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

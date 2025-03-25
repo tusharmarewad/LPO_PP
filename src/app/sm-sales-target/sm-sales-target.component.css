@@ -1,0 +1,318 @@
+.timeline {
+    position: relative;
+    /* padding-left: 40px; */
+    border-left: 2px solid #e0e0e0;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    top: 5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+  }
+  
+  .timeline-content {
+    padding-left: 20px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+
+  
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+  .card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 8px;
+  }
+  
+  .card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .circle-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #007bff;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    color: #007bff;
+  }
+  
+  .circle-chart h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .circle-chart p {
+    text-align: center;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  .table {
+    margin-top: 20px;
+    background-color: #fff;
+  }
+  
+  .table th {
+    background-color: #F5F3F3;
+    color: #2B3C4E;
+    text-align: center;
+  }
+  
+  .table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .badge {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 12px;
+  }
+  
+  .card-img-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    max-height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-body h5 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .card-body p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+  
+  .container {
+    /* max-width: 1200px; */
+  }
+  
+  .row {
+    margin-bottom: 20px;
+  }
+
+  .sai_nagari{
+    font-size: 2.1rem;
+    position: absolute;
+    margin-bottom: 10px;
+    top: 3rem;
+    left: 3rem;
+    color: white;
+    font-style: Quando;
+  }
+
+.card_description{
+    color: #2B3C4E;
+    font-size: larger;
+}
+
+.card_description_header{
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+.card_footer{
+    background-color: #2B3C4E;
+    color: white;
+    font-size: x-large;
+    text-align: center;
+}
+.card_header{
+    border-radius: 10px;
+    padding: 0;
+}
+.last_div{
+    gap: 12px;
+}
+
+.input-group{
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    width: 80%;
+    justify-content: end;
+}
+
+
+.site-container {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  padding: 10px;
+}
+
+.site-container h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2f3a47;
+}
+
+.chart-container {
+  width: 100px;
+  height: 100px;
+}
+
+.donut-chart {
+  width: 40%;
+  height: 40%;
+}
+
+.donut{
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+}
+
+.circular-chart {
+  width: 100%;
+  height: 100%;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #f0f0f0;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 3.8;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.chart-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2f3a47;
+}
+
+.chart-info .dot {
+  height: 10px;
+  border-radius: 100%;
+  display: inline-block;
+  width: 10px;
+}
+
+.chart-info .bg-dark {
+  background-color: #2f3a47;
+}
+
+.chart-info .bg-warning {
+  background-color: #ff7f0e;
+}
+
+.chart-info p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #2f3a47;
+  font-weight: 600;
+}
+
+.flat{
+  font-weight: 500;
+}
+
+.donut_container{
+  padding-left:0.5rem;
+}
+
+
+.yellow-portion {
+  stroke: #ff7f0e; /* Yellow color */
+  transition: stroke-dasharray 0.3s ease;
+}
+
+.black-portion {
+  stroke: #2b3c4e; /* Black color */
+  transition: stroke-dasharray 0.3s ease;
+}
+
+
+
+
+/* Chart CSS */
+
+
+.chart-container {
+    width: -webkit-fill-available;
+    height: auto;
+    margin-top: 1.5rem;
+  }
+  
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  .donut-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+
+  
+  @media (max-width: 768px) {
+    .circle-chart {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .circle-chart h2 {
+      font-size: 1.2rem;
+    }
+  
+    .circle-chart p {
+      font-size: 0.8rem;
+    }
+  
+    .card-title {
+      font-size: 1rem;
+    }
+  }
+  
+  h3{
+    color: #2B3C4E ;
+ }
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,143 @@
+<div class="row container-fluid p-0">
+
+
+    
+    <div class="col-md-2 p-0">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+
+        <h3 class="mb-4"><span style="color: #2B3C4E80;">Agreements ></span> Review</h3>
+
+        <div class="table-responsive mt-2">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Client’s ID</th>
+                        <th>ARN</th>
+                        <th>Name</th>
+                        <th>Project</th>
+                        <th>Unit</th>
+                        <th>Agreement value</th>
+                        <th>Stampduty</th>
+                        <th>Registeration Fees</th>
+                        <th>Prepared by</th>
+                        <th>PDF</th>
+                        <th>TAT</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>View</td>
+                        <td></td>
+                        <td>Approved</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container mt-4">
+            <!-- Top Row with Input Fields -->
+            <div class="row mb-4">
+                <div class="col">
+                    <label for="srn" class="form-label ">SRN</label>
+                    <input type="text" id="srn" class="form-control" value="123" />
+                </div>
+                <div class="col">
+                    <label for="clientId" class="form-label ">Client ID</label>
+                    <input type="text" id="clientId" class="form-control" value="123" />
+                </div>
+                <div class="col">
+                    <label for="clientName" class="form-label">Client Name</label>
+                    <input type="text" id="clientName" class="form-control" value="Kiran" />
+                </div>
+                <div class="col">
+                    <label for="project" class="form-label ">Project</label>
+                    <input type="text" id="project" class="form-control" value="ABC" />
+                </div>
+                <div class="col">
+                    <label for="unit" class="form-label ">Unit</label>
+                    <input type="text" id="unit" class="form-control" value="908" />
+                </div>
+            </div>
+
+            <!-- Main Row: Agreement for Sale on the Left, Remark on the Right -->
+            <div class="row">
+                <!-- Left Column: Agreement for Sale -->
+                <!-- <div class=" col-md-6 table-responsive mt-2">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> -->
+
+
+                <!-- Right Column: Remark Section -->
+                <div class="col-md-6">
+                    <!-- Buttons Above Remark Box -->
+                    <div class="mb-2 d-flex">
+                        <button class="btn btn-secondary me-2">Resubmission</button>
+                        <button class="btn btn-dark">Execute Deal</button>
+                    </div>
+                    <!-- Remark Shadow Box -->
+                    <div class="shadow-box p-4">
+                        <h5 class="fw-bold">Remark</h5>
+                        <textarea cols="50" placeholder="Enter your text here"></textarea>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-secondary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

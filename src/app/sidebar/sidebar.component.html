@@ -1,0 +1,728 @@
+<!-- <div class="logo1">
+      <img src="../assets/Icons/logo-img.jpeg" alt="Logo" height="150" width="150" />
+      <h4 style="margin-top: 1rem; margin-bottom: -1px">MPS</h4>
+    </div> -->
+
+<div class="col-md-2 sidebar p-0 ">
+  <div>
+    <div>
+      <h3 class="sidebar_header">LPO</h3>
+    </div>
+
+    <nav>
+      <div class="main">
+
+
+        <!-- RM Sidebar -->
+
+        <div *ngIf="shouldDisplay(11)">
+          <li class="Icons" (click)="GoTo_RM_dashboard()">
+            <img src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+
+          <li class="Icons" (click)="GoTo_addlead()">
+            <img src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Add Leads</span>
+          </li>
+
+
+          <li class="Icons" (click)="GoTo_addclient()">
+            <img src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Add Client</span>
+          </li>
+
+
+          <li class="policy_item Icons" style="cursor: pointer" (click)="go_to_Client_bank()">
+            <img src="../assets/Icons/dashboard.svg" alt="Loan Icon" />
+            <span>Client Bank</span>
+          </li>
+
+
+          <li class="policy_item Icons" style="cursor: pointer" (click)="go_to_loan_status()">
+            <img src="../assets/Icons/dashboard.svg" alt="Insurance Icon" />
+            <span>Loan Status</span>
+          </li>
+
+
+
+          <li class="Icons" (click)="go_to_Campign()">
+            <img src="../assets/Icons/dashboard.svg" alt="Equity Funding Icon" />
+            <span>Campaigning</span>
+          </li>
+
+          <li class="Icons" (click)="checkAvailability()">
+            <img src="../assets/Icons/dashboard.svg" alt="Equity Funding Icon" />
+            <span>Check Availability</span>
+          </li>
+
+          <li class="Icons" (click)="go_to_Calculator()">
+            <img src="../assets/Icons/dashboard.svg" alt="Equity Funding Icon" />
+            <span>Calculator</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_addevent()">
+            <img src="../assets/Icons/dashboard.svg" alt="Equity Funding Icon" />
+            <span>Add Event / Meeting</span>
+          </li>
+
+        </div>
+
+        <!-- SM Sidebar -->
+
+        <div *ngIf="shouldDisplay(12)">
+          <li class="Icons" (click)="GoTo_sm_dashboard()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+          <li class="Icons" (click)="GoTo_sm_add_rm_details()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Add RM Details</span>
+          </li>
+          <li class="Icons" (click)="GoTo_sm_rm_bank()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>RM Bank</span>
+          </li>
+          <li class="Icons" (click)="GoTo_sm_Project_Details()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Project Details</span>
+          </li>
+          <li class="Icons" (click)="GoTo_sm_My_Team()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>My Team</span>
+          </li>
+          <li class="Icons" (click)="GoTo_sm_Team_Performance()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Team Performance</span>
+          </li>
+          <li class="Icons" (click)="GoTo_sm_Check_Availability()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Check Availability</span>
+          </li>
+          <li class="Icons" (click)="GoTo_sm_Sales_Target()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Sales Target</span>
+          </li>
+          <li class="Icons" (click)="GoTo_sm_Accounts()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Accounts</span>
+          </li>
+          <li class="Icons" (click)="GoTo_sm_Cancel_Refund()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Cancel / Refund</span>
+          </li>
+
+        </div>
+
+
+
+
+        <!--  Lawyer 1  -->
+
+
+        <div *ngIf="shouldDisplay(6)">
+
+          <li class="Icons" (click)="GoTo_lawyer1_dashboard()">
+            <img src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+
+          <li class="Icons agreements" (mouseenter)="showSubModules()" (mouseleave)="hideSubModules()">
+            <img src="../assets/Icons/dashboard.svg" alt="Equity Funding Icon" />
+            <span>Agreements</span>
+
+            <ul class="sub-modules" *ngIf="isSubModulesVisible">
+              <li (click)="go_to_request()">Requested</li>
+              <li (click)="go_to_resubmission()">Resubmission</li>
+              <li (click)="go_to_registered()">Registered</li>
+            </ul>
+          </li>
+
+          <li class="Icons agreements" (mouseenter)="showreqSubModules()" (mouseleave)="hideredSubModules()">
+            <img src="../assets/Icons/dashboard.svg" alt="Equity Funding Icon" />
+            <span>Request For</span>
+
+            <ul class="sub-modules" *ngIf="isrequestSubModulesVisible">
+              <li (click)="go_to_stampduty()">Stampduty & Registeration Fees</li>
+              <li (click)="go_to_certified()">Certified Copies Payment</li>
+              <li (click)="go_to_binding()">Agreement Binding & Packing</li>
+            </ul>
+          </li>
+
+          <li class="Icons" (click)="GoTo_create_schedule()">
+            <img src="../assets/Icons/dashboard.svg" alt="Create Schedule" />
+            <span>Create Schedule</span>
+          </li>
+
+        </div>
+
+
+        <!-- Lawyer 2 sidebar -->
+        <div *ngIf="shouldDisplay(7)">
+          <li class="Icons" (click)="GoTo_lawyer2_dashboard()">
+            <img src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+          <!-- Agreements - Click to toggle -->
+          <li class="Icons agreements" (click)="toggleLawyer2AgreementModules()">
+            <img src="../assets/Icons/dashboard.svg" alt="Equity Funding Icon" />
+            <span>Agreements</span>
+
+            <ul class="sub-modules d-flex flex-column" *ngIf="bdmState.isLawyer2LeadActive">
+              <li (click)="go_to_review($event)">Review</li>
+              <li (click)="go_to_L2_resubmission($event)">Resubmission</li>
+              <li (click)="go_to_L2_registered($event)">Registered</li>
+            </ul>
+          </li>
+
+          <!-- New Drafts - Click to toggle -->
+          <li class="Icons agreements" (click)="toggleLawyer2NewDraftModules()">
+            <img src="../assets/Icons/dashboard.svg" alt="Equity Funding Icon" />
+            <span>New Drafts</span>
+
+            <ul class="sub-modules d-flex flex-column" *ngIf="bdmState.isLayer2NewDraftsActive">
+              <li (click)="go_to_new_draft_L2_create($event)">Create</li>
+              <li (click)="go_to_new_draft_L2_resubmission($event)">Resubmission</li>
+            </ul>
+          </li>
+
+          <!-- Request For - Click to toggle -->
+          <li class="Icons agreements" (click)="toggleLawyer2RequestForModules()">
+            <img src="../assets/Icons/dashboard.svg" alt="Equity Funding Icon" />
+            <span>Request For</span>
+
+            <ul class="sub-modules d-flex flex-column" *ngIf="bdmState.isLawyer2RequestForActive">
+              <li (click)="go_to_req_for_L2_Stampduty($event)">Stampduty & Registeration Fees</li>
+              <li (click)="go_to_req_for_L2_Certified($event)">Certified Copies Payment</li>
+              <li (click)="go_to_req_for_L2_Binding($event)">Agreement Binding & Packing</li>
+            </ul>
+          </li>
+
+          <li class="Icons" (click)="go_to_L2_create_schedule()">
+            <img src="../assets/Icons/dashboard.svg" alt="Create Schedule" />
+            <span>Create Schedule</span>
+          </li>
+        </div>
+
+
+
+
+        <!-- Executor Sidebar -->
+
+        <div *ngIf="shouldDisplay(8)">
+          <li class="Icons" (click)="GoTo_executor_dashboard()">
+            <img src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+          <li class="Icons agreements" (mouseenter)="showExecutorAgreenmentModules()"
+            (mouseleave)="hideExecutorAgreenmentModules()">
+            <img src="../assets/Icons/dashboard.svg" alt="Equity Funding Icon" />
+            <span>Agreements</span>
+
+            <ul class="sub-modules" *ngIf="isExecutorAgreement">
+              <li (click)="GoTo_executor_client_signature()">Client’s signature</li>
+              <li (click)="GoTo_executor_builder_signature()">Builder’s Signature</li>
+              <li (click)="GoTo_executor_resubmission()">Resubmission</li>
+            </ul>
+          </li>
+
+
+          <li class="Icons agreements" (mouseenter)="showExecutorSchedule()" (mouseleave)="hideExecutorSchedule()">
+            <img src="../assets/Icons/dashboard.svg" alt="Equity Funding Icon" />
+            <span>Schedule</span>
+
+            <ul class="sub-modules" *ngIf="isExecutorschedule">
+              <li (click)="GoTo_executor_client_appointment()">Client Appointment</li>
+              <li (click)="GoTo_executor_builder_appointment()">Builder Appointment</li>
+
+            </ul>
+          </li>
+        </div>
+
+
+        <!-- Builder sidebar -->
+        <div *ngIf="shouldDisplay(15)">
+          <li class="Icons" (click)="GoTo_builder_dashboard()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+          <li class="Icons agreements" (mouseenter)="showBuilderAgreenmentModules()"
+            (mouseleave)="hideBuilderAgreenmentModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Agreements</span>
+
+            <ul class="sub-modules" *ngIf="isBuilderAgreement">
+              <li (click)="GoTo_builder_agreement_execution()">Execution</li>
+              <li (click)="GoTo_builder_agreement_resubmission()">Resubmission</li>
+            </ul>
+          </li>
+
+          <li class="Icons" (click)="GoTo_builder_report()">
+            <img class="default-img" src="./assets/Icons/report.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/report_post.svg" alt="Home Icon" />
+            <span>Reports</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_builder_check_availability()">
+            <img class="default-img" src="./assets/Icons/check_availability.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/check_availability_post.svg" alt="Home Icon" />
+            <span>Check Availability</span>
+          </li>
+        </div>
+
+
+
+        <!-- Authority Sidebar -->
+        <div *ngIf="shouldDisplay(17)">
+
+          <li class="Icons" (click)="GoTo_authority_dashboard()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_authority_request()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Request</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_authority_resubmission()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Resubmission</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_authority_report()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Reports</span>
+          </li>
+
+        </div>
+
+        <!-- Loan Department  -->
+        <div *ngIf="shouldDisplay(13)">
+          <li class="Icons" (click)="GoTo_loan_dashboard()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_loan_request()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Loan Request</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_loan_disbursement_request()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Disbursement Request</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_loan_new_demand()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>New Demand</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_loan_report()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Reports</span>
+          </li>
+        </div>
+
+
+
+        <!-- Printer Department  -->
+        <div *ngIf="shouldDisplay(16)">
+          <li class="Icons" (click)="GoTo_printer_dashboard()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+
+
+
+          <li class="Icons agreements" (mouseenter)="showPrinterAgreenmentModules()"
+            (mouseleave)="hidePrinterAgreenmentModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Agreements</span>
+
+            <ul class="sub-modules" *ngIf="isPrinterAgreement">
+              <li (click)="GoTo_printer_agreement_print()">For Print</li>
+              <li (click)="GoTo_printer_agreement_delivery()">For Delivery</li>
+            </ul>
+          </li>
+
+
+          <li class="Icons agreements" (mouseenter)="showPrinterScheduleModules()"
+            (mouseleave)="hidePrinterScheduleModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Schedule</span>
+
+            <ul class="sub-modules" *ngIf="isPrinterSchedule">
+              <li (click)="GoTo_printer_schedule_client()">For Client</li>
+              <li (click)="GoTo_printer_schedule_builder()">For Builder</li>
+            </ul>
+          </li>
+        </div>
+
+
+
+        <!-- BDM Department  -->
+        <div *ngIf="shouldDisplay(4)">
+
+          <li class="Icons" (click)="GoTo_bdm_dashboard()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+          <li class="Icons agreements" (click)="toggleBDMLeadModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Lead</span>
+
+            <ul class="d-flex flex-column sub-modules" *ngIf="bdmState.isBDMLeadActive">
+              <li (click)="GoTo_bdm_add_lead($event)">Add</li>
+              <!-- <li (click)="GoTo_bdm_lead_status($event)">Status</li> -->
+            </ul>
+          </li>
+
+          <li class="Icons" [ngClass]="{'push-down': bdmState.isBDMLeadActive}" (click)="GoTo_bdm_add_project()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Add Project</span>
+          </li>
+
+
+          <li class="Icons" (click)="GoTo_bdm_create_schedule()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Create Schedule</span>
+          </li>
+          <li class="Icons" (click)="GoTo_bdm_ad_hoc()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Request for Ad-hoc Draft</span>
+
+          </li>
+
+        </div>
+
+
+        <!-- Client Manager Department  -->
+        <div *ngIf="shouldDisplay(3)">
+          <li class="Icons" (click)="GoTo_CM_dashboard()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+          <li class="Icons agreements" (click)="toggleCMLeadModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Lead</span>
+
+            <ul class="d-flex flex-column sub-modules" *ngIf="bdmState.isCMLeadActive">
+              <li (click)="GoTo_CM_add_lead($event)">Add</li>
+              <li (click)="GoTo_CM_lead_status($event)">Status</li>
+            </ul>
+          </li>
+
+          <li class="Icons" (click)="GoTo_cm_add_project()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Add Project</span>
+          </li>
+
+          <li class="Icons agreements" (click)="toggleCMOnboardingModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Onboarding</span>
+
+            <ul class="d-flex flex-column sub-modules" *ngIf="bdmState.isOnboardingActive">
+              <li (click)="GoTo_CM_onboarding_new_data($event)">New Data</li>
+              <li (click)="GoTo_CM_onboarding_modify($event)">Modify</li>
+            </ul>
+          </li>
+
+          <li class="Icons agreements" (click)="toggleCMReqForDraftModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Request for Draft</span>
+
+            <ul class="d-flex flex-column sub-modules" *ngIf="bdmState.isDraftActive">
+              <li (click)="GoTo_CM_draft_new_agreement($event)">New Agreements</li>
+              <li (click)="GoTo_CM_draft_ad_hoc($event)">Ad-hoc</li>
+            </ul>
+          </li>
+
+          <li class="Icons agreements" (click)="toggleCMReportModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Reports</span>
+
+            <ul class="d-flex flex-column sub-modules" *ngIf="bdmState.isReportActive">
+              <li (click)="GoTo_CM_report_bdm($event)">BDM</li>
+              <li (click)="GoTo_CM_report_agreement($event)">Agreements</li>
+            </ul>
+          </li>
+        </div>
+
+        <!--LPO's Accountant Department  -->
+        <div *ngIf="shouldDisplay(9)">
+          <li class="Icons" (click)="GoTo_acc_dashboard()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+          <li class="Icons agreements" (mouseenter)="showAccModules()" (mouseleave)="hideAccModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Payment</span>
+
+            <ul class="sub-modules" *ngIf="isAccActive">
+              <li (click)="GoTo_acc_payment__certified()">Certified Copies Challan</li>
+              <li (click)="GoTo_acc_payment__stampduty()">Stampduty & Registeration Fees</li>
+              <li (click)="GoTo_acc_payment__Miscellaneous()">Miscellaneous</li>
+            </ul>
+          </li>
+
+          <li class="Icons agreements" (mouseenter)="showAccReceiptModules()" (mouseleave)="hideAccReceiptModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Receipts</span>
+
+            <ul class="sub-modules" *ngIf="isAccReceiptActive">
+              <li (click)="GoTo_acc_receipts__agree_invoice()">Agreement Invoice</li>
+              <li (click)="GoTo_acc_receipts__stampduty()">Stampduty & Registeration Fees</li>
+              <li (click)="GoTo_acc_receipts__ad_hoc()">Ad-hoc Draft Invoice</li>
+            </ul>
+          </li>
+
+          <li class="Icons" (click)="GoTo_acc_reports()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Reports</span>
+          </li>
+        </div>
+
+
+        <!-- SR Lawyer Department  -->
+        <div *ngIf="shouldDisplay(5)">
+          <li class="Icons" (click)="GoTo_sr_lawyer_dashboard()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+          <li class="Icons agreements" (click)="toggleSLAgreementModules()" (mouseleave)="hideSRLawyerModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Agreements</span>
+
+            <ul class="d-flex flex-column sub-modules" *ngIf="bdmState.isSrLawyerActive">
+              <li (click)="GoTo_sr_lawyer_newagreement($event)">New Agreements</li>
+              <li (click)="GoTo_sr_lawyer_ad_hoc($event)">Ad-hoc</li>
+              <li (click)="GoTo_sr_lawyer_ad_hoc_by_jr_lawyer($event)">Ad-hoc by Jr Lawyer</li>
+              <li (click)="GoTo_sr_lawyer_resubmission($event)">Resubmission</li>
+            </ul>
+          </li>
+
+          <li class="Icons agreements" (click)="toggleSLReportModules()" (mouseleave)="hideSRLawyerReportModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Reports</span>
+
+            <ul class="d-flex flex-column sub-modules" *ngIf="bdmState.isSrLawyerReportActive">
+              <li (click)="GoTo_sr_lawyer_team($event)">Project</li>
+              <li (click)="GoTo_sr_lawyer_agreement($event)">Agreements</li>
+            </ul>
+          </li>
+
+
+
+        </div>
+
+
+
+        <!-- LPO Admin -->
+        <div *ngIf="shouldDisplay(1)">
+
+          <li class="Icons" (click)="GoTo_lpo_admin_dashboard()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+          <li class="Icons agreements" (click)="toggleLPOAdminLeadsModules()" (mouseleave)="hideLpoAdminModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Leads</span>
+
+            <ul class="d-flex flex-column sub-modules" *ngIf="bdmState.isLpoAdminActive">
+              <li (click)="GoTo_lpo_admin_lead_add($event)">Add</li>
+              <li (click)="GoTo_lpo_admin_lead_status($event)">Status</li>
+            </ul>
+          </li>
+
+          <li class="Icons" (click)="GoTo_lpo_admin_login_project_details()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Login & Project Details</span>
+          </li>
+
+          <li class="Icons agreements" (click)="toggleLPOAdminDraftModules()" (mouseleave)="hideLpoAdminDraftModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Request for Draft</span>
+
+            <ul class="d-flex flex-column sub-modules" *ngIf="bdmState.isLpoAdminDraftActive">
+              <li (click)="GoTo_lpo_admin_draft_new_agreement($event)">New Agreements</li>
+              <li (click)="GoTo_lpo_admin_draft_Ad_hoc($event)">Ad-hoc</li>
+            </ul>
+          </li>
+
+          <li class="Icons" (click)="GoTo_lpo_admin_Reports()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Reports</span>
+          </li>
+
+        </div>
+
+        <!-- Client Sidebar -->
+        <div *ngIf="shouldDisplay(2)"></div>
+
+        <!-- Builder Admin -->
+        <div *ngIf="shouldDisplay(14)">
+          <li class="Icons" (click)="GoTo_builder_admin_dashboard()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_builder_admin_Update_Client()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Update Client</span>
+          </li>
+          <li class="Icons" (click)="GoTo_builder_admin_Check_Availability()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Check Availability</span>
+          </li>
+          <li class="Icons" (click)="GoTo_builder_admin_Client_Ledger()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Client Ledger</span>
+          </li>
+          <li class="Icons" (click)="GoTo_builder_admin_Agreement_Status()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Agreement Status</span>
+          </li>
+          <li class="Icons" (click)="GoTo_builder_admin_Client_Reports()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Client Reports</span>
+          </li>
+          <li class="Icons" (click)="GoTo_builder_admin_Sales_Reports()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Sales Reports</span>
+          </li>
+          <li class="Icons" (click)="GoTo_builder_admin_Communicate_LPO_RM()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Communicate LPO’s RM</span>
+          </li>
+
+
+        </div>
+
+        <!-- Builder Accountant -->
+        <div *ngIf="shouldDisplay(10)">
+          <li class="Icons" (click)="GoTo_builder_account_dashboard()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Dashboard</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_builder_account_Update_Client()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Update Client</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_builder_account_Bank_NOC()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Bank NOC</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_builder_account_Check_Availability()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Check Availability</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_builder_account_Client_Ledger()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Client Ledger</span>
+          </li>
+
+          <li class="Icons" (click)="GoTo_builder_account_Agreement_Status()">
+            <img class="default-img" src="./assets/Icons/dashboard_pre.svg" alt="Home Icon" />
+            <img class="hover-img" src="./assets/Icons/dashboard.svg" alt="Home Icon" />
+            <span>Agreement Status</span>
+          </li>
+
+          <li class="Icons agreements" (mouseenter)="showbuilderAccountModules()"
+            (mouseleave)="hidebuilderAccountModules()">
+            <img class="default-img" src="../assets/Icons/agreement.svg" alt="Equity Funding Icon" />
+            <img class="hover-img" src="./assets/Icons/agreement_post.svg" alt="Home Icon" />
+            <span>Reports</span>
+
+            <ul class="sub-modules" *ngIf="isbuilderAccountActive">
+              <li (click)="GoTo_builder_account_Reports()">Reports</li>
+              <li (click)="GoTo_builder_account_Executor_Reports()">Executor Reports</li>
+            </ul>
+          </li>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="button_div">
+    <button class="btn btn-light logout" (click)="logout()">Logout <img src="../assets/Icons/logout_arrow.svg"
+        alt="Equity Funding Icon" /></button>
+  </div>
+</div>

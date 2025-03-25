@@ -1,0 +1,159 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0 m-0">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+
+
+        <div>
+            <h3>Add Lead</h3>
+            <form [formGroup]="leadForm" (ngSubmit)="onSubmit()">
+                <!-- First Row -->
+                <div class="row mb-4">
+                    <div class="col-3">
+                        <label for="builder_name" class="form-label">Builder Name</label>
+                        <input type="text" id="builder_name" class="form-control" formControlName="builder_name" placeholder="Name" />
+                    </div>
+                    <div class="col-3">
+                        <label for="project_name" class="form-label">Project Name</label>
+                        <input type="text" id="project_name" class="form-control" formControlName="project_name" placeholder="Name" />
+                    </div>
+                    <div class="col-3">
+                        <label for="contact_person" class="form-label">Contact Person</label>
+                        <input type="text" id="contact_person" class="form-control" formControlName="contact_person" placeholder="contact person name" />
+                    </div>
+                    <div class="col-3">
+                        <label for="email_id" class="form-label">Email ID</label>
+                        <input type="email" id="email_id" class="form-control" formControlName="email_id" placeholder="abc@gmail.com" />
+                    </div>
+                    <div class="col-3">
+                        <label for="phone_no" class="form-label">Phone No.</label>
+                        <input type="text" id="phone_no" class="form-control" formControlName="phone_no" placeholder="1234567890" />
+                    </div>
+                    <div class="col-3">
+                        <label for="address_1" class="form-label">Address 1</label>
+                        <input type="text" id="address_1" class="form-control" formControlName="address_1" placeholder="Fatima Nagar, KPCT Mall" />
+                    </div>
+                    <div class="col-3">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" id="location" class="form-control" formControlName="location" placeholder="Hadapsar" />
+                    </div>
+                    <div class="col-3">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" id="city" class="form-control" formControlName="city" placeholder="Pune" />
+                    </div>
+                </div>
+        
+                <div class="row mb-4">
+                    <div class="col-3">
+                        <label for="state" class="form-label">State</label>
+                        <input type="text" id="state" class="form-control" formControlName="state" placeholder="Maharashtra" />
+                    </div>
+                    <div class="col-3">
+                        <label for="pincode" class="form-label">Pincode</label>
+                        <input type="text" id="pincode" class="form-control" formControlName="pincode" placeholder="123456" />
+                    </div>
+                    <div class="col-3">
+                        <label for="no_of_units" class="form-label">No. of units</label>
+                        <input type="text" id="no_of_units" class="form-control" formControlName="no_of_units" placeholder="00" />
+                    </div>
+                    <div class="col-3">
+                        <label for="project_completion_status" class="form-label">Project Completion Status</label>
+                        <select id="project_completion_status" class="form-select" formControlName="project_completion_status">
+                            <option value="" disabled selected>Select</option>
+                            <option value="10%">10%</option>
+                            <option value="20%">20%</option>
+                            <option value="30%">30%</option>
+                            <option value="40%">40%</option>
+                            <option value="50%">50%</option>
+                            <option value="60%">60%</option>
+                            <option value="70%">70%</option>
+                            <option value="80%">80%</option>
+                            <option value="90%">90%</option>
+                            <option value="100%">100%</option>
+                        </select>
+                    </div>
+
+                                        <!-- Status Dropdown -->
+                    <div class="col-3">
+                        <label for="status" class="form-label">Status</label>
+                        <select id="status" class="form-select" formControlName="status">
+                        <option value="" disabled selected>Select Status</option>
+                        <option value="Interested">Interested</option>
+                        <option value="Not Interested">Not Interested</option>
+                        <option value="Call Pending">Call Pending</option>
+                        <option value="In Follow Up">In Follow Up</option>
+                        <option value="Contracted">Contracted</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <!-- <div class="row mb-4">
+                    <div class="col-3">
+                        <label for="lead_id" class="form-label">Lead ID</label>
+                        <input type="text" id="lead_id" class="form-control" formControlName="lead_id" placeholder="LD12345" />
+                    </div>
+                </div> -->
+        
+                <div class="d-flex justify-content-center mb-4">
+                    <div class="col-2 d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary w-100" [disabled]="leadForm.invalid">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Lead ID</th>
+                        <th>Project</th>
+                        <th>Location</th>
+                        <th>Total No. of Units</th>
+                        <th>Project Completion Status</th>
+                        <th>Email ID</th>
+                        <th>Phone No.</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let lead of leads">
+                        <td>{{ lead.lead_id }}</td>
+                        <td>{{ lead.project_name }}</td>
+                        <td>{{ lead.location }}</td>
+                        <td>{{ lead.no_of_units }}</td>
+                        <td>{{ lead.project_completion_status }}</td>
+                        <td>{{ lead.email_id }}</td>
+                        <td>{{ lead.phone_no }}</td>
+                        <td>{{ lead.status }}</td>
+                            <!-- <select class="form-select"
+                                [ngClass]="{
+                                    'bg-green': lead.status === 'Contracted',
+                                    'bg-yellow': lead.status === 'Interested',
+                                    'bg-red': lead.status === 'Not Interested'
+                                }"
+                                [(ngModel)]="lead.status" 
+                                (change)="updateStatus(lead)">
+                                <option value="Interested">Interested</option>
+                                <option value="Not Interested">Not Interested</option>
+                                <option value="Call Pending">Call Pending</option>
+                                <option value="In Follow Up">In Follow Up</option>
+                                <option value="Contracted">Contracted</option>
+                            </select>
+                        -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+
+    </div>
+</div>

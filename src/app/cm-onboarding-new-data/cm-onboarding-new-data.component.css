@@ -1,0 +1,73 @@
+label {
+  font-weight: bold;
+}
+
+button {
+  height: 38px;
+}
+
+input[type="file"]::file-selector-button {
+  height: 36px;
+  margin-right: 5px;
+  padding: 0 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.submit{
+  background-color:#2B3C4E;
+
+ width: 6rem;
+  color: white;
+}
+.project_add{
+  margin-top: 2rem;
+}
+.name{
+ color:#2B3C4E;
+ font-weight: bold;
+}
+
+
+/* Styling for the navigation bar */
+.nav-tabs {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-tabs .nav-link {
+  color: #6c757d; /* Muted text color */
+  border: none;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+  color: #2B3C4E; /* Dark text color for active tab */
+  font-weight: bold;
+  border-bottom: 2px solid #2B3C4E; /* Black underline for active tab */
+  background-color: transparent;
+}
+
+
+
+.table {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table th, .table td {
+  white-space: nowrap;
+}
+
+
+.phase-section {
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+h5 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+

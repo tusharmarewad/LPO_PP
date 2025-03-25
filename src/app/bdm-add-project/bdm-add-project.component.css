@@ -1,0 +1,34 @@
+
+label {
+    font-weight: bold;
+  }
+  
+  button {
+    height: 38px;
+  }
+  
+  input[type="file"]::file-selector-button {
+    height: 36px;
+    margin-right: 5px;
+    padding: 0 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  
+.submit{
+    background-color:#2B3C4E;
+    position: relative;
+   
+    color: white;
+}
+.upload{
+    width: 8rem;
+    gap: 10px
+}
+.meeting{
+    gap: 3rem;
+}
+.project_add{
+    margin-top: 2rem;
+}

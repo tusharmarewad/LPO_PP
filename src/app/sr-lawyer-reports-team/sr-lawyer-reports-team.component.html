@@ -1,0 +1,166 @@
+<div class="row container-fluid">
+  <div class="col-md-2 p-0">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="col-md-10">
+    <div>
+      <app-header></app-header>
+    </div>
+    <h3>
+      < Reports> Project
+    </h3>
+    <div class="container mt-2">
+      <!-- Header -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+
+
+      </div>
+
+      <!-- Filters Section -->
+      <div class="row mb-4 g-3">
+        <div class="col-md-3">
+          <div class="d-flex mb-2 align-items-center g-4">
+            <h6 class="card-title">Date</h6>
+            <input type="date" id="dateFrom" class="form-control me-2 small-input" placeholder="From"
+              style="width: 100px;" />
+            <input type="date" id="dateTo" class="form-control small-input" placeholder="To" style="width: 100px;" />
+          </div>
+          <select id="authorityApproval" class="form-select mb-2">
+            <option selected>Types of Agreements</option>
+          </select>
+
+        </div>
+
+        <div class="col-md-2">
+          <label class="form-label">Select BDM Name</label>
+          <select id="bdmDropdown" class="form-select mb-2" (change)="onBDMSelect($event)">
+            <option value="" selected disabled>Select BDM</option>
+            <option *ngFor="let bdm of bdmList" [value]="bdm.id">{{ bdm.name }}</option>
+          </select>
+        </div>
+
+        <!-- Client Manager Dropdown -->
+        <!-- <div class="col-md-2">
+          <label class="form-label" for="clientManagerDropdown">Select Client Manager</label>
+          <select id="clientManagerDropdown" class="form-select mb-2" (change)="onClientManagerSelect($event)">
+            <option value="" selected disabled>Select Client Manager</option>
+            <option *ngFor="let cm of clientManagerList" [value]="cm.id">{{ cm.name }}</option>
+          </select>
+        </div> -->
+
+        <div class="last_section col-md-2">
+          <div>
+            <select id="project" class="form-select mb-2" (change)="onProjectSelect($event)">
+              <option value="" selected disabled>Projects</option>
+              <option *ngFor="let projectName of uniqueProjectNames" [value]="projectName">{{ projectName }}</option>
+            </select>
+          </div>
+          <div>
+            <select id="project" class="form-select mb-2">
+              <option selected>Phase</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="last_section col-md-2 d-flex justify-content-end">
+          <div class="submit m-0">
+            <div class="col-md-12 text-center mb-2">
+              <button class="btn btn-primary" style="background-color: #2B3C4E;width: 8rem;">Submit</button>
+            </div>
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+      <!-- Table -->
+      <div class="table-responsive mt-4" style="max-height: 250px; overflow-y: auto;">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Created By</th>
+              <th>Project</th>
+              <th>location</th>
+              <th>Total units</th>
+              <th>Created At</th>
+              <th>phone No.</th>
+              <th>Email</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let project of projects">
+              <td>{{project.created_by_name}}</td>
+              <td>{{project.project_name}}</td>
+              <td>{{project.location}}</td>
+              <td>{{project.total_units}}</td>
+              <td>{{project.created_at | date:'short'}}</td>
+              <td>{{project.contract_number}}</td>
+              <td>{{project.contact_email}}</td>
+              <td><strong>{{project.project_completion_status}}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Action Buttons -->
+        <div class="d-flex justify-content-end align-items-center mt-3">
+          <button class="btn btn-secondary" style="background-color: #2B3C4E;">Download</button>
+        </div>
+      </div>
+
+
+      <div class="row mt-4">
+        <!-- Total Projects Count -->
+        <div class="col-md-3">
+          <div class="card text-center text-white shadow-sm" style="background-color: #2B3C4E;">
+            <div class="card-body">
+              <h6 class="card-title">Number of Projects</h6>
+              <p class="card-text"><strong>{{ getAllProjectsCount() }}</strong></p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- BDM Reports -->
+        <div class="col-md-3" *ngIf="selectedBDMId">
+          <div class="card text-center text-white shadow-sm" style="background-color: #2B3C4E;">
+            <div class="card-body">
+              <h6 class="card-title">BDM Report</h6>
+              <p class="card-text"><strong>{{ bdmProjectCount }}</strong></p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Client Manager Reports (Uncomment when needed) -->
+        <!-- <div class="col-md-3" *ngIf="selectedClientManagerId">
+          <div class="card text-center text-white shadow-sm" style="background-color: #2B3C4E;">
+            <div class="card-body">
+              <h6 class="card-title">Client Manager Reports</h6>
+              <p class="card-text"><strong>{{ clientManagerProjectCount }}</strong></p>
+            </div>
+          </div>
+        </div> -->
+      
+        <!-- Project Name Reports -->
+        <div class="col-md-3" *ngIf="selectedProjectName">
+          <div class="card text-center text-white shadow-sm" style="background-color: #2B3C4E;">
+            <div class="card-body">
+              <h6 class="card-title">Project Report</h6>
+              <p class="card-text"><strong>{{ selectedProjectCount }}</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+
+      
+
+    </div>
+  </div>
+</div>

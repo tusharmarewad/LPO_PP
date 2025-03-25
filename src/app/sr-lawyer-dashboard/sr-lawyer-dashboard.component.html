@@ -1,0 +1,198 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0">
+      <app-sidebar></app-sidebar>
+    </div>
+  
+  
+    <div class="col-md-10">
+  
+      <app-header></app-header>
+
+<h3>SR Lawyer Dashboard</h3>
+      <div class="table-responsive mt-2">
+        <table class="w-auto table table-bordered text-center align-middle sites">
+          <thead class="table-light">
+            <tr>
+            
+              <th colspan="4" class="align-middle">Agreements of this Month </th>
+            </tr>
+            <tr>
+              <th>Done</th>
+              <th>Delivered</th>
+              <th>Drafted</th>
+              <th>Ad-hoc Drafting</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-bold fs-5">21</td>
+              <td class="fw-bold fs-5">7</td>
+              <td class="fw-bold fs-5">7</td>  
+              <td class="fw-bold fs-5">7</td>   
+            </tr>
+          </tbody>
+        </table>
+
+          
+              <table class="w-auto table table-bordered text-center align-middle sites">
+                <thead class="table-light">
+                  <tr>
+                  
+                    <th colspan="4" class="align-middle">Lawyer 1 Agreements</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-bold">RM Name 1</td>
+                    <td class="fw-bold">Rahul</td>
+                    
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">RM Name 2</td>
+                    <td class="fw-bold">Ravi</td>
+                  
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">RM Name 3</td>
+                    <td class="fw-bold">Rohan</td>
+                     
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="w-auto table table-bordered text-center align-middle sites">
+                <thead class="table-light">
+                  <tr>
+                  
+                    <th colspan="4" class="align-middle">Lawyer 1 Agreements</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-bold">RM Name 1</td>
+                    <td class="fw-bold">Rahul</td>
+                    
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">RM Name 2</td>
+                    <td class="fw-bold">Ravi</td>
+                  
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">RM Name 3</td>
+                    <td class="fw-bold">Rohan</td>
+                     
+                  </tr>
+                </tbody>
+              </table>
+
+          
+      </div>
+<h3>Status of Agreements</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+                <th>Client’s ID</th>
+                <th>ARN</th>
+                <th>Name</th>
+                <th>Project</th>
+                <th>Unit</th>
+                <th>Agreement Value</th>
+                <th>Stampduty & Registeration Fees</th>
+                <th>Drafted by</th>
+                <th>Verified by</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td></td>
+              <td>Pune</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              
+            </tr>
+           
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h2>Ad-hoc Drafts Status</h2>
+        <div class="table-responsive">
+          
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+              
+                  <th>Client’s ID</th>
+                  <th>ARN</th>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Created by</th>
+                  <th>Drafted by</th>
+                  <th>Drafting Status</th>
+    
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let addhoc of addhocs">
+                  <td>{{addhoc.client_id}}</td>
+                  <td>{{addhoc.arn}}</td>
+                  <td>{{addhoc.client_name}}</td> 
+                  <td>{{addhoc.draft_type}}</td>  
+                  <td>{{addhoc.created_by_name}}</td>            
+                  <td>{{addhoc.assigned_to_name}}</td>            
+                  <td>{{addhoc.status}}</td>    
+                </tr>
+               
+              </tbody>
+            </table>
+          </div>
+      </div>
+
+      <div>
+        <h2>New Agreement Status</h2>
+        <div class="table-responsive">
+          
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+              
+                  <th>Client’s ID</th>
+                  <th>ARN</th>
+                  <th>Project</th>
+                  <th>Phase</th>
+                  <th>Unit Type</th>
+                  <th>Created by</th>
+                  <th>Agreement Status</th>
+    
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let agreement of agreements">
+                  <td>{{agreement.project_id}}</td>
+                  <td>00</td>
+                  <td>{{agreement.project_name}}</td> 
+                  <td>{{agreement.phase}}</td>  
+                  <td>{{agreement.unit_type}}</td>            
+                  <td>{{agreement.created_by_name}}</td>            
+                  <td>{{agreement.status}}</td>    
+                </tr>
+               
+              </tbody>
+            </table>
+          </div>
+      </div>
+
+      
+      </div>
+      </div>

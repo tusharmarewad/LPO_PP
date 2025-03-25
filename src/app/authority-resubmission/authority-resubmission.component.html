@@ -1,0 +1,125 @@
+<div class="row container-fluid p-0">
+    <div class="col-md-2 p-0 m-0">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+        <h3>< Resubmission</h3>
+        <div class="table-responsive mt-2">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <!-- <th>Client’s ID</th> -->
+                        <th>Client’s ID</th>
+                        <th>SRN</th>
+                        <th>Name</th>
+                        <th>Project</th>
+                        <th>Unit</th>
+                        <th>Agreement Value</th>
+                        <th>Loan</th>
+                        <th>Authority Approval Department Status</th>
+                        <th>Update</th>
+                        
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+<div class="mt-4">
+    <!-- First Row -->
+    <div class="row mb-4">
+        <div class="col-2">
+          <label for="srn" class="form-label">SRN</label>
+          <input type="text" id="srn" class="form-control" value="123" />
+        </div>
+        <div class="col-2">
+          <label for="clientId" class="form-label">Client ID</label>
+          <input type="text" id="clientId" class="form-control"  value="123"/>
+        </div>
+        <div class="col-4">
+          <label for="clientName" class="form-label">Client Name</label>
+          <input type="text" id="clientName" class="form-control" value="Kiran"/>
+        </div>
+        <div class="col-4">
+          <label for="project" class="form-label">Project</label>
+          <input type="text" id="project" class="form-control" value="ABC"/>
+        </div>
+       
+      </div>
+
+        <div class="row align-items-center">
+          <!-- Authority Approval Dept Status -->
+          <div class="col-3">
+            <label for="approvalDeptStatus" class="form-label">Authority Approval Dept Status</label>
+            <input
+              type="text"
+              class="form-control"
+              id="approvalDeptStatus"
+              [(ngModel)]="approvalDeptStatus"
+              placeholder="xyz"
+              
+            />
+          </div>
+      
+          <!-- Authority Approval Letter Status -->
+          <div class="col-2">
+            <label for="uploadSanctionLetter" class="form-label">Resubmission
+            </label>
+           
+            <input
+              type="text"
+              class="form-control"
+              id="uploadSanctionLetter"
+            
+              placeholder="XYZ"
+            />
+            </div>
+      
+          <!-- Upload Sanction Letter -->
+          <div class="col-2">
+            <label for="uploadSanctionLetter" class="form-label">Remark
+            </label>
+           
+            <input
+              type="text"
+              class="form-control"
+              id="uploadSanctionLetter"
+            
+              placeholder="XYZ"
+            />
+            </div>
+           
+ <!-- Submit Button -->
+          <div class="col-2 d-flex align-items-end">
+            <button
+              class="btn submit w-100"
+              (click)="onSubmit()"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+      
+  
+</div>
+</div>

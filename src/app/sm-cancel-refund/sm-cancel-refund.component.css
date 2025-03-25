@@ -1,0 +1,29 @@
+/* Custom styles (if needed) */
+.table {
+    text-align: left;
+  }
+  .table th, .table td {
+    vertical-align: middle;
+  }
+.btn1{
+    background-color: #2B3C4E;
+    color: white;
+}
+/* Input styling */
+.search-input {
+    padding-right: 40px; /* Add padding to the right to make space for the icon */
+  }
+  
+  /* Icon styling */
+  .search-icon {
+    position: absolute;
+    right: 10px; /* Adjust to align inside the input */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    pointer-events: none; /* Prevent the icon from blocking input clicks */
+  }
+  h3{
+    color: #2B3C4E;
+  }

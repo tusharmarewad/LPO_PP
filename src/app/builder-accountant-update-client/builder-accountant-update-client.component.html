@@ -1,0 +1,491 @@
+<div class="row m-0">
+    <div class="col-md-2 p-0">
+        <app-sidebar></app-sidebar>
+    </div>
+  
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+  
+        <div>
+            <h3><span style="color: #2B3C4E80;"></span>Update Client</h3>
+            <div class="container mt-4">
+              <div class="row mb-4">
+                <div class="col-md-4">
+                  <div class="input-group">
+                    <input type="text" id="clientName" class="form-control" placeholder="Search Client ID/ Name"
+                      style="border-radius: 5px;">
+                    <img src="/assets/Icons/Frame1.svg" alt="Search Icon"
+                      style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); width: 16px; pointer-events: none;">
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Project"
+                  />
+                </div>
+                <div class="col-md-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Unit"
+                  />
+                </div>
+                <div class=" col-md-2 d-flex justify-content-end ">
+                  <button class="btn" style="background-color: #2B3C4E;color: white;">Submit</button>
+                </div>
+            </div>
+             
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Client’s ID</th>
+                            <th>SRN</th>
+                            <th>Name</th>
+                            <th>Unit</th>
+                            <th>Agreement Value</th>
+                            <th>Stampduty</th>
+                            <th>Registeration
+                                Fees</th>
+                            <th>Agreement Status <img src="./assets/Icons/down_arrow.svg" /></th>
+                            <th>Update <img src="./assets/Icons/down_arrow.svg" /></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Approved</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+  
+            <div class="nav-bar">
+                <div class="nav-item" *ngFor="let item of navItems; let i = index" [class.active]="activeIndex === i"
+                    (click)="setActive(i)">
+                    {{ item }}
+                </div>
+            </div>
+  
+            <div>
+  
+  <!-- HTML Template for the Form -->
+  <div class="container mt-4" *ngIf="activeIndex === 0">
+    <form>
+    
+      <div class="box p-3">
+        <div class="row mb-3">
+          <div class="col-md-3">
+            <label for="clientIdRefund" class="form-label">Client ID</label>
+            <input type="text" id="clientIdRefund" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="projectRefund" class="form-label">Project</label>
+            <input type="text" id="projectRefund" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="agreementValueRefund" class="form-label">Agreement Value</label>
+            <input type="text" id="agreementValueRefund" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="stampDutyRefund" class="form-label">Legal Fees</label>
+            <input type="text" id="stampDutyRefund" class="form-control" />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-3">
+            <label for="nameRefund" class="form-label">Name</label>
+            <input type="text" id="nameRefund" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="unitRefund" class="form-label">Unit</label>
+            <input type="text" id="unitRefund" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="amountPaidRefund" class="form-label">Amount Paid Till Date</label>
+            <input type="text" id="amountPaidRefund" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="stampDutyRefund" class="form-label">Legal Fees</label>
+            <input type="text" id="stampDutyRefund" class="form-control" />
+          </div>
+      
+        </div>
+      </div>
+  
+        <!-- Second Box -->
+        <div class="box p-3">
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label for="confirmationAmount" class="form-label">Confirmation Amount</label>
+              <input type="text" id="confirmationAmount" placeholder="Rs." class="form-control" />
+            </div>
+            <div class="col-md-4">
+              <label for="paymentDate" class="form-label">Date of Payment</label>
+              <input type="date" id="paymentDate" class="form-control" />
+            </div>
+            <div class="col-md-4">
+              <label for="referenceNo" class="form-label">Reference No.</label>
+              <input type="text" id="referenceNo" class="form-control" />
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-md-4">
+              <label class="form-label">Payment Mode</label>
+              <div class="d-flex">
+                <div class="form-check me-3">
+                  <input class="form-check-input" type="checkbox" id="cash" />
+                  <label class="form-check-label" for="cash">Cash</label>
+                </div>
+                <div class="form-check me-3">
+                  <input class="form-check-input" type="checkbox" id="cheque" />
+                  <label class="form-check-label" for="cheque">Cheque</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="online" />
+                  <label class="form-check-label" for="online">Online</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Confirmation</label>
+              <div class="d-flex">
+                <div class="form-check me-3">
+                  <input class="form-check-input" type="radio" name="confirmation" id="approved" />
+                  <label class="form-check-label" for="approved">Approved</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="confirmation"
+                    id="notApproved"
+                  />
+                  <label class="form-check-label" for="notApproved">Not Approved</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <button type="submit" class="btn btn-primary mt-3" style="background-color: #2B3C4E;" >Submit</button>
+              </div>
+          </div>
+         
+        </div>
+      
+    </form>
+  </div>
+  
+  <div class="container mt-4" *ngIf="activeIndex === 1">
+    
+      <div class="box p-3">
+        <div class="row mb-3">
+          <div class="col-md-3">
+            <label for="clientIdInvoice" class="form-label">Client ID</label>
+            <input type="text" id="clientIdInvoice" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="projectInvoice" class="form-label">Project</label>
+            <input type="text" id="projectInvoice" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="agreementValueInvoice" class="form-label">Agreement Value</label>
+            <input type="text" id="agreementValueInvoice" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="stampDutyInvoice" class="form-label">Stamp Duty</label>
+            <select id="stampDutyInvoice" class="form-control">
+              <option value="paid">Paid</option>
+              <option value="unpaid">Unpaid</option>
+            </select>
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-3">
+            <label for="nameInvoice" class="form-label">Name</label>
+            <input type="text" id="nameInvoice" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="unitInvoice" class="form-label">Unit</label>
+            <input type="text" id="unitInvoice" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="amountPaidInvoice" class="form-label">Amount Paid Till Date</label>
+            <input type="text" id="amountPaidInvoice" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="legalFeesInvoice" class="form-label">Legal Fees</label>
+            <input type="text" id="legalFeesInvoice" class="form-control" />
+          </div>
+        </div>
+      </div>
+  
+      <div class="box p-3 mt-4">
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="invoiceAmount" class="form-label">Amount for Invoice</label>
+            <input type="text" id="invoiceAmount" placeholder="Gross Amt" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label for="invoiceDate" class="form-label">Date of Payment</label>
+            <input type="date" id="invoiceDate" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label for="referenceNoInvoice" class="form-label">Reference No.</label>
+            <input type="text" id="referenceNoInvoice" class="form-control" />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-3">
+            <label class="form-label">Payment Mode</label>
+            <div class="d-flex">
+              <div class="form-check me-1">
+                <input class="form-check-input" type="checkbox" id="cashInvoice" />
+                <label class="form-check-label" for="cashInvoice">Cash</label>
+              </div>
+              <div class="form-check me-3">
+                <input class="form-check-input" type="checkbox" id="chequeInvoice" />
+                <label class="form-check-label" for="chequeInvoice">Cheque</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="onlineInvoice" />
+                <label class="form-check-label" for="onlineInvoice">Online</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="gstRate" class="form-label">GST Rate</label>
+            <select id="gstRate" class="form-control">
+              <option value="14%">14%</option>
+              <option value="18%">18%</option>
+            </select>
+          </div>
+         
+          <div class="col-md-6 d-flex justify-content-end align-items-center">
+            <button type="submit" class="btn btn-primary me-3" style="background-color: #2B3C4E;">Create Invoice</button>
+          </div>
+          <div>
+            <img src="./assets/Icons/invoice.svg" class="img-invoice" />
+          </div>
+            <div class="d-flex justify-content-between">
+            <button class="btn btn-outline-secondary  download-btn "><span><img src="../assets/Icons/prime_download.svg" alt=""></span>Download</button>
+            <button class="btn btn-secondary" style="background-color: #2B3C4E;">Send<span><img src="../assets/Icons/next.svg" alt=""></span></button>
+          </div>
+        </div>
+      </div>
+  
+  </div>
+  
+          
+       
+  
+  
+               
+  
+  
+  
+            </div>
+  
+            <div class="container mt-4" *ngIf="activeIndex === 2">
+    
+              <div class="box mb-4 p-3">
+                <div class="row mb-3">
+                  <div class="col-md-3">
+                    <label for="clientIdDemand" class="form-label">Client ID</label>
+                    <input type="text" id="clientIdDemand" class="form-control" />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="projectDemand" class="form-label">Project</label>
+                    <input type="text" id="projectDemand" class="form-control" />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="agreementValueDemand" class="form-label">Agreement Value</label>
+                    <input type="text" id="agreementValueDemand" class="form-control" />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="stampDutyDemand" class="form-label">Stamp Duty</label>
+                    <input type="text" id="stampDutyDemand" class="form-control" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-3">
+                    <label for="nameDemand" class="form-label">Name</label>
+                    <input type="text" id="nameDemand" class="form-control" />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="unitDemand" class="form-label">Unit</label>
+                    <input type="text" id="unitDemand" class="form-control" />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="amountPaidDemand" class="form-label">Amount Paid Till Date</label>
+                    <input type="text" id="amountPaidDemand" class="form-control" />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="legalFeesDemand" class="form-label">Legal Fees</label>
+                    <input type="text" id="legalFeesDemand" class="form-control" />
+                  </div>
+                </div>
+              </div>
+      
+              <div class="box p-3">
+                <div class="row mb-3">
+                  <div class="col-md-3">
+                    <label for="projectCompletion" class="form-label">Project Completion</label>
+                    <input type="text" id="projectCompletion" class="form-control" />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="dueAmount" class="form-label">Due Amount</label>
+                    <input type="text" id="dueAmount" class="form-control" />
+                  </div>
+                  
+                  <div class="col-md-3">
+                    <label for="balance" class="form-label">Balance</label>
+                    <input type="text" id="balance" class="form-control" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-3">
+                    <label for="gstRateDemand" class="form-label">Add GST</label>
+                    <select id="gstRateDemand" class="form-control">
+                      <option value="14%">14%</option>
+                      <option value="18%">18%</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="grossDemand" class="form-label">Gross Demand</label>
+                    <input type="text" id="grossDemand" class="form-control" />
+                  </div>
+                  <div class="col-md-6 d-flex justify-content-end align-items-center">
+                    <button class="btn btn-outline-secondary " style="background-color: #2B3C4E;color: white;"><span><img src="../assets/Icons/prime_download.svg" alt=""></span>Download</button>
+                    <button class="btn btn-primary" style="background-color: #2B3C4E;">Send to Client and Bank</button>
+                    <button class="btn btn-secondary" style="background-color: #2B3C4E;">Next<span><img src="../assets/Icons/next.svg" alt=""></span></button>
+                  </div>
+                </div>
+              </div>
+               
+          
+          
+                       
+          
+          
+          
+                    </div>
+  
+                    <div class="container mt-4" *ngIf="activeIndex === 3">
+    
+                      <div class="box p-3">
+                        <div class="row mb-3">
+                          <div class="col-md-3">
+                            <label for="clientIdRefund" class="form-label">Client ID</label>
+                            <input type="text" id="clientIdRefund" class="form-control" />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="projectRefund" class="form-label">Project</label>
+                            <input type="text" id="projectRefund" class="form-control" />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="agreementValueRefund" class="form-label">Agreement Value</label>
+                            <input type="text" id="agreementValueRefund" class="form-control" />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="stampDutyRefund" class="form-label">Stamp Duty & Legal Fees</label>
+                            <input type="text" id="stampDutyRefund" placeholder="Paid / Unpaid" class="form-control" />
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-md-3">
+                            <label for="nameRefund" class="form-label">Name</label>
+                            <input type="text" id="nameRefund" class="form-control" />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="unitRefund" class="form-label">Unit</label>
+                            <input type="text" id="unitRefund" class="form-control" />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="amountPaidRefund" class="form-label">Amount Paid Till Date</label>
+                            <input type="text" id="amountPaidRefund" class="form-control" />
+                          </div>
+                      
+                        </div>
+                      </div>
+                    
+                      <div class="box p-3">
+                        <div class="row mb-3">
+                          <div class="col-md-3">
+                            <label for="projectCompletionRefund" class="form-label">Project Completion</label>
+                            <input type="text" id="projectCompletionRefund" class="form-control" />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="agreementDateRefund" class="form-label">Agreement Date</label>
+                            <input type="date" id="agreementDateRefund" class="form-control" />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="bookingDateRefund" class="form-label">Booking Date</label>
+                            <input type="date" id="bookingDateRefund" class="form-control" />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="deductionAmountRefund" class="form-label">Deduction Amount</label>
+                            <input type="text" id="deductionAmountRefund" class="form-control" />
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-md-3">
+                            <label for="refundAmount" class="form-label">Refund Amount</label>
+                            <input type="text" id="refundAmount" class="form-control" />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="smNameRefund" class="form-label">SM Name</label>
+                            <input type="text" id="smNameRefund" class="form-control" />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="smReqDateRefund" class="form-label">SM Req Date</label>
+                            <input type="date" id="smReqDateRefund" class="form-control" />
+                          </div>
+                          
+                          <div class="col-md-3">
+                            <label for="refundDate" class="form-label">Admin Confirmatiom Date</label>
+                            <input type="date" id="refundDate" class="form-control" />
+                          </div>
+                       
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-md-3">
+                            <label for="bookingDateRefund" class="form-label">Refund Date</label>
+                            <input type="date" id="Refunddate" class="form-control" />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="bookingDateRefund" class="form-label">Payment Date</label>
+                            <input type="date" id="paymentdate" class="form-control" />
+                          </div>
+                          
+                       
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-md-12 d-flex justify-content-end align-items-center">
+                            <button class="btn btn-primary me-3" style="background-color: #2B3C4E;">Send Request to Admin</button>
+                          </div>
+                      </div>
+                 
+                  
+                  
+                               
+                  
+                  
+                  
+         </div>
+        </div>
+    </div>
+  </div>

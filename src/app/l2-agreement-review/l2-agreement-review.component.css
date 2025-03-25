@@ -1,0 +1,90 @@
+.table {
+    margin-top: 20px;
+    background-color: #F5F3F3;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+}
+
+.table th {
+    background-color: #f1f1f1;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.table a:hover {
+    text-decoration: underline;
+}
+
+
+
+.shadow-box {
+    background-color: #ffffff; /* White background */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    border-radius: 10px; /* Rounded corners */
+    border: 1px solid #f1f1f1; /* Light border */
+  }
+  
+  /* Table styling */
+  .table {
+    margin: 0; /* Remove default margin */
+    border-collapse: collapse; /* Collapse borders for a clean look */
+  }
+  
+  .table-light {
+    background-color: #f8f9fa; /* Light gray header background */
+  }
+  
+  .table tbody tr:last-child {
+    background-color: #f9f9f9; /* Light gray background for the blank row */
+  }
+  
+  
+  /* Remark text styling */
+  .remark-text {
+    /* background-color: #f8f9fa; Light gray background for text */
+    padding: 10px;
+    /* border: 1px solid #ddd; */
+    border-radius: 5px;
+    margin-bottom: 20px; /* Space below the remark text */
+    font-weight: 500;
+    font-size: larger
+  }
+  
+  /* Buttons styling */
+  button {
+    font-size: 14px; /* Standard font size for buttons */
+    padding: 8px 20px; /* Comfortable padding */
+    border-radius: 5px; /* Rounded corners for buttons */
+  }
+  
+  /* Buttons spacing for "Resubmission" and "Execute Deal" */
+  button.me-2 {
+    margin-right: 10px;
+  }
+  
+  /* Adjust layout for smaller screens */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+      padding: 0;
+    }
+    .shadow-box {
+      margin-bottom: 20px; /* Add space between stacked shadow boxes */
+    }
+  }
+.label{
+    max-height: 436px;
+}  

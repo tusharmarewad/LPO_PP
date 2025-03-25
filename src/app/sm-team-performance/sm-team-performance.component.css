@@ -1,0 +1,23 @@
+
+.table {
+    margin-top: 20px;
+  }
+  
+  .table th {
+    background-color: #f8f9fa;
+  }
+  
+  .table td, .table th {
+    vertical-align: middle;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  h3{
+    color: #2B3C4E;
+  }
+  .btn{
+    background-color: #2B3C4E;
+    color: white;
+  }

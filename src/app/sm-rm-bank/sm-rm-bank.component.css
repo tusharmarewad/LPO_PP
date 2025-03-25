@@ -1,0 +1,22 @@
+.container {
+    max-width: 900px;
+  }
+  
+  .table th,
+  .table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  img {
+    border-radius: 50%;
+  }
+.next{
+    background-color: #2B3C4E;
+}  
+.input-group{
+    margin-left: 30rem;
+}
+h3{
+    color: #2B3C4E ;
+ }

@@ -1,0 +1,77 @@
+
+
+/* Table Styling */
+.table {
+    font-size: 14px;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #F5F3F3;
+    font-weight: bold;
+  }
+  
+  .table th select {
+    background-color: #F5F3F3;
+    border: 1px solid #ccc;
+  }
+  
+  /* Expanded Section Styling */
+  .expanded-section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    /* background-color: #f9f9f9; */
+    /* border: 1px solid #ddd; */
+  }
+  
+  .expanded-section .form-group {
+    flex: 1;
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+  
+  .expanded-section .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .expanded-section .form-control {
+    font-size: 14px;
+    padding: 5px;
+  }
+  
+  /* Buttons */
+  .btn{
+    background-color: #2B3C4E;
+    cursor: pointer;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .row{
+    height: 100vh;
+  }
+  
+  
+  /* General Styles */
+  h3 {
+    color: #2B3C4E;
+  }
+  
+  label {
+    font-weight: 600;
+  }
+  
+  select {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  

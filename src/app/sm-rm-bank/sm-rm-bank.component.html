@@ -1,0 +1,82 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0">
+      <app-sidebar></app-sidebar>
+    </div>
+  
+  
+    <div class="col-md-10">
+  
+      <app-header></app-header>
+  
+
+      <div class="mt-4">
+        <h3 class="fw-bold"> < RM Bank</h3>
+        <!-- Search and Filter Section -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div class="input-group" style="width: 300px;">
+            <input type="text" class="form-control" placeholder="Search" />
+            <span class="input-group-text">
+                <img src="../assets/Icons/search.svg" class="img-fluid">
+              </span>
+          </div>
+          <button class="btn btn-outline-secondary">
+            <img src="../assets/Icons/filter.svg" class="img-fluid"> Filter
+          </button>
+        </div>
+      
+        <!-- Table Section -->
+        <div class="mt-4">
+            <div class="table-responsive ">
+              <table class="table table-bordered shadow">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col">Sr. no</th>
+                    <th scope="col">RM Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Pincode</th>
+                    <th scope="col">Experience in Years</th>
+                    <th scope="col">Aadhar Card</th>
+                    <th scope="col">PAN Card</th>
+                    <th scope="col">Photo</th>
+                  </tr>
+                 
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="checkbox" /></td>
+                    <td>Kiran c</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" /></td>
+                    <td>Kiran c</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                  </tr>
+                 
+                 
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+    
+      
+        <!-- Pagination Section -->
+        <div class="d-flex justify-content-end mt-3">
+          <button class="btn next text-white" (click)="next()">Next</button>
+        </div>
+    </div>
+    </div>
+    

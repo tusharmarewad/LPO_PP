@@ -1,0 +1,107 @@
+<div class="row m-0">
+    <div class="col-md-2 p-0">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+
+        <div>
+            <h3><span style="color: #2B3C4E80;">Agreements ></span> Registered</h3>
+            <div class="table-responsive mt-2">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Client’s ID</th>
+                            <th>SRN</th>
+                            <th>Name</th>
+                            <th>Project</th>
+                            <th>Unit</th>
+                            <th>Agreement value</th>
+                            <th>Stampduty</th>
+                            <th>Registeration</th>
+                            <th>Update <img src="./assets/Icons/down_arrow.svg" /></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Approved</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container-fluid mt-4">
+                <form>
+                  <!-- Row for Client ID -->
+                  <div class="row mb-3">
+                    <div class="col-md-3">
+                      <!-- <label for="clientId" class="form-label">Client ID</label> -->
+                      <input type="text" class="form-control" id="clientId" placeholder="Client ID" [(ngModel)]="clientId" name="clientId">
+                    </div>
+                  </div>
+              
+                  <!-- Row for Prefix, First Name, Middle Name, Last Name -->
+                  <div class="row g-3 mb-3 align-items-center">
+                    <!-- Prefix -->
+                    <div class="col-auto">
+                      <label for="prefix" class="form-label visually-hidden">Prefix</label>
+                      <select class="form-select" id="prefix" [(ngModel)]="prefix" name="prefix">
+                        <option value="" disabled selected>Prefix</option>
+                        <option *ngFor="let option of prefixOptions" [value]="option">{{ option }}</option>
+                      </select>
+                    </div>
+              
+                    <!-- First Name -->
+                    <div class="col">
+                      <label for="firstName" class="form-label visually-hidden">First Name</label>
+                      <input type="text" class="form-control" id="firstName" placeholder="First Name" [(ngModel)]="firstName" name="firstName">
+                    </div>
+              
+                    <!-- Middle Name -->
+                    <div class="col">
+                      <label for="middleName" class="form-label visually-hidden">Middle Name</label>
+                      <input type="text" class="form-control" id="middleName" placeholder="Middle Name" [(ngModel)]="middleName" name="middleName">
+                    </div>
+              
+                    <!-- Last Name -->
+                    <div class="col">
+                      <label for="lastName" class="form-label visually-hidden">Last Name</label>
+                      <input type="text" class="form-control" id="lastName" placeholder="Last Name" [(ngModel)]="lastName" name="lastName">
+                    </div>
+                  </div>
+              
+                  <!-- Row for Registered Agreement -->
+                  <div class="row mb-4">
+                    <div class="col-auto">
+                      <button type="button" class="btn btn-outline-secondary d-flex align-items-center" (click)="openRegisteredAgreement()">
+                        <i class="bi bi-file-arrow-up me-2"></i>
+                        
+                        Registered Agreement
+                        <img src="../assets/Icons/file_upload.svg" alt="file Icon" class="file">
+                      </button>
+                    </div>
+                  </div>
+              
+                  <!-- Submit Button -->
+                  <div class="row">
+                    <div class="col text-end">
+                      <button type="button" class="btn btn-dark" (click)="submitForm()">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+            <div>
+                </div>
+                </div>

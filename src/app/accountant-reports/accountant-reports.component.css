@@ -1,0 +1,25 @@
+
+
+h5 {
+    font-weight: bold;
+  }
+  
+  label {
+    font-weight: 500;
+  }
+  
+  
+  .form-control,
+  .form-select {
+    border-radius: 6px;
+   
+  }
+  .agreement{
+    margin-bottom: 1.5rem;
+  }
+
+.btn{
+    background-color: #2B3C4E;
+
+}  
+ 

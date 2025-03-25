@@ -1,0 +1,83 @@
+<div class="row container-fluid">
+  <div class="col-md-2 p-0 m-0">
+      <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="col-md-10">
+      <div>
+          <app-header></app-header>
+      </div>
+
+      <h3>Lead Status</h3>
+
+      
+      <div class="table-responsive">
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>Lead ID</th>
+                      <th>Project</th>
+                      <th>Location</th>
+                      <th>Total No. of Units</th>
+                      <th>Project Completion Status</th>
+                      <th>Email ID</th>
+                      <th>Phone No.</th>
+                      <th>Status</th>
+                      <th>View</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let lead of leads">
+                      <td>{{ lead.lead_id }}</td>
+                      <td>{{ lead.project_name }}</td>
+                      <td>{{ lead.location }}</td>
+                      <td>{{ lead.no_of_units }}</td>
+                      <td>{{ lead.project_completion_status }}</td>
+                      <td>{{ lead.email_id }}</td>
+                      <td>{{ lead.phone_no }}</td>
+                      <td>{{ lead.status }} </td>
+                      <td><button class="btn btn-primary" (click)="onView(lead)">View</button></td>
+                        
+                     
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+
+    
+      <form [formGroup]="leadForm" (ngSubmit)="onSubmit()">
+        <div class="row mb-4">
+          <div class="col-3">
+            <label class="form-label">Lead ID</label>
+            <input type="text" class="form-control" formControlName="lead_id" placeholder="lead id" readonly />
+          </div>
+          <div class="col-3">
+            <label class="form-label">Project</label>
+            <input type="text" class="form-control" formControlName="project_name" placeholder="project name" readonly />
+          </div>
+          <div class="col-3">
+            <label class="form-label">Location</label>
+            <input type="text" class="form-control" formControlName="location" placeholder="location" readonly />
+          </div>
+          <!-- <div class="col-3">
+              <label class="form-label">Last Status</label>
+              <input type="text" class="form-control" formControlName="status" readonly />
+            </div> -->
+          <div class="col-3">
+            <label class="form-label">Update Status</label>
+            <select class="form-select" formControlName="status">
+              <option value="Interested">Interested</option>
+              <option value="Not Interested">Not Interested</option>
+              <option value="Call Pending">Call Pending</option>
+              <option value="In Follow Up">In Follow Up</option>
+              <option value="Contracted">Contracted</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-success" type="submit">Submit</button>
+      </form>
+
+    
+
+  </div>
+</div>

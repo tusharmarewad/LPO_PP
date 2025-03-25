@@ -1,0 +1,398 @@
+<div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar Section -->
+      <div class="col-md-2 p-0">
+        <app-sidebar></app-sidebar>
+      </div>
+  
+      <!-- Main Content Section -->
+      <div class="col-md-10">
+        <!-- Header -->
+        <app-header></app-header>
+  <div class="mt-3">
+    <h5><img src="../assets/Icons/back_arrow.svg" alt="Edit" class="">  Dashboard</h5>
+
+  </div>
+        <div class="container ">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="container my-4">
+                        <div class="row justify-content-center">
+                          <div class="col-md-4">
+                            <div class="card shadow-sm border">
+                              <div class="row no-gutters">
+                                <!-- Vertical Side Label -->
+                                <div class="col-2 bg-light d-flex align-items-center justify-content-center">
+                                  <div class="vertical-text font-weight-bold size">Agreement Status</div>
+                                </div>
+                                <!-- Main Content -->
+                                <div class="col-10">
+                                  <div class="card-header text-center font-weight-bold">Site 1</div>
+                                  <table class="table table-bordered mb-0 text-center">
+                                    <thead>
+                                      <tr>
+                                        <th>Requested</th>
+                                        <th>WIP</th>
+                                        <th>Executed</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                     
+                                      <tr>
+                                        <td>7</td>
+                                        <td>11</td>
+                                        <td>11</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="card shadow-sm border">
+                              <div class="row no-gutters">
+                                <!-- Vertical Side Label -->
+                                <div class="col-2 bg-light d-flex align-items-center justify-content-center">
+                                  <div class="vertical-text font-weight-bold size">Agreement Status</div>
+                                </div>
+                                <!-- Main Content -->
+                                <div class="col-10">
+                                  <div class="card-header text-center font-weight-bold">Site 2</div>
+                                  <table class="table table-bordered mb-0 text-center">
+                                    <thead>
+                                      <tr>
+                                        <th>Requested</th>
+                                        <th>WIP</th>
+                                        <th>Executed</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                     
+                                      <tr>
+                                        <td>7</td>
+                                        <td>11</td>
+                                        <td>11</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="card shadow-sm border">
+                              <div class="row no-gutters">
+                                <!-- Vertical Side Label -->
+                                <div class="col-2 bg-light d-flex align-items-center justify-content-center">
+                                  <div class="vertical-text font-weight-bold size">Agreement Status</div>
+                                </div>
+                                <!-- Main Content -->
+                                <div class="col-10">
+                                  <div class="card-header text-center font-weight-bold">Site 3</div>
+                                  <table class="table table-bordered mb-0 text-center">
+                                    <thead>
+                                      <tr>
+                                        <th>Requested</th>
+                                        <th>WIP</th>
+                                        <th>Executed</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                     
+                                      <tr>
+                                        <td>7</td>
+                                        <td>11</td>
+                                        <td>11</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+                          
+                        </div>
+                      </div>
+                      
+                  </div>
+                  
+             
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+          
+          
+  
+        <!-- Agreement Table -->
+        <div class="row mt-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="font-weight-bold"></h5>
+                <input type="text" class="form-control w-25" placeholder="Filter" id="filterInput">
+                <img src="../assets/Icons/filter.svg" alt="Filter Icon"  style="position: absolute; margin-left: 65rem;">
+            </div>
+          <div class="col-12">
+            <table class="table table-bordered text-center">
+              <thead class="thead-light">
+                <tr>
+                  <th>Client's ID</th>
+                  <th>SRN</th>
+                  <th>Name</th>
+                  <th>Project</th>
+                  <th>Unit</th>
+                  <th>Agreement Value</th>
+                  <th>Stampduty</th>
+                  <th>Registration Fees</th>
+                  <th>Prepared by</th>
+                  <!-- Dropdown in Agreement Mode Column Header -->
+          <th>
+            <div class="dropdown">
+              <button
+                class="btn btn-light dropdown-toggle"
+                type="button"
+                id="agreementModeDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span>Agreement Mode</span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="agreementModeDropdown">
+                <li><a class="dropdown-item" href="#">Online</a></li>
+                <li><a class="dropdown-item" href="#">Offline</a></li>
+              </ul>
+            </div>
+          </th>
+          <th>
+          <div class="dropdown">
+            <button
+              class="btn btn-light dropdown-toggle"
+              type="button"
+              id="agreementStatusDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+             <span>Agreement Status</span> 
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="agreementStatusDropdown">
+              <li><a class="dropdown-item" href="#">Pending</a></li>
+              <li><a class="dropdown-item" href="#">In process</a></li>
+              <li><a class="dropdown-item" href="#">Done</a></li>
+            </ul>
+
+          </div>
+              </th>       
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Kiran C</td>
+                  <td>Project A</td>
+                  <td>Unit 1</td>
+                  <td>10,000</td>
+                  <td>500</td>
+                  <td>200</td>
+                  <td>300</td>
+                  <td>Online</td>
+                  <td>In process</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Kiran C</td>
+                  <td>Project B</td>
+                  <td>Unit 2</td>
+                  <td>12,000</td>
+                  <td>600</td>
+                  <td>250</td>
+                  <td>350</td>
+                  <td>Offline</td>
+                  <td>Done</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+        <div class="col-lg-12">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="font-weight-bold">Ad-hoc</h5>
+                <input type="text" class="form-control w-25" placeholder="Filter" id="filterInput">
+                <img src="../assets/Icons/filter.svg" alt="Filter Icon"  style="position: absolute; margin-left: 65rem;">
+            </div>
+            
+            <table class="table table-bordered text-center">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Client ID</th>
+                        <th>SRN</th>
+                        <th>Type</th>
+                        <th>Date for Agreement</th>
+                        <th>Assigned by</th>
+                        <th>TAT</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>-</td>
+                        <td>1</td>
+                        <td>Kiran C</td>
+                        <td>Project A</td>
+                        <td>Unit 1</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>1</td>
+                        <td>Kiran C</td>
+                        <td>Project A</td>
+                        <td>Unit 1</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+  
+        <!-- Bottom Section: Agreement Schedule and Useful Links -->
+        <div class="row mt-4">
+          <!-- Agreement Schedule -->
+          <div class="col-lg-8">
+            <h5 class="font-weight-bold mb-3">Agreement Schedule</h5>
+            <table class="table table-bordered text-center">
+              <thead class="thead-light">
+                <tr>
+                  <th>Date for Agreement</th>
+                  <th>Client ID</th>
+                  <th>Name</th>
+                  <th>Project</th>
+                  <th>Unit</th>
+                  <th>Executor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>-</td>
+                  <td>1</td>
+                  <td>Kiran C</td>
+                  <td>Project A</td>
+                  <td>Unit 1</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>1</td>
+                    <td>Kiran C</td>
+                    <td>Project A</td>
+                    <td>Unit 1</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>-</td>
+                    <td>1</td>
+                    <td>Kiran C</td>
+                    <td>Project A</td>
+                    <td>Unit 1</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>-</td>
+                    <td>1</td>
+                    <td>Kiran C</td>
+                    <td>Project A</td>
+                    <td>Unit 1</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>-</td>
+                    <td>1</td>
+                    <td>Kiran C</td>
+                    <td>Project A</td>
+                    <td>Unit 1</td>
+                    <td>-</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+  
+          <div class="container col-md-4 ">
+            <h5 class="font-weight-bold">Useful Links</h5>
+            <div class="row border mb-4">
+              <!-- Link 1 -->
+              <div class="col-md-6 mb-3 mt-3 text-center">
+                <div class="card card1 shadow-sm border text-center">
+                  <div class="card-body text-center">
+                    <a href="#" class="text-decoration-none text-dark text-center">
+                        <img src="../assets/Icons/link_icon.svg" alt="Link" class="link">
+                      <span class="font-weight-bold">Stampduty</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Link 2 -->
+              <div class="col-md-6 mb-3 mt-3">
+                <div class="card card1 shadow-sm border">
+                  <div class="card-body text-center">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <img src="../assets/Icons/link_icon.svg" alt="Link" class="link">
+                      <span class="font-weight-bold">Government Rate</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Link 3 -->
+              <div class="col-md-6 mb-3">
+                <div class="card card1 shadow-sm border">
+                  <div class="card-body text-center">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <img src="../assets/Icons/link_icon.svg" alt="Link" class="link">
+                      <span class="font-weight-bold">Calculator</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Link 4 -->
+              <div class="col-md-6 mb-3">
+                <div class="card card1 shadow-sm border">
+                  <div class="card-body text-center">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <img src="../assets/Icons/link_icon.svg" alt="Link" class="link">
+                      <span class="font-weight-bold">Extra</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  

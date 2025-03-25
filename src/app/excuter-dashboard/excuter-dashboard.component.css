@@ -1,0 +1,97 @@
+.container-fluid {
+    font-family: Arial, sans-serif;
+  }
+  
+  .table th,
+  .table td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+  }
+  
+  .thead-light th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  
+  h5 {
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .btn-outline-primary {
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  
+  .carousel-control-next,
+  .carousel-control-prev {
+    width: 3%;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #000;
+    border-radius: 50%;
+  }
+  
+  .vertical-text {
+    writing-mode: vertical-rl; /* Makes text vertical */
+    text-orientation: sideways-right; /* Keeps text upright */
+    font-size: 16px;
+    text-align: center;
+    color: #6c757d;
+    font-weight: bold;
+  }
+  
+  .card {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .card-header {
+    background-color: #f8f9fa;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .card-body {
+    padding: 0.75rem;
+    align-content: center;
+  }
+  
+  .card-body i {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 8px;
+    color: #6c757d;
+   
+  }
+  
+  .card-body span {
+    font-size: 16px;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+  }
+  
+  .no-gutters > .col-10 {
+    padding: 0;
+  }
+  
+  .card1 {
+    border-radius: 8px;
+    height: 90px;
+  }
+  span{
+    font-weight: bold;
+  }
+  @media (min-width: 768px) {
+    .col-md-4 {
+      flex: 0 0 auto;
+      width: 32%;
+    }
+  }
+  

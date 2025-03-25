@@ -1,0 +1,343 @@
+/* Styling for the navigation bar */
+.nav-tabs {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-tabs .nav-link {
+    color: #6c757d; /* Muted text color */
+    border: none;
+    padding: 10px 20px;
+    font-weight: 500;
+  }
+  
+  .nav-tabs .nav-link.active {
+    color: #2B3C4E; /* Dark text color for active tab */
+    font-weight: bold;
+    border-bottom: 2px solid #2B3C4E; /* Black underline for active tab */
+    background-color: transparent;
+  }
+  
+
+
+  /* Cost Sheet CSS*/
+.head{
+    font-weight: bold;
+    color:#2B3C4E ;
+}
+.table th {
+  text-align: center;
+  font-weight: bold;
+}
+.total{
+    font-weight: bold;
+    background-color:#2B3C4E;
+    color: white;
+}
+.note{
+    background-color:#FFF4F4 ;
+}
+.text{
+    background-color: #F6F6F6;
+    text-align: center; 
+}
+.print{
+    background-color:#2B3C4E ;
+    color: white;
+}
+.submit_btn{
+    background-color: #2B3C4E;
+    color:white;
+}
+/* Hide elements with the 'no-print' class during print */
+@media print {
+    .no-print {
+      display: none;
+    }
+  }
+  #unitGrossArea,
+  #unitArea,
+  #terrace,
+  #balcony {
+    border-right: none !important;
+  }
+  
+
+  .sqmt{
+    background-color: white !important;
+  }
+
+  .button{
+    background-color: #2B3C4E;
+    width: 9rem;
+    border-radius: 6px;
+    color: white;
+}
+.form-label{
+    font-weight: 600;
+}
+.heading1{
+    color: #2B3C4E;
+}
+
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .label-box {
+    width: 150px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: white;
+    border-right: 1px solid #ddd;
+  }
+  
+  .input-group-sm .form-control {
+    font-size: 12px;
+    height: 30px;
+  }
+  
+  .input-group-sm .input-group-text {
+    font-size: 12px;
+    background-color: none;
+  }
+  
+  
+  button.btn-primary:hover {
+    background-color: #155cb0;
+  }
+  .btn_button{
+    background-color: #2B3C4E;
+    width: 14%;
+    color: white;
+    margin-left: 60rem;
+}
+.col-form-label{
+    /* border: 1px solid gray; */
+    box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for input group */
+
+}
+ 
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  select.form-control-sm {
+    border-radius: 4px;
+  }
+  
+  /* Style the select dropdown */
+.custom-select-box {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    padding-right: 40px; /* Adjust for arrow space */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+   
+  }
+  
+  /* Position the custom arrow image */
+  .custom-arrow {
+    position: absolute;
+    top: 50%;
+    right: 15px; /* Adjust the arrow's position */
+    transform: translateY(-50%);
+    width: 16px; /* Adjust size */
+    height: 16px; /* Adjust size */
+    pointer-events: none; /* Ensure the arrow doesn't block interactions */
+  }
+.unit_details{
+    margin-top: 2rem;
+}
+
+
+
+
+
+
+
+
+/* loan details */
+.loan_question{
+  display: flex;
+  gap: 1rem;
+  justify-content: start;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+
+.loan{
+  padding: 0;
+  margin: 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.buttons input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #007bff; /* Changes the radio button color */
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.buttons label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.buttons input[type="radio"]:checked + label {
+  color: #41ae07; /* Changes label color for checked state */
+}
+
+
+
+
+
+.loan_question {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.loan {
+  font-size: 1.rem;
+}
+
+.buttons .btn {
+  margin: 0 10px;
+}
+
+/* Modal Styles */
+.custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  display: flow;
+}
+
+
+.modal-content h4 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.upload{
+  background-color: #41AE07;
+  color: white;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.modal-content .btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  height: 69px;
+  width: 170px;
+}
+.card11 {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  height: 60px;
+  width: auto;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.common_document{
+  display: flex;
+  gap: 10px;
+}
+.heading22{
+  font-weight: 600;
+  font-size:14px;
+}
+.container.mt-5 > p {
+  margin-bottom: 30px; /* Increase this value as needed for more gap */
+   font-weight: 400;
+  font-size: 17px;
+  color: #2B3C4E;
+  
+}
+.card label {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+p {
+
+  color: #666;
+  margin: 0;
+}
+.img-fluid{
+ 
+  margin-left: 4px;
+}
+
+.col-md-3 {
+  flex: 0 0 auto;
+  width: 25%;
+}
+.btn1{
+  color: white;
+  background-color: #2B3C4E;
+  border-radius: 6px;
+  height: 38px;
+  width: 8rem;
+}
+
+
+@media (max-width: 768px) {
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  
+}

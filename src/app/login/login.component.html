@@ -1,0 +1,106 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- Left Section -->
+        <div class="col-md-6 p-0 main">
+            <img src="../assets/Icons/login_img.svg" alt="Financial Dashboard">
+        </div>
+
+        <!-- Login Section -->
+        <div class="col-md-6 d-flex justify-content-center align-items-center" *ngIf="forgot !== true && otp_div !==true">
+            <div class="w-75">
+                <h1 class="fw-bold text-center heading">Login</h1>
+                <form>
+                    <div class="login">
+                        <div class="input_form">
+                            <div class="input1 mb-3">
+                                <label for="email ">Email</label>
+                                <input type="email" id="email" placeholder="abc@gmail.com" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password">Password</label>
+                                <div class="position-relative">
+                                    <input type="password" id="password" class="form-control" autocomplete="new-password"  >
+                                    <i class="fas fa-eye-slash position-absolute" style="cursor: pointer;"></i>
+                                </div>
+                            </div>
+                            <div class="text-end mb-3" (click)="GoTo_forgot()">
+                                <p class="heading" >Forgot Password?</p>
+                            </div>
+                            <button type="button" class="btn login_btn w-100" (click)="GoTo_home()">Login Now</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="signup-container text-center mt-5">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div class="line"></div>
+                        <span class="mx-2 or-text">Or Sign Up With</span>
+                        <div class="line"></div>
+                    </div>
+                    <div class="mt-4">
+                        <img src="../assets/Icons/google_icon.svg" alt="Google" height="25" width="25">
+                    </div>
+                    <p class="mt-3">
+                        Don't have an account? <a  class="heading1" (click)="GoTo_signup()">Sign Up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+<!-- Forgot Password Section -->
+<div class="col-md-6 d-flex justify-content-center align-items-center p-4" *ngIf="forgot === true && otp_div !== true">
+    <div class="w-75">
+      <h1 class="fw-bold">Forgot Password</h1>
+      <p class="mb-5">Enter the email address associated with your account, and we'll send you a verification
+        code to reset your password.</p>
+      <form>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" class="form-control mb-3" />
+        <button type="submit" class="btn  login_btn w-100 mt-3" (click)="GoTo_verify()">Send OTP</button>
+      </form>
+      <p class="text-center mt-3"(click)="GoTo_login()">
+        <- Return to Login Screen</p>
+    </div>
+  </div>
+  
+
+
+  <!-- Verify Section -->
+  <div class="col-md-6 d-flex flex-column justify-content-center align-items-center bg-white p-5" *ngIf="otp_div === true">
+    <h1 class="heading">Verify Email</h1>
+    <p>Enter the OTP sent to <b>user&#64;example.com</b></p>
+  
+    <div class="d-flex justify-content-center gap-2">
+      <input type="text" maxlength="1" class="otp-input">
+      <input type="text" maxlength="1" class="otp-input">
+      <input type="text" maxlength="1" class="otp-input">
+      <input type="text" maxlength="1" class="otp-input">
+    </div>
+  
+    <p class="text-muted mt-2">
+      Didn't receive an OTP?
+      <span>Resend in <b>30 seconds</b></span>
+    </p>
+    <div >
+    <div class="input_form mt-2">
+        <div class="mb-3">
+            <label for="password ">New Password</label>
+            <div class="position-relative">
+                <input type="password" id="new_password" class="form-control " autocomplete="new-password"  >
+                <i class="fas fa-eye-slash position-absolute"></i>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="password ">Confirm Your New Password</label>
+            <div class="position-relative">
+                <input type="password" id="confirm_new_password" class="form-control" autocomplete="new-password"  >
+                <i class="fas fa-eye-slash position-absolute"></i>
+            </div>
+        </div>
+</div>
+    <button class="btn btn-success mt-4">Confirm</button>
+  </div>
+
+        
+    </div>
+</div>

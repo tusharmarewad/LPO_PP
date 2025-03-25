@@ -1,0 +1,101 @@
+<div class="row container-fluid">
+  <div class="col-md-2 p-0 m-0">
+      <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="col-md-10">
+      <div>
+          <app-header></app-header>
+      </div>
+
+      <h3>Add Project</h3>
+
+      <div class="mt-4">
+          <form [formGroup]="builderForm" (ngSubmit)="onSubmit()">
+            <div class="row mb-4">
+              <div class="col-3">
+                <label class="form-label">Project ID</label>
+                <select class="form-select" formControlName="project_id" (change)="onProjectSelect($event)">
+                  <option  value="" selected disabled>Select Project ID</option>
+                  <option *ngFor="let project of projects" [value]="project.project_id">{{ project.project_id }}</option>
+                </select>
+              </div>     
+              <div class="col-3">
+                <label class="form-label">Builder’s Name</label>
+                <input type="text" class="form-control" formControlName="builderName"  placeholder="enter Builder’s name"/>
+                <small *ngIf="submitted && builderForm.controls['builderName'].invalid" class="text-danger">Required</small>
+              </div>
+              <div class="col-3">
+                <label class="form-label">Project Name</label>
+                <input type="text" class="form-control" formControlName="projectName"  placeholder="enter project name"/>
+                <small *ngIf="submitted && builderForm.controls['projectName'].invalid" class="text-danger">Required</small>
+              </div>
+              <div class="col-3">
+                <label class="form-label">Location</label>
+                <input type="text" class="form-control" formControlName="location"  placeholder="enter location"/>
+                <small *ngIf="submitted && builderForm.controls['location'].invalid" class="text-danger">Required</small>
+              </div>
+            </div>
+        
+            <div class="row mb-4">
+              <div class="col-3">
+                <label class="form-label">Builder’s PAN Card Number</label>
+                <input type="text" class="form-control" formControlName="panCardNumber"  placeholder="enter pan no."/>
+              </div>
+              <div class="col-3">
+                <label class="form-label">Total No. of Units</label>
+                <input type="text" class="form-control" formControlName="totalUnits"  placeholder="enter no. of units"/>
+              </div>
+              <div class="col-3">
+                <label class="form-label">Units for Agreements</label>
+                <input type="text" class="form-control" formControlName="unitsForAgreements"  placeholder="enter units for agreements"/>
+              </div>
+            </div>
+        
+            <div class="row mb-4">
+              <div class="col-3">
+                <label class="form-label">Project Completion Status</label>
+                <select class="form-select mb-2" formControlName="projectCompletionStatus">
+                  <option value="" disabled selected>Select</option>
+                  <option *ngFor="let percentage of percentages" [value]="percentage">{{ percentage }}%</option>
+                </select>
+                
+              </div>
+              <div class="col-3">
+                <label class="form-label">Date of Contract Signed</label>
+                <input type="date" class="form-control" formControlName="contractSignedDate" />
+              </div>
+              <div class="col-3">
+                <label class="form-label">Contract No.</label>
+                <input type="text" class="form-control" formControlName="contractNumber"  placeholder="enter contract no."/>
+              </div>
+            </div>
+        
+            <div class="row mb-4">
+              <div class="col-3">
+                <label class="form-label">Contact Person’s Name</label>
+                <input type="text" class="form-control" formControlName="contactPersonName"  placeholder="enter person name"/>
+              </div>
+              <div class="col-3">
+                <label class="form-label">Contact Person’s Email ID</label>
+                <input type="email" class="form-control" formControlName="contactEmail"  placeholder="enter contact email"/>
+              </div>
+              <div class="col-3">
+                <label class="form-label">Contact Person’s Phone No.</label>
+                <input type="text" class="form-control" formControlName="contactPhone"  placeholder="enter contact no."/>
+              </div>
+            </div>
+        
+            <div class="row mb-4">
+              <div class="col-3">
+                <button type="submit" class="btn btn-primary" [disabled]="builderForm.invalid">Submit to Client Manager</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+
+    
+
+  </div>
+</div>

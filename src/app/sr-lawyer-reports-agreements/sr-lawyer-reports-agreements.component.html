@@ -1,0 +1,179 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+        <h3>< Reports > Agreements</h3>
+        <div class="container mt-2">
+            <!-- Header -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              
+             
+            </div>
+          
+           <!-- Filters Section -->
+<div class="row mb-4 g-3">
+  <!-- Date Filter -->
+  <div class="col-md-3">
+    <div class="d-flex mb-2 align-items-center g-4">
+      <h6 class="card-title">Date</h6>
+      <input type="date" id="dateFrom" class="form-control me-2 small-input" style="width: 100px;"/>
+      <input type="date" id="dateTo" class="form-control small-input" style="width: 100px;"/>
+    </div>
+  </div>
+
+    <!-- Agreement Type Filter -->
+    <div class="col-md-3">
+      <label><strong>Agreement Type</strong></label>
+      <select class="form-select mb-2" [(ngModel)]="selectedAgreementType" (change)="filterAgreements()">
+          <option value="" selected>Select Agreement Type</option>
+          <option *ngFor="let type of agreementTypes" [value]="type">{{ type }}</option>
+      </select>
+  </div>
+
+ <!-- Project Filter -->
+ <div class="col-md-3">
+  <label><strong>Project</strong></label>
+  <select class="form-select mb-2" [(ngModel)]="selectedProject" (change)="filterAgreements()">
+      <option value="" selected>Select Project</option>
+      <option *ngFor="let project of projectList" [value]="project">{{ project }}</option>
+  </select>
+</div>
+
+   <!-- Phase Filter -->
+   <div class="col-md-3">
+    <label><strong>Phase</strong></label>
+    <select class="form-select mb-2" [(ngModel)]="selectedPhase" (change)="filterAgreements()">
+        <option value="" selected>Select Phase</option>
+        <option *ngFor="let phaseName of phaseList" [value]="phaseName">{{ phaseName }}</option>
+    </select>
+</div>
+
+  <!-- Created By & Drafted By Filters -->
+<!-- Created By Filter -->
+<div class="col-md-3">
+  <label><strong>Created By</strong></label>
+  <select class="form-select mb-2" [(ngModel)]="selectedCreatedBy" (change)="filterAgreements()">
+      <option value="" selected>Select Creator</option>
+      <option *ngFor="let creator of createdByList" [value]="creator">{{ creator }}</option>
+  </select>
+</div>
+
+  <div class="col-md-2">
+    <label><strong>Drafted By</strong></label>
+    <select id="draftedBy" class="form-select mb-2">
+      <option value="" selected>Drafted by</option>
+      <option></option>
+    </select>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="col-md-2 d-flex justify-content-end">
+    <div class="submit m-0">
+      <div class="col-md-12 text-center mb-2">
+        <button class="btn btn-primary" style="background-color: #2B3C4E; width: 8rem;">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+          
+           
+            
+          
+            <!-- Table -->
+            <div class="table-responsive mt-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Creted By</th>
+                    <th>Project</th>
+                    <th>Phase</th>
+                    <th>Agreement type</th>
+                    <th>Assign to</th>
+                    <th>Created at</th>
+                    <th>Building</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let agreement of agreements">
+                    <td class="text-center">{{agreement.created_by_name}}</td>
+                    <td class="text-center">{{agreement.project_name}}</td>
+                    <td class="text-center">{{agreement.phase}}</td>
+                    <td class="text-center">{{agreement.agreement_type}}</td>
+                    <td class="text-center">{{agreement.drafted_by}}</td>
+                    <td class="text-center">{{agreement.created_at}}</td>
+                    <td class="text-center">{{agreement.building}}</td>
+                    <td class="text-center"
+                    ><strong>{{agreement.status}}</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Action Buttons -->
+            <div class="d-flex justify-content-end align-items-center mt-3">
+                <button class="btn btn-secondary" style="background-color: #2B3C4E;">Download</button>
+              </div>
+            </div>
+
+ 
+          </div>
+
+         <!-- Filter Count Summary -->
+<div class="mt-4 row">
+  <!-- Phase Reports -->
+  <div class="col-md-3" *ngIf="selectedPhase">
+    <div class="card text-center text-white shadow-sm" style="background-color: #2B3C4E;">
+      <div class="card-body">
+        <h6 class="card-title">Phase Reports</h6>
+        <p class="card-text"><strong>{{ phaseCount }}</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Reports -->
+  <div class="col-md-3" *ngIf="selectedProject">
+    <div class="card text-center text-white shadow-sm" style="background-color: #2B3C4E;">
+      <div class="card-body">
+        <h6 class="card-title">Project Reports</h6>
+        <p class="card-text"><strong>{{ projectCount }}</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Created By Reports -->
+  <div class="col-md-3" *ngIf="selectedCreatedBy">
+    <div class="card text-center text-white shadow-sm" style="background-color: #2B3C4E;">
+      <div class="card-body">
+        <h6 class="card-title">Created By Reports</h6>
+        <p class="card-text"><strong>{{ createdByCount }}</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Agreement Type Reports -->
+  <div class="col-md-3" *ngIf="selectedAgreementType">
+    <div class="card text-center text-white shadow-sm" style="background-color: #2B3C4E;">
+      <div class="card-body">
+        <h6 class="card-title">Agreement Type Reports</h6>
+        <p class="card-text"><strong>{{ agreementTypeCount }}</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Total Agreements Found -->
+  <div class="col-md-3">
+    <div class="card text-center text-white shadow-sm" style="background-color: #2B3C4E;">
+      <div class="card-body">
+        <h6 class="card-title">Total Agreements</h6>
+        <p class="card-text"><strong>{{ getAllAgreementCount() }}</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+</div>

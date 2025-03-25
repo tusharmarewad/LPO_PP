@@ -1,0 +1,475 @@
+<div class="row m-0">
+    <div class="col-md-2 p-0">
+        <app-sidebar></app-sidebar>
+    </div>
+  
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+  
+        <div>
+            <h3><span style="color: #2B3C4E80;"></span>Update Client</h3>
+            <div class="container mt-4">
+              <div class="row mb-4">
+                <div class="col-md-4">
+                  <div class="input-group">
+                    <input type="text" id="clientName" class="form-control" placeholder="Search Client ID/ Name"
+                      style="border-radius: 5px;">
+                    <img src="/assets/Icons/search.svg" alt="Search Icon"
+                      style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); width: 16px; pointer-events: none;">
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Project"
+                  />
+                </div>
+                <div class="col-md-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Unit"
+                  />
+                </div>
+                <div class=" col-md-2 d-flex justify-content-end ">
+                  <button class="btn" style="background-color: #2B3C4E;color: white;">Submit</button>
+                </div>
+            </div>
+             
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Client’s ID</th>
+                            <th>SRN</th>
+                            <th>Name</th>
+                            <th>Unit</th>
+                            <th>Agreement Value</th>
+                            <th>Stampduty</th>
+                            <th>Registeration
+                                Fees</th>
+                            <th>Agreement Status <img src="./assets/Icons/down_arrow.svg" /></th>
+                            <th>Update <img src="./assets/Icons/down_arrow.svg" /></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Approved</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="nav-bar">
+                <div class="nav-item" *ngFor="let item of navItems; let i = index" [class.active]="activeIndex === i"
+                    (click)="setActive(i)">
+                    {{ item }}
+                </div>
+            </div>
+            <div>
+  
+  <!-- HTML Template for the Form -->
+  <div class="container mt-4" *ngIf="activeIndex === 0">
+    <form>
+    
+      <div class="box p-3">
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="clientIdRefund" class="form-label">Client ID</label>
+            <input type="text" id="clientIdRefund" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label for="projectRefund" class="form-label">Project</label>
+            <input type="text" id="projectRefund" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label for="agreementValueRefund" class="form-label">Agreement Value</label>
+            <input type="text" id="agreementValueRefund" class="form-control" />
+          </div>
+         
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="nameRefund" class="form-label">Name</label>
+            <input type="text" id="nameRefund" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label for="unitRefund" class="form-label">Unit</label>
+            <input type="text" id="unitRefund" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label for="amountPaidRefund" class="form-label">Payment Received</label>
+            <input type="text" id="amountPaidRefund" class="form-control" />
+          </div>
+        </div>
+      </div>
+  
+        <!-- Second Box -->
+        <div class="tabel-container mt-4">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Client Ledger</th>
+                    <th></th>
+                    <th>Credit Amount</th>
+                    <th>Debit Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>DD/MM/YY</td>
+                    <td>Booking Amount</td>
+                    <td>Rs 10000</td>
+                    <td>Rs 100000</td>
+                    <td>Rs 100000</td>
+                  </tr>
+                  <tr>
+                    <td>DD/MM/YY</td>
+                    <td>Cheque No.</td>
+                    <td>Rs 10000</td>
+                    <td>Rs 100000</td>
+                    <td>Rs 100000</td>
+                  </tr>
+                  <tr>
+                    <td>DD/MM/YY</td>
+                    <td>Stamp Duty</td>
+                    <td>Rs 10000</td>
+                    <td>Rs 1000</td>
+                    <td>Rs 1000</td>
+                  </tr>
+                  <tr>
+                    <td>DD/MM/YY</td>
+                    <td>Legal Fees</td>
+                    <td>Rs 10000</td>
+                    <td>Rs 1000</td>
+                    <td>Rs 1000</td>
+                  </tr>
+                  <tr>
+                    <td>DD/MM/YY</td>
+                    <td>Payment Received</td>
+                    <td>Rs 10000</td>
+                    <td>Rs 100000</td>
+                    <td>Rs 100000</td>
+                  </tr>
+                  <tr>
+                    <td>DD/MM/YY</td>
+                    <td>Refund</td>
+                    <td>Rs 10000</td>
+                    <td>Rs 100000</td>
+                    <td>Rs 100000</td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+            </div>
+           
+              <div>
+                <h3 style="margin-left: 20rem;">Review Invoice</h3>
+                <img src="./assets/Icons/invoice.svg" class="img-invoice" />
+              </div>
+                <div class="d-flex justify-content-between">
+                <button class="btn btn-outline-secondary  download-btn ">Approve</button>
+                <button class="btn btn-secondary" style="background-color: #2B3C4E;">Resubmit</button>
+              </div>
+          </div>
+        </form>
+  </div>
+  
+  <div class="container mt-4" *ngIf="activeIndex === 1">
+    
+      <div class="box p-3">
+        <div class="row mb-3">
+          <div class="col-md-3">
+            <label for="clientIdInvoice" class="form-label">Client ID</label>
+            <input type="text" id="clientIdInvoice" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="projectInvoice" class="form-label">Project</label>
+            <input type="text" id="projectInvoice" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="agreementValueInvoice" class="form-label">Agreement Value</label>
+            <input type="text" id="agreementValueInvoice" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="stampDutyInvoice" class="form-label">SM Name</label>
+            <select id="stampDutyInvoice" class="form-control">
+              <option value="paid">Paid</option>
+              <option value="unpaid">Unpaid</option>
+            </select>
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-3">
+            <label for="nameInvoice" class="form-label">Name</label>
+            <input type="text" id="nameInvoice" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="unitInvoice" class="form-label">Unit</label>
+            <input type="text" id="unitInvoice" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="amountPaidInvoice" class="form-label">Payment Received</label>
+            <input type="text" id="amountPaidInvoice" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="legalFeesInvoice" class="form-label">SM Request</label>
+            <input type="text" id="legalFeesInvoice" class="form-control" />
+          </div>
+        </div>
+      </div>
+  
+      <div class="tabel-container mt-4">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Client Ledger</th>
+                <th></th>
+                <th>Credit Amount</th>
+                <th>Debit Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>DD/MM/YY</td>
+                <td>Booking Amount</td>
+                <td>Rs 10000</td>
+                <td>Rs 100000</td>
+                <td>Rs 100000</td>
+              </tr>
+              <tr>
+                <td>DD/MM/YY</td>
+                <td>Cheque No.</td>
+                <td>Rs 10000</td>
+                <td>Rs 100000</td>
+                <td>Rs 100000</td>
+              </tr>
+              <tr>
+                <td>DD/MM/YY</td>
+                <td>Stamp Duty</td>
+                <td>Rs 10000</td>
+                <td>Rs 1000</td>
+                <td>Rs 1000</td>
+              </tr>
+              <tr>
+                <td>DD/MM/YY</td>
+                <td>Legal Fees</td>
+                <td>Rs 10000</td>
+                <td>Rs 1000</td>
+                <td>Rs 1000</td>
+              </tr>
+              <tr>
+                <td>DD/MM/YY</td>
+                <td>Payment Received</td>
+                <td>Rs 10000</td>
+                <td>Rs 100000</td>
+                <td>Rs 100000</td>
+              </tr>
+              <tr>
+                <td>DD/MM/YY</td>
+                <td>Refund</td>
+                <td>Rs 10000</td>
+                <td>Rs 100000</td>
+                <td>Rs 100000</td>
+              </tr>
+             
+            </tbody>
+          </table>
+        </div>
+        <div class="preview-refund-container">
+            <h3>Preview Refund</h3>
+            <div class="refund-details">
+              <div class="refund-row">
+                <label>Total Amount</label>
+                <input type="text" readonly />
+              </div>
+              <div class="refund-row">
+                <label>Deduction</label>
+                <input type="text" />
+              </div>
+              <div class="refund-row">
+                <label>Net Refund Amount</label>
+                <input type="text" readonly />
+              </div>
+            </div>
+            <div class="button-container">
+              <button class="edit-btn">
+                <i class="fas fa-edit"></i> Edit
+              </button>
+              <button class="approve-btn">
+                Approve
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+ </div>
+        <div class="container mt-4" *ngIf="activeIndex === 2">
+    
+              <div class="box mb-4 p-3">
+                <div class="row mb-3">
+                  <div class="col-md-3">
+                    <label for="clientIdDemand" class="form-label">Client ID</label>
+                    <input type="text" id="clientIdDemand" class="form-control" />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="projectDemand" class="form-label">Project</label>
+                    <input type="text" id="projectDemand" class="form-control" />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="agreementValueDemand" class="form-label">Agreement Value</label>
+                    <input type="text" id="agreementValueDemand" class="form-control" />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="stampDutyDemand" class="form-label">Loan Status</label>
+                    <input type="text" id="stampDutyDemand" class="form-control" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-3">
+                    <label for="nameDemand" class="form-label">Name</label>
+                    <input type="text" id="nameDemand" class="form-control" />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="unitDemand" class="form-label">Unit</label>
+                    <input type="text" id="unitDemand" class="form-control" />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="amountPaidDemand" class="form-label">Payment Received</label>
+                    <input type="text" id="amountPaidDemand" class="form-control" />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="legalFeesDemand" class="form-label">Bank NOC</label>
+                    <input type="text" id="legalFeesDemand" class="form-control" />
+                  </div>
+                </div>
+              </div>
+      
+              <div class="tabel-container mt-4">
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Client Ledger</th>
+                        <th></th>
+                        <th>Credit Amount</th>
+                        <th>Debit Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>DD/MM/YY</td>
+                        <td>Booking Amount</td>
+                        <td>Rs 10000</td>
+                        <td>Rs 100000</td>
+                        <td>Rs 100000</td>
+                      </tr>
+                      <tr>
+                        <td>DD/MM/YY</td>
+                        <td>Cheque No.</td>
+                        <td>Rs 10000</td>
+                        <td>Rs 100000</td>
+                        <td>Rs 100000</td>
+                      </tr>
+                      <tr>
+                        <td>DD/MM/YY</td>
+                        <td>Stamp Duty</td>
+                        <td>Rs 10000</td>
+                        <td>Rs 1000</td>
+                        <td>Rs 1000</td>
+                      </tr>
+                      <tr>
+                        <td>DD/MM/YY</td>
+                        <td>Legal Fees</td>
+                        <td>Rs 10000</td>
+                        <td>Rs 1000</td>
+                        <td>Rs 1000</td>
+                      </tr>
+                      <tr>
+                        <td>DD/MM/YY</td>
+                        <td>Payment Received</td>
+                        <td>Rs 10000</td>
+                        <td>Rs 100000</td>
+                        <td>Rs 100000</td>
+                      </tr>
+                      <tr>
+                        <td>DD/MM/YY</td>
+                        <td>Refund</td>
+                        <td>Rs 10000</td>
+                        <td>Rs 100000</td>
+                        <td>Rs 100000</td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                </div>
+                
+                <div class="documents-view-container">
+                    <h3>Documents View</h3>
+                  
+                    <div class="owner-documents">
+                      <h4>1st Owner’s Documents</h4>
+                      <div class="document-row">
+                        <div class="document">
+                          <button>
+                            PAN Card <img src="../assets/Icons/upload_image.svg" alt="Upload" />
+                          </button>
+                        </div>
+                        <div class="document">
+                          <button>
+                            Aadhar Card <img src="../assets/Icons/upload_image.svg" alt="Upload" />
+                          </button>
+                        </div>
+                        <div class="document">
+                          <button>
+                            POA <img src="../assets/Icons/upload_image.svg" alt="Upload" />
+                          </button>
+                        </div>
+                      </div>
+                  
+                      <h4>2nd Owner’s Documents</h4>
+                      <div class="document-row">
+                        <div class="document">
+                          <button>
+                            PAN Card <img src="../assets/Icons/upload_image.svg" alt="Upload" />
+                          </button>
+                        </div>
+                        <div class="document">
+                          <button>
+                            Aadhar Card <img src="../assets/Icons/upload_image.svg" alt="Upload" />
+                          </button>
+                        </div>
+                        <div class="document">
+                          <button>
+                            Bank Sanction Letter <img src="../assets/Icons/upload_image.svg" alt="Upload" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="button-container">
+                      <button class="resubmit-btn">Resubmit</button>
+                      <button class="approve-btn">Approve</button>
+                    </div>
+                  </div>
+                </div>
+             </div>
+            </div>
+        </div>

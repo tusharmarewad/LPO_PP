@@ -1,0 +1,214 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0">
+      <app-sidebar></app-sidebar>
+    </div>
+  
+  
+    <div class="col-md-10">
+  
+        <app-header></app-header>
+
+<div class="container my-4">
+<h2 class="fw-bold">< Dashboard</h2><br>
+    <div class="row d-flex">
+
+      <table class="w-auto table table-bordered text-center align-middle sites" style="margin-right: 2rem;">
+        <thead class="table-light">
+          <tr>
+          
+            <th colspan="4" class="align-middle">  Agreements of this Month</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fw-bold">online</td>
+            <td class="fw-bold">30</td>
+            
+          </tr>
+          <tr>
+            <td class="fw-bold">offline</td>
+            <td class="fw-bold">30</td>
+          
+          </tr>
+          <tr>
+            <td class="fw-bold">Delivered</td>
+            <td class="fw-bold">10</td>
+             
+          </tr>
+          <tr>
+            <td class="fw-bold">Ad-hoc</td>
+            <td class="fw-bold">30</td>
+             
+          </tr>
+          <tr>
+            <td class="fw-bold table-dark">Total</td>
+            <td class="fw-bold">100</td>
+             
+          </tr>
+        </tbody>
+      </table>
+        <table class="w-auto table table-bordered text-center align-middle sites">
+          <thead class="table-light">
+            <tr>
+            
+              <th colspan="4" class="align-middle">BDM Performance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-bold">RM Name 1</td>
+              <td class="fw-bold">Rahul</td>
+              
+            </tr>
+            <tr>
+              <td class="fw-bold">RM Name 2</td>
+              <td class="fw-bold">Ravi</td>
+            
+            </tr>
+            <tr>
+              <td class="fw-bold">RM Name 3</td>
+              <td class="fw-bold">Rohan</td>
+               
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <!-- Project Table -->
+    <div class="container mt-4">
+        <div class="table-responsive  ">
+          <table class="table table-bordered shadow">
+            <thead class="table-light">
+              <tr>
+                <th>Project ID</th>
+                <th>Project</th>
+                <th>Location</th>
+                <th>No. of Units</th>
+                <th>Units for Agreement</th>
+                <th>Project Completion Status</th>
+                <th>Onboarding Status</th>
+                <th>Data Entry Status</th>
+              </tr>
+           
+            </thead>
+            <tbody>
+              <tr *ngFor="let project of projects">
+                <td>{{ project.project_id }}</td>
+                <td>{{ project.project_name }}</td>
+                <!-- <td>{{ project.created_by_name }}</td> -->
+                <td>{{ project.location }}</td>
+                <td>{{ project.total_units }}</td>
+                <td>{{ project.units_for_agreements }}</td>
+                <td>{{ project.project_completion_status }}</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  
+    <!-- Leads in Pipeline -->
+    <div class="container mt-4">
+        <h4>Leads in Pipeline</h4>
+        <div class="table-responsive  ">
+          <table class="table table-bordered shadow">
+            <thead class="table-light">
+              <tr>
+                <th>Lead ID</th>
+                <th>Project</th>
+                <th>Location</th>
+                <th>Total No. of Units</th>
+                <th>Email ID</th>
+                <th>Phone No.</th>
+                <th>Status</th>
+              </tr>
+           
+            </thead>
+            <tbody>
+              <tr *ngFor="let lead of leads">
+                <td>{{ lead.lead_id }}</td>
+                <td>{{ lead.project_name }}</td>
+                <td>{{ lead.created_by_name }}</td>
+                <td>{{ lead.location }}</td>
+                <td>{{ lead.no_of_units }}</td>
+                <td>{{ lead.email_id }}</td>
+                <td>{{ lead.phone_no }}</td>
+                <td>{{ lead.status }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  
+    <!-- Agreement Status -->
+    <div class="container mt-4">
+        <h4>Agreement Status</h4>
+        <div class="table-responsive  ">
+          <table class="table table-bordered shadow">
+            <thead class="table-light">
+              <tr>
+                <th>Project ID</th>
+                <th>Project</th>
+                <th>Location</th>
+                <th>Total No. of Units</th>
+                <th>Online Agreements</th>
+                <th>Offline Agreements</th>
+                <th>Agreements Delivered</th>
+              </tr>
+           
+            </thead>
+            <tbody>
+              <tr *ngFor="let agreement of agreements">
+                <td>{{agreement.project_id}}</td>
+                <td>{{agreement.project_name}}</td>                
+                <td>{{agreement.location}}</td>   
+                <td>{{agreement.total_units}}</td>               
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  
+    <!-- New / Ad-hoc Drafts -->
+    <div class="container mt-4">
+        <h4>New / Ad-hoc Drafts</h4>
+        <div class="table-responsive  ">
+          <table class="table table-bordered shadow">
+            <thead class="table-light">
+              <tr>
+                <th>Client ID</th>
+                <th>ABN</th>
+                <th>Draft Type</th>
+                <th>Client Name</th>
+                <th>Date</th>
+                <th>TAT</th>
+                <th>Last Status</th>
+                <th>Created By</th>
+                <th>Drafted By</th>
+                <th>Verified By</th>
+              </tr>
+           
+            </thead>
+            <tbody>
+              <tr *ngFor="let addhoc of addhocs">
+                <td>{{addhoc.client_id}}</td>
+                <td>{{addhoc.arn}}</td>
+                <td>{{addhoc.draft_type}}</td>  
+                <td>{{addhoc.client_name}}</td>  
+                <td>{{addhoc.created_at | date:'dd/MM/YYYY'}}</td>
+                <td>{{addhoc.tat | date:'dd/MM/YYYY'}}</td>   
+                <td>{{addhoc.status}}</td>   
+                <td>{{addhoc.created_by_name}}</td>   
+                <td>{{addhoc.assigned_to_name}}</td>
+                <td></td>     
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>

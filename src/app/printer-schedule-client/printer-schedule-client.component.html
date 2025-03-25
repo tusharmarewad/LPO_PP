@@ -1,0 +1,97 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0 m-0">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+<h3>< Schedule for Client</h3>
+        <div class="table-responsive mt-2">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                            <th rowspan="2">Client’s ID</th>
+                            <th rowspan="2">SRN</th>
+                            <th rowspan="2">Name</th>
+                            <th rowspan="2">Project</th>
+                            <th rowspan="2">Unit</th>
+                            <th rowspan="2">Agreement Value</th>
+                            <th rowspan="2">Print Requested by</th>
+                            <th rowspan="2">Delivered to</th>
+                            <th colspan="2">Schedule</th>
+                            
+                        </tr>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+
+<div class="mt-4">
+    <!-- First Row -->
+    <div class="row mb-4">
+        <div class="col-3">
+          <label for="srn" class="form-label">SRN</label>
+          <input type="text" id="srn" class="form-control" value="123" />
+        </div>
+        <div class="col-3">
+          <label for="clientId" class="form-label">Client ID</label>
+          <input type="text" id="clientId" class="form-control"  value="123"/>
+        </div>
+        <div class="col-3">
+          <label for="clientName" class="form-label">Client Name</label>
+          <input type="text" id="clientName" class="form-control" value="Kiran"/>
+        </div>
+        
+       
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-3">
+          <label for="srn" class="form-label">Date</label>
+          <input type="date" id="srn" class="form-control" value="" />
+        </div>
+        <div class="col-3">
+          <label for="clientId" class="form-label">Time</label>
+          <input type="text" id="clientId" class="form-control"  value="00:00 AM/PM"/>
+        </div>
+        <div class="col-3">
+            <label for="clientId" class="form-label">Place</label>
+            <input type="text" id="clientId" class="form-control"  value="XYZ"/>
+          </div>
+        <div class="col-2 d-flex align-items-end">
+            <button
+              class="btn submit w-100"
+              (click)="onSubmit()"
+              
+            >
+              Submit
+            </button>
+          </div>
+        
+      </div>    
+      </div>
+      
+  
+</div>
+</div>

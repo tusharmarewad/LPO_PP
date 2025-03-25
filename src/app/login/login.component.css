@@ -1,0 +1,131 @@
+.main{
+    background-color: #2B3C4E;
+    height: 100mvh;
+}
+.heading{
+    color:#2B3C4E ;
+}
+.heading1{
+    color:#2B3C4E ;
+    cursor: pointer;
+}
+.login_btn {
+    background-color: #2B3C4E;
+    color:white ;
+}
+.line {
+    width: 100px;
+    height: 1px;
+    background-color: #dcdcdc;
+    }
+     
+  /* Text styling */
+  .or-text {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    }
+    label{
+        font-weight: bold;
+        color:#2B3C4E ;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  p {
+    font-size: large;
+  }
+  b {
+    color: #2B3C4E;
+    margin-top: 2rem;
+  }
+  a {
+    cursor: pointer;
+  }
+  
+  /* Button Styles */
+  .btn-success {
+    background-color: #2B3C4E;
+    border: none;
+    margin-top: 20px;
+    width: 350px;
+  }
+ 
+  
+  /* OTP Input Styles */
+  .otp-input {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+  .otp-input:focus {
+    outline: none;
+    border-color:#2B3C4E;
+    box-shadow: 0 0 5px #2B3C4E;
+  }
+  
+  /* Text Styles */
+  .text-success {
+    color: #2B3C4E;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+  }
+  .text-muted {
+    color: #6c757d;
+  }
+  
+  /* Layout Styles */
+  
+  .row {
+    height: 100vh;
+  }
+  .container {
+    display: flex;
+  }
+  .login_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Input Styles */
+  input {
+    border-radius: 6px;
+    padding: 0.5rem;
+    width: -webkit-fill-available;
+    border: 1px solid #DADADA;
+  }
+ 
+  .position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+    right: 10px; /* Adjust to fit within the input field */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}

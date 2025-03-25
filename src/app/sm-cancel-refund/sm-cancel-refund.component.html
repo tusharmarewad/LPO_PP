@@ -1,0 +1,86 @@
+
+
+<div class="row container-fluid">
+    <div class="col-md-2 p-0">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-10">
+      <app-header></app-header>
+
+      <div class="container mt-2">
+        <h3 class="fw-bold">< Cancel / Refund</h3>
+        <div class="row mt-3">
+          <div class="col-md-4">
+            <label for="clientSearch" class="form-label">Client Name / Client ID*</label>
+            <div class="input-group position-relative">
+                <input
+                  type="text"
+                  id="clientSearch"
+                  class="form-control search-input"
+                  placeholder="Search..."
+                />
+                <img
+                  src="../assets/Icons/search.svg"
+                  alt="Search"
+                  class="search-icon"
+                />
+              </div>
+              
+          </div>
+          <div class="col-md-4">
+            <label for="projectName" class="form-label">Project Name*</label>
+            <select id="projectName" class="form-select">
+              <option selected>Select Project</option>
+              <option value="Sai Nagari">Sai Nagari</option>
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="unitNo" class="form-label">Unit No.*</label>
+            <select id="unitNo" class="form-select">
+              <option selected>Select Unit</option>
+              <option value="108">108</option>
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+        </div>
+      
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered">
+            <thead class="table-light">
+              <tr>
+                <th>Client ID</th>
+                <th>Client Name</th>
+                <th>Project Name</th>
+                <th>Unit</th>
+                <th>Master Data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="#">A12345</a></td>
+                <td>Kiran C</td>
+                <td>Sai Nagari</td>
+                <td>108</td>
+                <td><a href="#" class="text-primary">View & Proceed</a></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Kiran C</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="d-flex justify-content-end mt-3">
+          <button class="btn btn1">
+            Next >
+          </button>
+        </div>
+      </div>
+      
+      </div>
+      </div>

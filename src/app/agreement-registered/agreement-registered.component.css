@@ -1,0 +1,171 @@
+.table {
+    margin-top: 20px;
+    background-color: #F5F3F3;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+}
+
+.table th {
+    background-color: #f1f1f1;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.table a:hover {
+    text-decoration: underline;
+}
+
+
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .nav-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  .nav-item.active {
+    color: #2B3C4E;
+    font-weight: bold;
+    border-bottom: 2px solid #2B3C4E;
+  }
+
+
+
+  
+
+  .tbl_head{
+    color: #2B3C4E;
+}
+.btnclr{
+    background-color: #2B3C4E;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    width: 6em;
+}
+
+.cus_style{
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: #2B3C4E;
+    color: white;
+    text-align: center;
+}
+
+thead tr th, .theadclr td{
+    background-color: #F5F3F3;
+}
+
+.footer_btns{
+    display: flex;
+    justify-content: end;
+    gap: 15px
+}
+
+
+
+/* mayuri css */
+.inputbox {
+    display: flex;
+    align-items: center;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    text-align: center;
+    white-space: nowrap;
+    /* background-color: var(--bs-tertiary-bg); */
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+}
+.img22{
+    margin-left: 2rem;
+}
+
+
+/* sakshi css */
+
+.confirm-agreement-box {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+  
+
+
+    background-color: #ffffff;
+  }
+  
+  .card {
+    border: 1px solid #e3e3e3;
+  }
+  
+  h4 {
+    font-weight: 600;
+  }
+  
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  button i {
+    margin-left: 5px;
+  }
+
+
+  .container {
+    max-width: 900px;
+  }
+  
+  .form-control,
+  .form-select {
+    border-radius: 6px;
+    height: 38px;
+    min-width: 150px;
+  }
+  
+  button.btn-outline-secondary {
+    border-radius: 6px;
+    font-weight: 500;
+  }
+  
+  button.btn-outline-secondary i {
+    font-size: 1.2rem;
+  }
+  
+  button.btn-primary {
+    width: 100px;
+    border-radius: 6px;
+  }
+  .file{
+    margin-left: 1rem;
+  }
+

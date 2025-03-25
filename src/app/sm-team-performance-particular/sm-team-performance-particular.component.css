@@ -1,0 +1,63 @@
+
+
+/* General Chart Container */
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Donut Chart */
+  .donut-chart-container {
+    width: 300px; /* Adjust width of the donut chart */
+    height: 300px; /* Adjust height of the donut chart */
+  }
+  
+  /* Bar Chart */
+  .bar-chart-container {
+    width: 100%; /* Set full width */
+    height: 300px; /* Adjust height of the bar chart */
+  }
+  
+  .donut-chart,
+  .small-donut-chart {
+    margin: 0 auto;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    border-radius: 50%;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .card {
+    border-radius: 12px;
+  }
+  
+  h5,
+  h6 {
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+  }
+  .btn{
+    background-color: #2B3C4E;
+    color: white;
+  }
+  h3{
+    color: #2B3C4E ;
+ }
+  
+  

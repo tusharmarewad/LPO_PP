@@ -1,0 +1,32 @@
+
+.container {
+  
+  
+    border-radius: 8px;
+  }
+  
+  .table {
+    margin-top: 20px;
+   
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  .btn{
+    background-color: #2B3C4E;
+    color: white;
+  }
+  th{
+    background-color: #F5F3F3;
+  }
+  h3{
+    color: #2B3C4E;
+  }
+ .op{
+    background-color:#F5F3F3 ;
+    font-weight: bold;
+    border: 1px solid #F5F3F3 ;
+  }
+
+

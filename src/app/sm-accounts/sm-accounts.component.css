@@ -1,0 +1,63 @@
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .card-header {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #dee2e6;
+    padding: 4px;
+    text-align: left;
+    vertical-align: middle;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  tr {
+    padding: 0px;
+  }
+  
+  th {
+    background-color: #f8f9fa;
+  }
+  .next{
+    background-color: #2B3C4E;
+    color: white;
+    width: 11rem;
+  }
+  .card-footer{
+    gap: 2rem;
+  }
+  .input-group-text img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+  }
+  button img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+  }
+  .main{
+    width: 20rem;
+  }
+ 
+  h3{
+    color: #2B3C4E;
+  }

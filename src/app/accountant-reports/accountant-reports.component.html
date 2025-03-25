@@ -1,0 +1,130 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0">
+      <app-sidebar></app-sidebar>
+    </div>
+  
+  
+    <div class="col-md-10">
+  
+      <app-header></app-header>
+
+  <!-- Form Filters -->
+  <div class="container mt-4">
+  
+    <!-- First Row: From, To, Agreements -->
+    <div class="row mb-3">
+
+
+        <div class="col-auto d-flex align-items-center">
+            <label for="dateFrom" class="form-label ">From:</label>
+            <input type="date" id="dateFrom" class="form-control" placeholder="From Date" />
+          </div>
+          <div class="col-md-2 d-flex align-items-center " >
+            <label for="dateTo" class="form-label ">To:</label>
+            <input type="date" id="dateTo" class="form-control" placeholder="To Date" />
+          </div>
+      
+          <div class="col-md-2">
+            <label for="agreements" class="form-label"></label>
+            <select id="agreements" class="form-select agreement" [(ngModel)]="filters.agreements">
+              <option value="" disabled selected>Agreements</option>
+              <option *ngFor="let agreement of agreementsList" [value]="agreement">
+                {{ agreement }}
+              </option>
+            </select>
+          </div>
+        </div>
+  
+    <!-- Second Row: Legal Fees, Stamp Duty -->
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <label for="legalFees" class="form-label"></label>
+        <select id="legalFees" class="form-select" [(ngModel)]="filters.legalFees">
+          <option value="" disabled selected>Select Legal Fees</option>
+          <option *ngFor="let fee of legalFeesList" [value]="fee">{{ fee }}</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="stampDuty" class="form-label"></label>
+        <select id="stampDuty" class="form-select" [(ngModel)]="filters.stampDuty">
+          <option value="" disabled selected>Select Stamp Duty</option>
+          <option *ngFor="let duty of stampDutyList" [value]="duty">{{ duty }}</option>
+        </select>
+      </div>
+    </div>
+  
+    <!-- Third Row: Certified Copy Payments, Status, Submit -->
+    <div class="row">
+      <div class="col-md-3">
+        <label for="certifiedCopy" class="form-label"></label>
+        <select
+          id="certifiedCopy"
+          class="form-select"
+          [(ngModel)]="filters.certifiedCopy"
+        >
+          <option value="" disabled selected>Certified Copy Payments</option>
+          <option *ngFor="let payment of certifiedCopyList" [value]="payment">
+            {{ payment }}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="status" class="form-label"></label>
+        <input
+          type="text"
+          id="status"
+          class="form-control"
+          [(ngModel)]="filters.status"
+          placeholder="Status"
+        />
+      </div>
+      <div class="col-md-2 d-flex align-items-end ">
+        <button class="btn w-100 text-white" (click)="submitFilters()">Submit</button>
+      </div>
+    </div>
+  </div>
+  
+  
+      
+        <!-- Data Table -->
+        <div class="container mt-4">
+            <div class="table-responsive  ">
+              <table class="table table-bordered shadow">
+                <thead class="table-light">
+                  <tr>
+                    <th>Test</th>
+          <th>Test</th>
+          <th>Test</th>
+          <th>Test</th>
+          <th>Test</th>
+          <th>Test</th>
+                  </tr>
+               
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      
+        <!-- Download Button -->
+        <div class="text-end mt-3 ">
+          <button class="btn  text-white" (click)="downloadReport()">Download</button>
+        </div>
+      </div>

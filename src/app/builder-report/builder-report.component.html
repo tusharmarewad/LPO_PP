@@ -1,0 +1,100 @@
+<div class="row container-fluid p-0">
+    <div class="col-md-2 p-0 m-0">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+
+        <div class="container mt-4">
+            <!-- Header -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h4>Reports</h4>
+             
+            </div>
+          
+            <!-- Filters Section -->
+            <div class="row mb-4 g-3">
+              <div class="col-md-3">
+                <div class="d-flex mb-2 align-items-center">
+                    <h6 class="card-title">Date</h6>
+                  <input type="date" id="dateFrom" class="form-control me-2 small-input" placeholder="From" style="width: 100px;" />
+                  <input type="date" id="dateTo" class="form-control small-input" placeholder="To" style="width: 100px;" />
+                </div>
+                <select id="authorityApproval" class="form-select mb-2">
+                  <option selected>Authority Approval Received</option>
+                </select>
+              </div>
+          
+              <div class="col-md-2">
+                <select id="project" class="form-select mb-2">
+                  <option selected>Project</option>
+                </select>
+                <select id="phase" class="form-select mb-2">
+                  <option selected>Phase</option>
+                </select>
+                <select id="building" class="form-select mb-2">
+                  <option selected>Building</option>
+                </select>
+              </div>
+          
+              <div class="col-md-2">
+                <select id="loanSanctioned" class="form-select mb-2">
+                  <option selected>Loan Sanctioned</option>
+                </select>
+                <select id="loanDisbursed" class="form-select mb-2">
+                  <option selected>Loan Disbursed</option>
+                </select>
+                <select id="events" class="form-select mb-2">
+                  <option selected>Events</option>
+                </select>
+                </div>
+                <div class="col-md-2">
+                <select id="agreementDone" class="form-select mb-2">
+                  <option selected>Agreement Done</option>
+                </select>
+                <select id="booked" class="form-select mb-2">
+                  <option selected>Booked</option>
+                </select>
+                 <!-- Submit Button -->
+            <div class="row mt-3">
+                <div class="col-md-12 text-center">
+                  <button class="btn btn-primary" style="background-color: #2B3C4E;">Submit</button>
+                </div>
+              </div>
+            
+              </div>
+            </div>
+          
+           
+            
+          
+            <!-- Table -->
+            <div class="table-responsive mt-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                    <th>Column 3</th>
+                    <th>Column 4</th>
+                    <th>Column 5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="5" class="text-center">No Data Available</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Action Buttons -->
+            <div class="d-flex justify-content-end align-items-center mt-3">
+                <button class="btn btn-secondary me-2" style="background-color: #2B3C4E;">Email</button>
+                <button class="btn btn-secondary" >Download</button>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>

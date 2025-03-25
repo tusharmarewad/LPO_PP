@@ -1,0 +1,57 @@
+
+
+
+
+label{
+    font-weight: bold;
+  }
+   
+    .modify{
+      background-color: #2B3C4E;
+      margin-top: 2rem;
+      color: white;
+      width: 7rem;
+  
+    }
+    .submit{
+      background-color: #2B3C4E;
+      position: relative;
+  
+    }
+    /* Styling for the navigation bar */
+    .nav-tabs {
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .nav-tabs .nav-link {
+      color: #6c757d; /* Muted text color */
+      border: none;
+      padding: 10px 20px;
+      font-weight: 500;
+    }
+    
+    .nav-tabs .nav-link.active {
+      color: #2B3C4E; /* Dark text color for active tab */
+      font-weight: bold;
+      border-bottom: 2px solid #2B3C4E; /* Black underline for active tab */
+      background-color: transparent;
+    }
+    .table {
+      text-align: center;
+      vertical-align: middle;
+    }
+    
+    .table th, .table td {
+      white-space: nowrap;
+    }
+    /* .container {
+      max-width: 800px;
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    } */
+    
+  
+  
+  

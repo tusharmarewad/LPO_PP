@@ -1,0 +1,255 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0 m-0">
+        <app-sidebar></app-sidebar>
+    </div>
+  
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+  
+  
+  <h3>< Onboarding > Modify</h3>
+  <div class="container mt-4">
+      <!-- First Row: Select Project ID, Project Name, Location -->
+      <div class="row">
+          <div class="col-md-3">
+            <label for="projectId" class="form-label">Select Project ID</label>
+            <select id="projectId" class="form-select">
+              <option>XYZ</option>
+              <option>ABC</option>
+              <option>DEF</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="projectName" class="form-label">Project Name</label>
+            <input type="text" id="projectName" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" id="location" class="form-control" value="XYZ"  />
+          </div>
+          <div class="col-md-2">
+            <button class=" btn modify text-white">Modify</button>
+          </div>
+        </div>
+      <!-- Navigation Tabs -->
+      <div class="container mt-4">
+          <!-- Tab navigation -->
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="activeTab === 'login-details'" (click)="setActiveTab('login-details')"
+                href="javascript:void(0)">Login Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="activeTab === 'project-details'" (click)="setActiveTab('project-details')"
+                href="javascript:void(0)">Project Details</a>
+            </li>
+          </ul>
+        </div>
+    
+     
+        <div class="container mt-4"  *ngIf="activeTab=== 'login-details'">
+          <div class="table-responsive  shadow">
+            <table class="table table-bordered">
+              <thead class="table-light">
+                <tr>
+                  <th>Employee No.</th>
+                  <th>Name</th>
+                  <th>DOB</th>
+                  <th>Role</th>
+                  <th colspan="2">Project Name</th>
+                  <th colspan="2">Project Name</th>
+                  <th>Email ID</th>
+                  <th>Phone No.</th>
+                  <th>Modify</th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th>Phase</th>
+                  <th>Building</th>
+                  <th>Phase</th>
+                  <th>Building</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>SM</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td> <input type="checkbox"/></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>RM</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><input type="checkbox"/></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Accountant</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><input type="checkbox"/></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Admin</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><input type="checkbox"/></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Builder</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><input type="checkbox"/></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+  
+          <div class="container mt-5">
+            <form>
+              <div class="row mb-3">
+                <div class="col-md-2">
+                  <label for="employeeNo" class="form-label">Employee No.</label>
+                  <input type="text" class="form-control" id="employeeNo" placeholder="123">
+                </div>
+                <div class="col-md-3">
+                  <label for="employeeName" class="form-label">Employee Name</label>
+                  <input type="text" class="form-control" id="employeeName" placeholder="Kiran">
+                </div>
+                <div class="col-md-2">
+                  <label for="dob" class="form-label">DOB</label>
+                  <input type="date" class="form-control" id="dob">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <label for="projectName" class="form-label">Project Full Name</label>
+                  <input type="text" class="form-control" id="projectName" placeholder="XYZ">
+                </div>
+                <div class="col-md-2">
+                  <label for="phase" class="form-label">Select Phase</label>
+                  <select class="form-select" id="phase">
+                    <option selected disabled>Select Phase</option>
+                    <option>Phase 1</option>
+                    <option>Phase 2</option>
+                    <option>Phase 3</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <label for="building" class="form-label">Select Building</label>
+                  <select class="form-select" id="building">
+                    <option selected disabled>Select Building</option>
+                    <option>Building A</option>
+                    <option>Building B</option>
+                    <option>Building C</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <label for="email" class="form-label">Email ID</label>
+                  <input type="email" class="form-control" id="email" placeholder="@">
+                </div>
+                <div class="col-md-2">
+                  <label for="phone" class="form-label">Phone No.</label>
+                  <input type="text" class="form-control" id="phone" placeholder="XYZ">
+                </div>
+             
+              <div class="col-md-2">
+                <button type="button" class="btn modify">Modify</button>
+              </div>
+            </div>
+            </form>
+          </div>
+          
+        </div>
+  
+  
+  
+  
+        <div *ngIf="activeTab=== 'project-details'">
+          <div class="row mt-3">
+            <!-- Project Full Name, Select Phase, Select Building -->
+            <div class="col-md-3">
+              <label for="projectFullName" class="form-label">Project Full Name</label>
+              <input type="text" id="projectFullName" class="form-control" value="XYZ"/>
+            </div>
+            <div class="col-md-2">
+              <label for="selectPhase" class="form-label">Select Phase</label>
+              <select id="selectPhase" class="form-select">
+                <option></option>
+             
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="selectBuilding" class="form-label">Select Building</label>
+              <select id="selectBuilding" class="form-select">
+                <option></option>
+               
+              </select>
+            </div>
+          </div>
+  
+          <!-- Second Row: Building Name, Upload Modified Details, Submit Button -->
+          <div class="row mt-4">
+            <div class="col-md-3">
+              <label for="buildingName" class="form-label">Building Name</label>
+              <input type="text" id="buildingName" class="form-control" value="XYZ" />
+            </div>
+            <div class="col-md-3">
+              <label for="uploadDetails" class="form-label">Upload Modified Details</label>
+              <input type="file" id="uploadDetails" class="form-control" />
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
+              <button class="btn modify w-100">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+     </div>
+  
+  

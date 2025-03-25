@@ -1,0 +1,67 @@
+<div class="row container-fluid">
+  <div class="col-md-2 p-0 m-0">
+      <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="col-md-10">
+      <div>
+          <app-header></app-header>
+      </div>
+
+
+<h3>< Request for Draft > Ad-hoc</h3>
+
+<form [formGroup]="draftForm" (ngSubmit)="submitForm()">
+  <div class="row mb-2">
+    <div class="col-md-3">
+      <label class="form-label">Client Name</label>
+      <input type="text" class="form-control" formControlName="clientName" placeholder="XYZ" />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Email ID</label>
+      <input type="email" class="form-control" formControlName="email" />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Phone No.</label>
+      <input type="text" class="form-control" formControlName="phone" />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Type of Agreement</label>
+      <select class="form-select" formControlName="agreementType">
+        <option value="" disabled selected>Select</option>
+        <option value="Term Sheet">Term Sheet</option>
+        <option value="MOU">MOU</option>
+        <option value="Agreement to Sale">Agreement to Sale</option>
+        <option value="Agreement Deed">Agreement Deed</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    
+    <div class="col-md-3">
+      <label class="form-label">Other Field Specifications</label>
+      <input type="text" class="form-control" formControlName="otherSpecs" placeholder="XYZ" />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Remark</label>
+      <input type="text" class="form-control" formControlName="remark" placeholder="XYZ" />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">TAT</label>
+      <input type="date" class="form-control" formControlName="tat" />
+    </div>
+    
+  </div>
+
+  <div class="d-flex justify-content-center mt-2">
+    <div class="col-md-3">
+      <button type="submit" class="btn" style="background-color: #2B3C4E;color: white;" [disabled]="draftForm.invalid">Submit to Sr Lawyer</button>
+    </div>
+  </div>
+
+</form>
+   </div>
+   </div>
+

@@ -1,0 +1,27 @@
+@import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+html, body, div, span, p, a, ul, ol, li, header, footer, section, article, nav, aside, figure, figcaption, blockquote, pre, code, table, tr, td, th, form, input, button, select, textarea {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-fluid{
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.col-md-10{
+  padding: 10px;
+  margin: 0;
+}
+
+:root {
+  --bg-color: #076486;
+  --font1:#000000;
+  --font2:#171717;
+  --font3:#403E3E;
+  --white-font:#FFFFFF;
+}
+

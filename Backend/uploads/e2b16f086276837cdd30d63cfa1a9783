@@ -1,0 +1,77 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 06, 2025 at 05:26 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `lpo`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `project_details`
+--
+
+CREATE TABLE `project_details` (
+  `id` int(11) NOT NULL,
+  `project_id` varchar(50) NOT NULL,
+  `phase_number` varchar(50) NOT NULL,
+  `building_name` varchar(255) NOT NULL,
+  `floor_number` varchar(50) NOT NULL,
+  `unit_number` varchar(255) NOT NULL,
+  `unit_type` varchar(255) NOT NULL,
+  `unit_category` varchar(50) NOT NULL,
+  `agreement_value` decimal(15,2) NOT NULL,
+  `buildup_area` decimal(10,2) NOT NULL,
+  `carpet_area` decimal(10,2) NOT NULL,
+  `client_id` varchar(55) NOT NULL,
+  `created_by` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `project_details`
+--
+
+INSERT INTO `project_details` (`id`, `project_id`, `phase_number`, `building_name`, `floor_number`, `unit_number`, `unit_type`, `unit_category`, `agreement_value`, `buildup_area`, `carpet_area`, `client_id`, `created_by`, `created_at`) VALUES
+(1, 'PJT-000001', '1', 'A', '1', '101', 'Flat', '1BHK', '12121212.00', '900.00', '900.00', '', '9', '2025-03-05 11:11:50');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `project_details`
+--
+ALTER TABLE `project_details`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `project_details`
+--
+ALTER TABLE `project_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

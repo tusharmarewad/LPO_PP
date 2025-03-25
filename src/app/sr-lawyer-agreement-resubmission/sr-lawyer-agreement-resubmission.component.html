@@ -1,0 +1,93 @@
+
+<div class="container-fluid">
+    <div class="row"  style="height: 100vh;">
+      <div class="col-md-2 p-0">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="col-md-10">
+        <app-header></app-header>
+  
+        <div class="container mt-2">
+          <h3 class="fw-bold"> < Agreements > Resubmission </h3>
+          <table class="table table-bordered table-hover shadow mt-3">
+            <thead class="thead-light">
+              <tr>
+                <th>Client ID</th>
+                <th>Client Name</th>
+                <th>Project</th>
+                <th>Unit</th>
+                <th>Agreement Value</th>
+                <th>Stampduty GRN</th>
+                <th>Lawyer 2</th>
+                <th>Resubmission Reason</th>
+                <th>Update Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of filteredTableData; let i = index">
+                <td>{{ row.clientId }}</td>
+                <td>{{ row.clientName }}</td>
+                <td>{{ row.projectName }}</td>
+                <td>{{ row.unit }}</td>
+                <td>{{ row.agreementValue }}</td>
+                <td>{{ row.stampdutyGRN }}</td>
+                <td>{{ row.lawyer2 }}</td>
+                <td>{{ row.resubmissionReason }}</td>
+                <td>{{ row.updateStatus }}</td>
+                <td>
+                  <a href="#" class="text-primary" (click)="toggleDetails(i, $event)">edit</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+  
+          <!-- Expanded details section -->
+          <div *ngIf="expandedRowIndex !== null && filteredTableData[expandedRowIndex]" class="expanded-section row mt-3">
+            <div class="form-group col-md-2">
+              <label>Client ID</label>
+              <input type="text" class="form-control" [(ngModel)]="filteredTableData[expandedRowIndex!].clientId" />
+            </div>
+            <div class="form-group col-md-3">
+              <label>Client Name</label>
+              <input type="text" class="form-control" [(ngModel)]="filteredTableData[expandedRowIndex!].clientName" />
+            </div>
+            <div class="form-group col-md-3">
+              <label>Project Name</label>
+              <input type="text" class="form-control" [(ngModel)]="filteredTableData[expandedRowIndex!].projectName" />
+            </div>
+            <div class="form-group col-md-2">
+              <label>Unit</label>
+              <input type="text" class="form-control" [(ngModel)]="filteredTableData[expandedRowIndex!].unit" />
+            </div>
+            <div class="form-group col-md-2">
+              <label>Resubmission Reason</label>
+              <input type="text" class="form-control" [(ngModel)]="filteredTableData[expandedRowIndex!].resubmissionReason" />
+            </div>
+            <div class="form-group col-md-2">
+              <label>Remark</label>
+              <input type="text" class="form-control" [(ngModel)]="filteredTableData[expandedRowIndex!].remark" />
+            </div>
+            <div class="form-group col-md-2">
+              <label>Update Status</label>
+              <select class="form-control form-select" [(ngModel)]="filteredTableData[expandedRowIndex!].updateStatus">
+                <option value="" selected disabled>select status</option>
+                <option value="Resubmitted">Resubmitted</option>
+                <!-- <option value="Pending with Builder">Pending with Builder</option>
+                <option value="Pending with Client">Pending with Client</option> -->
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label>Date of Resubmission</label>
+              <input type="date" class="form-control" [(ngModel)]="filteredTableData[expandedRowIndex!].dateOfResubmission" placeholder="DD/MM/YYYY" />
+            </div>
+            <div class="form-group col-md-2">
+              <label>&nbsp;</label>
+              <button class="btn  w-100">Modify</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

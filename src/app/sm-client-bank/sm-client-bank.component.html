@@ -1,0 +1,250 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0">
+      <app-sidebar></app-sidebar>
+    </div>
+  
+  
+    <div class="col-md-10">
+  
+      <app-header></app-header>
+      <h3 class="fw-bold"> < RM Bank</h3>
+  <div class="table-container mt-3" *ngIf="!clientbank">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Client ID</th>
+          <th>Name</th>
+          <th>Project</th>
+          <th>Unit</th>
+          <th>Agreement Value</th>
+          <th>Received Amount</th>
+          <th>Customer Booking</th>
+          <th>Loan Status</th>
+          <th>Approval Status</th>
+          <th>Last Updated Remark</th>
+          <th>Cancel with Email</th>
+          <th>New Remark</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td><strong>Kiran C</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span class="text-danger">Cancelled</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><strong>Kiran C</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+        <button class="btn btn-next text-white" (click)="next()">Next ></button>
+        </div>
+  </div>
+
+  <div *ngIf="clientbank">
+    <div>     
+        <div class="table-container mt-3">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Client ID</th>
+            <th class="w-25">   Name   </th>
+            <th>Project</th>
+            <th>Unit</th>
+            <th>Agreement Value</th>
+            <th>Received Amount</th>
+            <th>Customer Booking</th>
+            <th>Loan Status</th>
+            <th>Approval Status</th>
+            <th>Last Updated Remark</th>
+            <th>Cancel with Email</th>
+            <th>New Remark</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td><strong>Kiran C</strong></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>Kiran C</strong></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div>
+    <button class="btn btn-next text-white">Next ></button>
+    </div>
+  </div>
+     
+  
+  
+  
+  
+        
+            <!-- Form Table Section -->
+            <div class="container col- mt-4">
+              <!-- Preview Section -->
+              <div class="card shadow-sm">
+                <!-- Header -->
+                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                  <span>Preview</span>
+                  <span>&#x25BC;</span>
+                </div>
+            
+                <!-- Table and Buttons -->
+                <div class="card-body">
+                  <!-- Table -->
+                  <table class="table table-borderless">
+                    <tbody>
+                      <tr>
+                        <td>Client ID</td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td>Agreement Value</td>
+                        <td><input type="text" class="form-control" /></td>
+                      </tr>
+                      <tr>
+                        <td>Name</td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td>Booking Amount</td>
+                        <td><input type="text" class="form-control" /></td>
+                      </tr>
+                      <tr>
+                        <td>Address</td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td>Loan Status</td>
+                        <td><input type="text" class="form-control" /></td>
+                      </tr>
+                      <tr>
+                        <td>Project</td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td>Authority Approval</td>
+                        <td><input type="text" class="form-control" /></td>
+                      </tr>
+                      <tr>
+                        <td>Unit</td>
+                        <td colspan="3"><input type="text" class="form-control" /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            
+                  <!-- Buttons -->
+                  <div class=" main d-flex justify-content-end mt-3">
+                    <div>
+                      <button class="btn btn-primary">Client Confirmation</button>
+                    </div>
+                    <div>
+                      <button class="btn btn-secondary">Confirmed</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            
+   <h3>Approval for Agreement</h3>
+            <div class="table-container mt-3">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Client ID</th>
+            <th>Name</th>
+            <th>Project</th>
+            <th>Unit</th>
+            <th>Agreement Value</th>
+            <th>Received Amount</th>
+            <th>Customer Booking</th>
+            <th>Loan Status</th>
+            <th>Approval Status</th>
+            <th>Last Updated Remark</th>
+            <th>Cancel with Email</th>
+            <th>New Remark</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td><strong>Kiran C</strong></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>Kiran C</strong></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div>
+      <button class="btn btn-next text-white">Next ></button>
+      </div>
+         
+      
+  </div>
+  
+
+  </div>
+  </div>
+  

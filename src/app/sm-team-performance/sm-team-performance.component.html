@@ -1,0 +1,54 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0">
+      <app-sidebar></app-sidebar>
+    </div>
+  
+  
+    <div class="col-md-10">
+  
+      <app-header></app-header>
+
+<div class="container mt-2">
+    <h3 class="fw-bold"> < Team Performance</h3>
+    <div class="table-responsive ">
+      <table class="table table-bordered  text-center shadow">
+        <thead class="thead-light">
+          <tr>
+            <th>RM's ID</th>
+            <th>Name</th>
+            <th>Project</th>
+            <th>Phase</th>
+            <th>Building</th>
+            <th>Unsold Data</th>
+            <th>Target of 1 week</th>
+            <th>Target of 1 month</th>
+            <th>Performance of week in %</th>
+            <th>Performance of month in %</th>
+            <th>Performance till date in %</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of tableData">
+            <td>{{ data.id }}</td>
+            <td>{{ data.name }}</td>
+            <td>{{ data.project }}</td>
+            <td>{{ data.phase }}</td>
+            <td>{{ data.building }}</td>
+            <td>{{ data.unsoldData }}</td>
+            <td>{{ data.targetWeek }}</td>
+            <td>{{ data.targetMonth }}</td>
+            <td>{{ data.performanceWeek }}</td>
+            <td>{{ data.performanceMonth }}</td>
+            <td>{{ data.performanceToDate }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="d-flex justify-content-end">
+      <button class="btn " (click)="next()">Next ></button>
+    </div>
+  </div>
+  </div>
+  </div>
+
+

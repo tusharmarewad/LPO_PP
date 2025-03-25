@@ -1,0 +1,553 @@
+body{
+    font-family: Poppins;
+  }
+  
+  
+  
+  .add-event {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sub-add-event h3 {
+    font-size: 1rem;
+    font-weight:500;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Make input fields smaller */
+  .form-control {
+    height: 30px; /* Adjust the height as needed */
+    padding: 4px 1px; /* Reduce padding for a more compact look */
+    font-size: 0.875rem; /* Adjust font size for a smaller appearance */
+  }
+  
+  /* Make buttons smaller */
+  .btn {
+    height: 30px; /* Adjust the height as needed */
+    padding: 4px 12px; /* Reduce padding for buttons */
+    font-size: 0.875rem; /* Adjust font size for a smaller appearance */
+    margin-top: 10px;
+  }
+  
+  .add-guest-btn {
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid black;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+  }
+  
+  .btn-outline-primary {
+    width: 50%;
+  }
+  
+  .form label {
+    font-weight: 500;
+  }
+  
+  .training-calendar {
+    margin-top: 20px;
+  
+  }
+  
+  .calendar {
+    height: 300px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .mode_button{
+    border: var(--bs-border-width) solid var(--bs-border-color);
+  }
+  
+  .heading_line{
+    margin: 1rem 0 0 0;
+  }
+  
+  .active-mode {
+    background-color: #E2FFEF !important; /* Light green background */
+    color: #333 !important; /* Dark text color */
+    border-color: #E2FFEF !important; /* Match border color to background */
+  }
+  
+  .bgclr{
+    background: #F6F6F6;
+    padding: 1em;
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+  
+  .bdclr{
+   border: 1px solid #DCDCDC;
+   border-radius: 4px;
+   margin-top: 1.4rem;
+   background-color: white;
+  }
+  
+  .mycalbg{
+  background-color: white;
+  border: 1px solid #DCDCDC;
+  border-radius: 2px;
+  }
+  
+  .card {
+    width: 100%;
+    background-color: #fceefe;
+    border-radius: 10px;
+    padding: 1em;
+    border: none;
+  }
+  .card h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+  .card .info {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+  }
+  .card .info span {
+    font-size: 14px;
+    color: #555;
+  }
+  .card .info .label {
+    font-weight: 500;
+    color: #333;
+  }
+  .card .meeting-url {
+    margin-top: 1rem;
+    background-color: #f7d6fd;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .card .meeting-url a {
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .cusclr .info{
+    color: #3F3F3F;
+  }
+  
+  .calender{
+  position: absolute;
+  
+  }
+  .input_calender{
+  display: flex;
+  }
+  
+  a{
+  font-weight: 500;
+  }
+  
+  .input-container {
+  position: relative;
+  width: 100%;
+  }
+  
+  .event_time{
+  width: 8.8rem;
+  }
+  
+  .location-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px; /* Adjust as needed */
+  width: 20px;  /* Adjust as needed */
+  pointer-events: none; /* Allows clicking in the input without affecting the icon */
+  }
+  
+  .plus-sign {
+  color: green;
+  /* font-size: 1rem; */
+  }
+  
+  .add-guest-btn {
+  /* Other button styles here, if needed */
+  }
+  
+  
+  
+  
+  .imgsz{
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  }
+  
+  /* width */
+  .scrollbar::-webkit-scrollbar {
+  width: 10px;
+  }
+  
+  /* Track */
+  .scrollbar::-webkit-scrollbar-track {
+  background: #925858;
+  }
+  
+  /* Handle */
+  .scrollbar::-webkit-scrollbar-thumb {
+  background: #1ea729;
+  }
+  
+  .mainDiv{
+  height: 100%;
+  }
+  /* sid */
+  .scrollbar {
+  max-height: 400px; /* Adjust the height as needed */
+  overflow-y: scroll; /* Enable vertical scrollbar */
+  overflow-x: hidden; /* Disable horizontal scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: green transparent; /* Green scroller with transparent track */
+  }
+  
+  .scrollbar::-webkit-scrollbar {
+  width: 6px;
+  }
+  
+  .scrollbar::-webkit-scrollbar-thumb {
+  background-color: green;
+  border-radius: 10px;
+  }
+  
+  .scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  }
+  
+  
+  /* sid */
+  /* Modal background */
+  .modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  }
+  
+  /* Modal content */
+  .modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+  }
+  
+  /* Close button */
+  .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  }
+  
+  
+  /* Modal Background */
+  .modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  text-align: left;
+  position: relative;
+  overflow-y: auto;
+  max-height: 90vh;
+  }
+  
+  /* Header */
+  .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  }
+  
+  .datew{
+  width: 120% !important;
+  }
+  
+  .back-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  }
+  .timew{
+  width: 55% !important;
+  }
+  
+  .form-section label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-top: 10px;
+  display: block;
+  }
+  
+  .form-section input,
+  .form-section select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  }
+  
+  .time-input {
+  display: flex;
+  gap: 8px;
+  }
+  
+  h3 {
+  font-size: 16px;
+  color: #333;
+  
+  }
+  
+  /* Delete Guest Link */
+  .delete-guest {
+  border: none;
+  color: red;
+  font-size: 14px;
+  border-radius: 4px;
+  
+  }
+  
+  .chkbox{
+  width: 20px  !important;
+  margin-left: 8px;
+  }
+  
+  /* Save Button */
+  .save-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  }
+  
+  
+  .guest-form {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  }
+  
+  .guest-input {
+  width: 100%; /* Ensure all input fields are consistent */
+  }
+  
+  .d-flex {
+  display: flex;
+  align-items: center;
+  }
+  
+  .me-2 {
+  margin-right: 8px; /* Adds spacing to the right of elements */
+  }
+  
+  .form-check-input {
+  width: auto; /* Ensure the checkbox does not stretch */
+  height: auto; /* Keeps the checkbox size reasonable */
+  }
+  
+  .form-label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  }
+  
+  .guestInput{
+  width: 20em;
+  }
+  
+  /* General styling for day headers (e.g., "Sun", "Mon") */
+  ::ng-deep .fc-col-header-cell-cushion {
+  color: black !important;
+  font-weight: bold;
+  text-decoration: none;
+  }
+  
+  /* Transparent background for toolbar chunks and primary buttons */
+  ::ng-deep .fc-toolbar-chunk,
+  ::ng-deep .fc-button-primary {
+  background-color: transparent !important;
+  border: none !important;
+  }
+  
+  /* Custom styles for the toolbar */
+  ::ng-deep .fc-toolbar {
+  background: #F6F6F6 !important;
+  height: 40px !important;
+  border-radius: 10px !important;
+  padding: 0rem 1rem !important;
+  }
+  
+  /* Custom icons and colors for chevron navigation buttons */
+  ::ng-deep .fc-icon-chevron-left::before,
+  ::ng-deep .fc-icon-chevron-right::before {
+  color: black !important;
+  }
+  
+  ::ng-deep .fc-icon-chevron-left::before {
+  content: ""; /* Left icon */
+  }
+  
+  ::ng-deep .fc-icon-chevron-right::before {
+  content: ""; /* Right icon */
+  }
+  
+  /* Style for navigation buttons */
+  ::ng-deep .fc-button-primary,
+  ::ng-deep .fc-button-next,
+  ::ng-deep .fc-button-prev {
+  background: white !important;
+  border-radius: 50% !important;
+  }
+  
+  /* Remove borders from table headers */
+  ::ng-deep th {
+  border: none !important;
+  }
+  
+  /* Style for day numbers */
+  ::ng-deep .fc-daygrid-day-number {
+  color: black !important;
+  display: block !important;
+  text-decoration: none !important;
+  }
+  
+  /* General styling for day cells */
+  ::ng-deep .fc-day {
+  border: none !important;
+  border-radius: 50% !important;
+  }
+  
+  /* Hide events inside the day cells */
+  ::ng-deep .fc-daygrid-day-events {
+  display: none !important;
+  }
+  
+  /* Ensure day numbers are centered */
+  ::ng-deep .fc-daygrid-day-top {
+  display: block !important;
+  }
+  
+  /* Center-align header cells */
+  ::ng-deep .fc-scrollgrid-sync-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  ::ng-deep .fc-scrollgrid {
+  border: none !important;
+  }
+  ::ng-deep .fc-theme-standard td, .fc-theme-standard th  {
+  /* border: 1px solid var(--fc-border-color); */
+  border: none !important;
+  }
+  ::ng-deep .fc-toolbar-title{
+  font-size: 18px !important;
+  }
+  ::ng-deep .fc-day{
+  height: 53px;
+  }
+  /* Change background color for a specific date */
+  ::ng-deep .fc-day[data-date="2024-10-08"] {
+  background-color: #FBEAFF !important; /* Replace with your desired color */
+  }
+  
+  ::ng-deep .fc-day[data-date="2024-10-20"] {
+  background-color: #E7FFEF !important; /* Replace with your desired color */
+  }
+  
+  ::ng-deep .fc .fc-daygrid-day.fc-day-today {
+  background-color: #fceefe !important;
+  }
+  
+  .to_ad{
+  margin-top: 6px;
+  }
+  
+  
+  
+  .placeholder {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+    z-index: 0;
+  }
+  input:focus + .placeholder,
+  input:not(:placeholder-shown) + .placeholder {
+    display: none;
+  }
+  input[type="number"]::-webkit-inner-spin-button, 
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .to-time.disabled {
+    pointer-events: none; /* Prevent interaction */
+    background-color: #e9ecef; /* Visually indicate it's disabled */
+    cursor: not-allowed;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5); /* Add a semi-transparent overlay */
+    z-index: 1;
+    pointer-events: none; /* Ensure it doesn't interfere with clicks */
+  }
+  .full_calender{
+    height: 314px;
+  }

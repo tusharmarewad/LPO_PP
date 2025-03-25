@@ -1,0 +1,237 @@
+
+<div class="row container-fluid">
+    <div class="col-md-2 p-0">
+        <app-sidebar></app-sidebar>
+    </div>
+
+
+    <div class="col-md-10 container">
+
+        <app-header></app-header>
+
+
+<div class="container p-0">
+    <!-- Project Header -->
+    <div class="header mb-2">
+        <div class="d-flex header_details">
+            <h5 class="fw-bold">Sai Nagari</h5>
+            <div class="d-flex flex-column">
+                <span class="text-danger">Available: 220</span>
+                <span class="text-success">Booked: 70</span>
+            </div>
+           
+            
+        </div>
+        <div class="d-flex header_details">
+            <h5 class="fw-bold">Sai Dwarka</h5>
+            <div class="d-flex flex-column">
+                <span>Booked/Target</span>
+                <span>20/100</span>
+            </div>
+            
+        </div>
+        <div class="d-flex header_details">
+            <h5 class="fw-bold">Euphoria</h5>
+            <div class="d-flex flex-column">
+                <span>Available: 220</span>
+                <span>Booked: 70</span>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Phase Navigation -->
+    <div class="phase mb-3">
+        <button class="btn sub_phase">Phase 1 - A B C D E</button>
+        <button class="btn sub_phase">Phase 2 - A B C D E</button>
+        <button class="btn sub_phase">Phase 3 - A B C D E</button>
+    </div>
+
+    <!-- Floor Plan Container -->
+    <div class="main_container">
+
+        <div class="d-flex align-items-start mb-3">
+            <label for="floor" class="form-label mb-0 me-2">Floor:</label>
+            <select id="floor" class="form-select" style="width: auto;">
+                <option value="18" selected>18</option>
+                <option value="17">17</option>
+                <option value="16">16</option>
+            </select>
+        </div>
+
+
+        <div class="floor-plan border rounded p-4">
+            <div class="floor-grid">
+                <!-- First Row -->
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <!-- Second Row -->
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <!-- third row -->
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit selected">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <div class="unit best-sellers">F</div>
+                <!-- available row first -->
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <!-- available row second -->
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <!-- available row third -->
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <div class="unit available"></div>
+                <!-- duplex row first -->
+                <div class="unit office">O</div>
+                <div class="unit office">O</div>
+                <div class="unit office">O</div>
+                <div class="unit office">O</div>
+                <div class="unit office">O</div>
+                <div class="unit office">O</div>
+                <div class="unit booked">O</div>
+                <div class="unit booked">O</div>
+                <div class="unit booked">O</div>
+                <div class="unit booked">O</div>
+                <!-- shop row first -->
+                <div class="unit best-sellers ">S</div>
+                <div class="unit best-sellers">S</div>
+                <div class="unit best-sellers">S</div>
+                <div class="unit available">S</div>
+                <div class="unit available">S</div>
+                <div class="unit available">S</div>
+                <div class="unit available">S</div>
+                <div class="unit best-sellers">S</div>
+                <div class="unit best-sellers">S</div>
+                <div class="unit best-sellers">S</div>
+
+                <!-- parking row first -->
+                <div class="unit available">P</div>
+                <div class="unit available">P</div>
+                <div class="unit available">P</div>
+                <div class="unit available">P</div>
+                <div class="unit available">P</div>
+                <div class="unit available">P</div>
+                <div class="unit available">P</div>
+                <div class="unit available">P</div>
+                <div class="unit available">P</div>
+                <div class="unit available">P</div>
+
+
+                <!-- <div class="unit office">O</div>
+          <div class="unit booked">B</div> -->
+            </div>
+
+            <!-- Left Section -->
+            <div>
+
+                <!-- Floor Grid -->
+                <div class="d-flex floors_div">
+                    <div class="floor_details">
+                        <div class="unit">F</div>
+                        <p>Flat</p>
+                    </div>
+                    <div class="floor_details">
+                        <div class="unit">W</div>
+                        <p>Warehouse</p>
+                    </div>
+                    <div class="floor_details">
+                        <div class="unit">S</div>
+                        <p>Shop</p>
+                    </div>
+                    <div class="floor_details">
+                        <div class="unit">O</div>
+                        <p>Office</p>
+                    </div>
+                    <div class="floor_details">
+                        <div class="unit">P</div>
+                        <p>Parking</p>
+                    </div>
+                    <div class="floor_details">
+                        <div class="unit">Ph</div>
+                        <p>Pent House</p>
+                    </div>
+                    <div class="floor_details">
+                        <div class="unit">D</div>
+                        <p>Booked</p>
+                    </div>
+                </div>
+
+                <!-- Legend -->
+                <div class="legend mt-3">
+                    <div class="floor_details">
+                        <div class="unit"></div>
+                        <p>Available</p>
+                    </div>
+                    <div class="floor_details">
+                        <div class="unit" style="border: 3px solid #FFEC1C;"></div>
+                        <p>Best Sellers</p>
+                    </div>
+                    <div class="floor_details">
+                        <div class="unit selected"></div>
+                        <p>Selected</p>
+                    </div>
+                    <div class="floor_details">
+                        <div class="unit booked"></div>
+                        <p>Booked</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right Section -->
+        <div class="info-box p-3 border rounded">
+            <p><strong>Unit No: 108</strong> </p>
+            <p><strong>Area: 1400 sqmt</strong></p>
+            <p><strong>Floor No: 6</strong></p>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

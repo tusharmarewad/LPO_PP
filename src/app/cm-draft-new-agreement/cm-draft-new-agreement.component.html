@@ -1,0 +1,105 @@
+<div class="row container-fluid">
+    <div class="col-md-2 p-0 m-0">
+        <app-sidebar></app-sidebar>
+    </div>
+  
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+  
+  
+  <h3>< Request for Draft > New Agreement</h3>
+  <div class="container mt-4">
+    <!-- First Row: Select Project ID, Project Name, Location -->
+    <form [formGroup]="newAgreementForm" (ngSubmit)="onSubmit()">
+      <div class="row mb-2">
+        <div class="col-3">
+          <label for="project_id" class="form-label">Select Project ID</label>
+          <select class="form-select" formControlName="project_id">
+            <option value="" disabled selected>Select Project ID</option>
+            <option *ngFor="let project of projectId" [value]="project.project_id">{{ project.project_id }}</option>
+          </select>
+        </div>
+        
+        <div class="col-md-3">
+          <label for="projectName" class="form-label">Project Name</label>
+          <input type="text" id="projectName" class="form-control" formControlName="project_name" placeholder="XYZ" />
+        </div>
+        
+        <div class="col-md-3">
+          <label for="location" class="form-label">Location</label>
+          <input type="text" id="location" class="form-control" formControlName="location" />
+        </div>
+      </div>
+  
+      <div class="row mb-2">
+        <div class="col-md-3">
+          <label for="projectFullName" class="form-label">Project Full Name</label>
+          <input type="text" id="projectFullName" class="form-control" formControlName="project_full_name" placeholder="XYZ" />
+        </div>
+  
+        <div class="col-md-3">
+          <label for="phase" class="form-label">Select Phase</label>
+          <select class="form-select" formControlName="phase">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+  
+        <div class="col-md-3">
+          <label for="building" class="form-label">Select Building</label>
+          <select class="form-select" formControlName="building">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-3">
+          <label for="unitType" class="form-label">Unit type</label>
+          <select class="form-select" formControlName="unit_type">
+            <option>Flat</option>
+            <option>Shop</option>
+            <option>Office</option>
+            <option>Warehouse</option>
+            <option>Penthouse</option>
+            <option>Duplex</option>
+          </select>
+        </div>
+  
+        <div class="col-md-3">
+          <label for="authorityApproval" class="form-label">Authority Approval</label>
+          <select class="form-select" formControlName="authority_approval">
+            <option>Authority Approval Department</option>
+            <option>Non Authority Approval Department</option>
+          </select>
+        </div>
+  
+        <div class="col-md-3">
+          <label for="tat" class="form-label">TAT</label>
+          <input type="date" id="tat" class="form-control" formControlName="tat" />
+        </div>
+  
+        <div class="col-md-3">
+          <label for="agreementType" class="form-label">Type of Agreement</label>
+          <select class="form-select" formControlName="agreement_type">
+            <option>Agreement to Sale</option>
+            <option>Sale Deed</option>
+          </select>
+        </div>
+  
+        <div class="col-md-2">
+          <button class="btn modify text-white" type="submit" [disabled]="newAgreementForm.invalid">Submit to Sr Lawyer</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+     </div>
+     </div>
+  
+  

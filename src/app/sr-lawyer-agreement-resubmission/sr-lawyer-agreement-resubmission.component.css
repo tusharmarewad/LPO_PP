@@ -1,0 +1,41 @@
+/* Table Styling */
+.table {
+    font-size: 14px;
+  }
+  
+  .table th,
+  .table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .table th {
+    background-color: #F5F3F3;
+  }
+  
+  /* Expanded Section Styling */
+  .expanded-section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    gap: 15px;
+  }
+  
+  .expanded-section .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .form-control {
+    font-size: 14px;
+  }
+  
+  h3 {
+    color: #2B3C4E;
+  }
+  .btn{
+    background-color: #2B3C4E;
+    color: white;
+  }
+  label{
+    font-weight: 600;
+  }

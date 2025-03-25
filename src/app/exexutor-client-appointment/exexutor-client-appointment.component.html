@@ -1,0 +1,191 @@
+
+
+<div class="row container-fluid p-0">
+    <div class="col-md-2 p-0 m-0">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-md-10">
+        <div>
+            <app-header></app-header>
+        </div>
+
+        <div>
+            <h3><span style="color: #2B3C4E80;">Agreement ></span> Client Appointment</h3>
+            <div class="table-responsive mt-2">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <!-- <th>Client’s ID</th> -->
+                            <th>Client’s ID</th>
+                            <th>SRN</th>
+                            <th>Name</th>
+                            <th>Project</th>
+                            <th>Unit</th>
+                            <th>Agreement Value</th>
+                            <th>Prepared by</th>
+                            <th>Checked by</th>
+                            <th>Last Execution Status</th>
+                            <th>TAT</th>
+                            <th>Appointment</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container mt-4">
+                <form>
+                  <div class="row mb-3">
+                    <div class="col-md-2">
+                      <label for="srn" class="form-label">SRN</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="srn"
+                        placeholder="123"
+                        [(ngModel)]="formData.srn"
+                        name="srn"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label for="clientId" class="form-label">Client ID</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="clientId"
+                        placeholder="123"
+                        [(ngModel)]="formData.clientId"
+                        name="clientId"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label for="clientName" class="form-label">Client Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="clientName"
+                        placeholder="Kiran"
+                        [(ngModel)]="formData.clientName"
+                        name="clientName"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label for="contactNumber" class="form-label">Contact Number</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="contactNumber"
+                        placeholder="123"
+                        [(ngModel)]="formData.contactNumber"
+                        name="contactNumber"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label for="emailId" class="form-label">Email ID</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="emailId"
+                        placeholder="Kiran"
+                        [(ngModel)]="formData.emailId"
+                        name="emailId"
+                      />
+                    </div>
+                  </div>
+                  <br>
+                  
+              
+                  <div class="row mb-3">
+                    <div class="col-md-2">
+                      <label for="appointmentDate" class="form-label">Appointment Date</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="appointmentDate"
+                        placeholder="DD/MM/YYYY"
+                        [(ngModel)]="formData.appointmentDate"
+                        name="appointmentDate"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label for="time" class="form-label">Time</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="time"
+                        placeholder="11:00 AM"
+                        [(ngModel)]="formData.time"
+                        name="time"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label for="venue" class="form-label">Venue</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="venue"
+                        placeholder="DD/MM/YYYY"
+                        [(ngModel)]="formData.venue"
+                        name="venue"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label for="mode" class="form-label">Mode</label>
+                      <select
+                        class="form-select"
+                        id="mode"
+                        [(ngModel)]="formData.mode"
+                        name="mode"
+                      >
+                        <option selected disabled>Choose...</option>
+                        <option value="online">Online</option>
+                        <option value="offline">Offline</option>
+                      </select>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <button class="btn btn_submit">Submit</button>
+
+                    </div>
+            
+                    <div class="col-md-2">
+                      <label for="appointmentNumber" class="form-label">Appointment Number</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="appointmentNumber"
+                        [(ngModel)]="formData.appointmentNumber"
+                        name="appointmentNumber"
+                      />
+                    </div>
+                
+                  </div>
+                
+                </form>
+            
+              </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

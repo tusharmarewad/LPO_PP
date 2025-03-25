@@ -1,0 +1,448 @@
+
+    <div class="row container-fluid">
+      <div class="col-md-2 p-0">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="col-md-10">
+        <app-header></app-header>
+        <div class="row">
+          <h3 class="heading_line">SME Training Calendar</h3>
+          <div class="col-md-3 training-calendar">
+            <div class="calendar">
+              <div
+                class="container-fluid mycalbg"
+                *ngIf="CalenderPage === 'My_calendar'"
+              >
+                <!-- <full-calendar
+                  [options]="calendarOptions"
+                  class="full_calender"
+                ></full-calendar> -->
+              </div>
+            </div>
+            <div class="add-event mt-4 mycalbg">
+              <div class="sub-add-event">
+                <img
+                  src="../assets/Icons/add_event.svg"
+                  alt="calendar_month"
+                  class="calender"
+                />
+                <h3>Add New Event</h3>
+                <form
+                  [formGroup]="addEventForm"
+                  (ngSubmit)="onSubmit()"
+                  #form="ngForm"
+                >
+                  <!-- Event Name -->
+                  <input
+                    type="text"
+                    class="form-control mb-3"
+                    placeholder="Event Name"
+                    formControlName="event_name"
+                    pattern="[A-Za-z]+" 
+                    title="Only alphabetic characters are allowed."
+                    onkeypress="return /^[A-Za-z]+$/.test(event.key)"
+                  />
+  
+                  <!-- Identification Number -->
+                  <input
+                    type="number"
+                    class="form-control mb-3"
+                    placeholder="Event No."
+                    formControlName="identification_no"
+                  />
+  
+                  <!-- Event Type -->
+                  <select class="form-control mb-3" formControlName="event_type">
+                    <option value="">Select Event Type</option>
+                    <option value="Event">Event</option>
+                    <option value="Training">Training</option>
+                    <option value="Training">Meeting</option>
+                  </select>
+  
+                  <!-- Event Date -->
+                  <input
+                    type="date"
+                    class="form-control mb-3"
+                    placeholder="Event Date"
+                    formControlName="event_date"
+                    [min]="minDate"
+                  />
+  
+                  <!-- Event Time -->
+  <div class="d-flex event_time gap-2">
+    <div class="position-relative">
+      <label for="event_start_time" class="floating-label">From</label>
+      <input
+        type="time"
+        class="form-control"
+        id="event_start_time"
+        formControlName="event_start_time"
+        (change)="onFromTimeChange($event)"
+      />
+    </div>
+    <span class="mx-2">-</span>
+    <div class="position-relative">
+      <label for="event_end_time" class="floating-label">To</label>
+      <input
+        type="time"
+        class="form-control to-time"
+        id="event_end_time"
+        formControlName="event_end_time"
+        [class.disabled]="!minToTime"
+      />
+      <div class="overlay" *ngIf="!minToTime"></div>
+    </div>
+  </div>
+  
+                  <!-- Mode Selection -->
+                  <label for="mode" class="floating-label">Mode</label>
+                  <div class="d-flex">
+                    <button
+                      type="button"
+                      class="btn mode_button me-2"
+                      [ngClass]="{ 'active-mode': isOnlineSelected }"
+                      (click)="toggleOnline()"
+                    >
+                      Online
+                    </button>
+                    <button
+                      type="button"
+                      class="btn mode_button"
+                      [ngClass]="{ 'active-mode': isOfflineSelected }"
+                      (click)="toggleOffline()"
+                    >
+                      Offline
+                    </button>
+                  </div>
+  
+                  <!-- Conditional Inputs for Mode -->
+                  <div *ngIf="isOnlineSelected">
+                    <input
+                      type="text"
+                      class="form-control mb-3"
+                      placeholder="Meeting URL"
+                      formControlName="meeting_url"
+                    />
+                  </div>
+                  <div *ngIf="isOfflineSelected">
+                    <input
+                      type="text"
+                      class="form-control mb-3"
+                      placeholder="Place of Meeting"
+                      formControlName="place_of_meeting"
+                    />
+                  </div>
+  
+                  <!-- Guests Section -->
+                  <div formArrayName="guests">
+                    <div
+                      *ngFor="
+                        let guest of guestsFormArray.controls;
+                        let i = index
+                      "
+                      [formGroupName]="i"
+                    >
+                      <input
+                        type="text"
+                        class="form-control mb-3"
+                        placeholder="Guest Name"
+                        formControlName="name"
+                        
+                    pattern="[A-Za-z]+" 
+                    title="Only alphabetic characters are allowed."
+                    onkeypress="return /^[A-Za-z]+$/.test(event.key)"
+                      />
+                      <input
+                        type="email"
+                        class="form-control mb-3"
+                        placeholder="Guest Email"
+                        formControlName="email"
+                      />
+  
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="phone"
+                        placeholder="Enter Phone No."
+                        formControlName="phone"
+                      />
+                      <button
+                        type="button"
+                        class="btn btn-danger btn-sm mb-3"
+                        (click)="removeGuest(i)"
+                      >
+                        Remove Guest
+                      </button>
+                    </div>
+                  </div>
+  
+                  <!-- Add Guest Button -->
+                  <button
+                    type="button"
+                    class="btn btn-primary mb-3"
+                    (click)="addGuest()"
+                  >
+                    + Add Guest
+                  </button>
+  
+                  <!-- Submit Button -->
+                  <button type="submit" class="btn btn-success mt-3 w-100">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-8">
+            <div class="container bdclr">
+              <div class="bgclr d-flex justify-content-center mb-4 mt-3">
+                Upcoming Events
+              </div>
+              <div class="card mb-2" *ngFor="let event of events">
+                <div class="d-flex justify-content-between">
+                  <h2>{{ event.event_date | date : "dd MMM" }}</h2>
+                  <div class="d-flex gap-2">
+                    <img
+                      class="imgsz"
+                      src="../../assets/Icons/editIcon.svg"
+                      alt="Edit"
+                      title="Edit"
+                      (click)="editEvent(event)"
+                    />
+                    <img
+                      class="imgsz"
+                      src="../../assets/Icons/delete_Icon.svg"
+                      title="Delete"
+                      alt="Delete"
+                      (click)="deleteEvent(event)"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="info">
+                          <span class="label">Event Name:</span>
+                        </div>
+                        <div class="info">
+                          <span class="label">Type:</span>
+                        </div>
+                        <div class="info">
+                          <span class="label">Mode:</span>
+                        </div>
+                        <div class="info" *ngIf="event.guestName">
+                          <span class="label">Guest Name:</span>
+                        </div>
+                      </div>
+                      <div class="col-6 cusclr">
+                        <div class="info">{{ event.event_name }}</div>
+                        <div class="info">{{ event.event_type }}</div>
+                        <div class="info">{{ event.mode }}</div>
+                        <div class="info" *ngIf="event.name">
+                          {{ event.name }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="info">
+                          <span class="label">Identification No:</span>
+                        </div>
+                        <div class="info">
+                          <span class="label">Date:</span>
+                        </div>
+                        <div class="info">
+                          <span class="label">Time:</span>
+                        </div>
+                        <div class="info" *ngIf="event.guestEmail">
+                          <span class="label">Guest Email ID:</span>
+                        </div>
+                        <div class="info" *ngIf="event.guestPhone">
+                          <span class="label">Guest Phone No.:</span>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="info">{{ event.event_id }}</div>
+                        <div class="info">
+                          {{ event.event_date | date : "dd MMM" }}
+                        </div>
+                        <div class="info">
+                          {{ event.event_start_time }} To
+                          {{ event.event_end_time }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="meeting-url">
+                  <a
+                    *ngIf="event.mode == 'Online'"
+                    [href]="event.meeting_url"
+                    target="_blank"
+                  >
+                    Meeting URL: {{ event.meeting_url }}
+                  </a>
+                  <a *ngIf="event.mode != 'Online'" target="_blank">
+                    Meeting Place: {{ event.place_of_meeting }}
+                  </a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="modal" *ngIf="isModalOpen">
+              <div class="modal-content">
+                <!-- Header -->
+                <div class="modal-header">
+                  <span class="back-icon" (click)="closePopupForm()"
+                    >&#8592;</span
+                  >
+                  <h2 class="mt-2"> Edit Event Details</h2>
+                </div>
+  
+                <!-- Event Details Form -->
+                <div class="form-section">
+                  <label>Event Name</label>
+                  <input
+                    type="text"
+                    [(ngModel)]="event_name"
+                    placeholder="Mutual Fund Training"
+                  />
+  
+                  <label>Identification No:</label>
+                  <input
+                    type="text"
+                    [(ngModel)]="identification_no"
+                    placeholder="183798173402747"
+                  />
+  
+                  <label>Type:</label>
+                  <select [(ngModel)]="event_type">
+                    <option value="Training">Training</option>
+                    <option value="Workshop">Workshop</option>
+                    <option value="Seminar">Seminar</option>
+                  </select>
+  
+                  <div class="row d-flex">
+                    <div class="col-4">
+                      <label class="datew">Date:</label>
+                      <input class="datew" type="date" [(ngModel)]="event_date" />
+                    </div>
+  
+                    <div class="col-6">
+                      <label class="datew">Time:</label>
+                      <div class="time-input">
+                        <input
+                          class="datew timew"
+                          type="time"
+                          [(ngModel)]="event_start_time"
+                        />
+                        <h4 class="to_ad">To</h4>
+                        <input
+                          class="datew timew"
+                          type="time"
+                          [(ngModel)]="event_end_time"
+                        />
+                      </div>
+                    </div>
+                  </div>
+  
+                  <label>Mode:</label>
+                  <select [(ngModel)]="mode">
+                    <option value="Online">Online</option>
+                    <option value="In-Person">In-Person</option>
+                  </select>
+                </div>
+  
+                <!-- Guest Details Form -->
+                <div class="form-section">
+                  <h3>Guest Details</h3>
+                  <!-- Loop through each guest in popupGuests array -->
+                  <div
+                    *ngFor="let guest of popupGuests; let i = index"
+                    class="guest-form mb-3"
+                  >
+                    <div class="d-flex form-group mb-2" style="gap: 1em">
+                      <div class="checkbox-row">
+                        <label class="form-label">Guest Name:</label>
+                        <input
+                          type="text"
+                          [(ngModel)]="guest.name"
+                          placeholder="Guest Name"
+                          class="form-control guest-input guestInput"
+                        />
+                      </div>
+                      <input
+                        type="checkbox"
+                        [(ngModel)]="guest.selected"
+                        class="form-check-input"
+                        style="width: 1em !important; margin-top: 2em"
+                      />
+                    </div>
+  
+                    <div class="mb-2">
+                      <label class="form-label">Guest Email ID:</label>
+                      <input
+                        type="email"
+                        [(ngModel)]="guest.email"
+                        placeholder="Guest Email"
+                        class="form-control guest-input"
+                      />
+                    </div>
+  
+                    <div class="mb-2">
+                      <label class="form-label">Guest Phone No.:</label>
+                      <input
+                        type="text"
+                        [(ngModel)]="guest.phone"
+                        placeholder="Guest Phone"
+                        class="form-control guest-input"
+                      />
+                    </div>
+  
+                    <button
+                      type="button"
+                      class="btn btn-danger btn-sm mb-3"
+                      (click)="removePopupGuest(i)"
+                    >
+                      Remove Guest
+                    </button>
+                  </div>
+  
+                  <!-- Add New Guest Button -->
+                  <button
+                    type="button"
+                    class="btn add-guest-btn mt-3 w-100"
+                    (click)="addPopupGuest()"
+                  >
+                    + Add Guest
+                  </button>
+  
+                  <!-- Delete Selected Guests Button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger mt-3 w-100"
+                    (click)="deleteSelectedGuests()"
+                  >
+                    Delete Selected Guests
+                  </button>
+                </div>
+  
+                <!-- Save Changes Button -->
+                <div class="d-flex justify-content-end mt-4">
+                  <button class="btn btn-success" (click)="saveChanges()">
+                    Save Changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <app-drawer></app-drawer> -->
+        </div>
+      </div>
+    </div>
+  
