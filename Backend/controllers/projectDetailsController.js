@@ -3,6 +3,8 @@ const fs = require("fs");
 const csv = require("fast-csv");
 const db = require("../config/db");
 const { log } = require("console");
+const XLSX = require('xlsx');
+const moment = require('moment');
 
 // Function to generate a random password
 const generateRandomPassword = () => {
@@ -16,11 +18,15 @@ const generateUniqueUserId = () => {
   };
   
   
-const createUser = (userData, role_id, callback) => {
-  const password = generateRandomPassword();
 
-  const newUserId = generateUniqueUserId();
 
+  const createUser = (userData, role_id, callback) => {
+    const password = generateRandomPassword();
+    const newUserId = generateUniqueUserId();
+  
+    // Format the date to MySQL format (YYYY-MM-DD)
+    const formattedDob = moment(userData.dob).format('YYYY-MM-DD');
+  
     // Create the user object after generating the user_id
     const user = {
       user_id: newUserId,
@@ -35,23 +41,23 @@ const createUser = (userData, role_id, callback) => {
       aadhaar_number: userData.aadhaar_number,
       pan_number: userData.pan_number,
       pincode: userData.pincode,
-      dob: userData.dob,
+      dob: formattedDob,  // Formatted date
       age: userData.age,
       created_by: userData.created_by,
     };
-
+  
     // Now call Project.createUser within the callback
     Project.createUser(user, (err, result) => {
       if (err) {
         console.log("Error creating user:", err);
         return callback(err);
       }
-
+  
       // Send back the user ID and password
       callback(null, result.insertId, password);
     });
-// });
-};
+  };
+  
 
 // Upload CSV and insert data into the database
 const uploadCSV = (req, res) => {
@@ -355,20 +361,34 @@ const uploadCSV = (req, res) => {
     });
 };
 
-// Fetch all records by project_id
 const fetchAllRecords = (req, res) => {
-  const { project_id } = req.params;
+  const query = `
+      SELECT 
+          ap.*, 
+          u.name AS created_by_name
+      FROM 
+          addproject AS ap
+      LEFT JOIN 
+          users AS u ON ap.created_by = u.id
+      WHERE 
+        ap.admin_status = 'Pending' AND
+        ap.submitted_by_cm = 1;
+  `;
 
-  Project.fetchAllRecordsByProjectId(project_id, (err, result) => {
-    if (err) {
-      return res.status(500).json({ error: err });
-    }
+  db.query(query, (err, results) => {
+      if (err) {
+          console.error("Error fetching data:", err);
+          return res.status(500).json({ message: 'Server Error' });
+      }
 
-    return res
-      .status(200)
-      .json({ message: "Records fetched successfully", data: result });
+      if (results.length === 0) {
+          return res.status(404).json({ message: 'No data found' });
+      }
+
+      res.status(200).json(results);
   });
 };
+
 
 // Update record by ID
 const updateRecord = (req, res) => {
@@ -410,4 +430,95 @@ const updateRecord = (req, res) => {
   });
 };
 
-module.exports = { uploadCSV, fetchAllRecords, updateRecord };
+
+// Update record by ID
+const updateProjectStatusByAdmin = (req, res) => {
+  const { project_id, remark, status } = req.body;
+
+  if (!project_id || !status) {
+      return res.status(400).json({ message: "Project ID and status are required" });
+  }
+
+  const updateQuery = `
+      UPDATE addproject 
+      SET 
+          admin_status = ?, 
+          remark = ?, 
+          updated_at = NOW()
+      WHERE 
+          project_id = ?
+  `;
+
+  const values = [status, remark, project_id];
+
+  db.query(updateQuery, values, (err, result) => {
+      if (err) {
+          console.error("Error updating project status:", err);
+          return res.status(500).json({ message: "Internal Server Error" });
+      }
+
+      if (result.affectedRows === 0) {
+          return res.status(404).json({ message: "Project not found" });
+      }
+
+      res.status(200).json({ message: "Project status updated successfully" });
+  });
+};
+
+
+
+
+
+
+const exportProjectData = (req, res) => {
+    const { project_id } = req.params;
+    console.log("Received project ID:", project_id);
+
+    // SQL query to join project_details with users table
+    const query = `
+        SELECT pd.*, 
+               u1.name AS first_owner_name, u1.email AS first_owner_email, u1.mobile AS first_owner_phone, 
+               u1.address AS first_owner_address, u1.city AS first_owner_city, u1.state AS first_owner_state, u1.pincode AS first_owner_pincode, 
+               u1.aadhaar_number AS first_owner_aadhaar, u1.pan_number AS first_owner_pan, u1.dob AS first_owner_dob, u1.age AS first_owner_age,
+               
+               u2.name AS second_owner_name, u2.email AS second_owner_email, u2.mobile AS second_owner_phone, 
+               u2.address AS second_owner_address, u2.city AS second_owner_city, u2.state AS second_owner_state, u2.pincode AS second_owner_pincode, 
+               u2.aadhaar_number AS second_owner_aadhaar, u2.pan_number AS second_owner_pan, u2.dob AS second_owner_dob, u2.age AS second_owner_age,
+
+              u3.name AS third_owner_name, u3.email AS third_owner_email, u3.mobile AS third_owner_phone, 
+               u3.address AS third_owner_address, u3.city AS third_owner_city, u3.state AS third_owner_state, u3.pincode AS third_owner_pincode, 
+               u3.aadhaar_number AS third_owner_aadhaar, u3.pan_number AS third_owner_pan, u3.dob AS third_owner_dob, u3.age AS third_owner_age
+        FROM project_details pd
+        LEFT JOIN users u1 ON pd.first_owner_id = u1.id
+        LEFT JOIN users u2 ON pd.second_owner_id = u2.id
+        LEFT JOIN users u3 ON pd.third_owner_id = u3.id
+        WHERE pd.project_id = ?;
+    `;
+
+    db.query(query, [project_id], (err, results) => {
+        if (err) {
+            console.error("Error exporting data:", err);
+            return res.status(500).json({ message: 'Server Error' });
+        }
+
+        if (results.length === 0) {
+            return res.status(404).json({ message: 'No data found for the given project ID' });
+        }
+
+        // Convert data to Excel format
+        const worksheet = XLSX.utils.json_to_sheet(results);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'ProjectData');
+
+        // Write Excel file to buffer
+        const excelBuffer = XLSX.write(workbook, { type: 'buffer', bookType: 'xlsx' });
+
+        // Set response headers for download
+        res.setHeader('Content-Disposition', `attachment; filename=project_${project_id}.xlsx`);
+        res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        res.end(excelBuffer); // Use res.end instead of res.send for binary data
+    });
+};
+
+
+module.exports = { uploadCSV, fetchAllRecords, updateRecord, updateProjectStatusByAdmin, exportProjectData };

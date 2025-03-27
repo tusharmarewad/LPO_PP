@@ -10,9 +10,15 @@ const upload = multer({ dest: 'uploads/' });
 router.post('/upload-csv', upload.single('csvFile'), projectController.uploadCSV);
 
 // API to fetch all records by project_id
-router.get('/fetch-all/:project_id', projectController.fetchAllRecords);
+router.get('/fetch-all-project-details', projectController.fetchAllRecords);
 
 // API to update record by id
 router.put('/update/:id', projectController.updateRecord);
+
+// API to update record by id
+router.put('/updateStatus', projectController.updateProjectStatusByAdmin);
+
+// API to update record by id
+router.get('/download-excel/:project_id', projectController.exportProjectData);
 
 module.exports = router;

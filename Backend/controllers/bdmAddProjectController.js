@@ -139,7 +139,7 @@ exports.updateProject = (req, res) => {
             contact_email,
             contact_phone,
             created_by,
-            submitted_by_cm  // ✅ New field
+            submitted_by_cm
         } = req.body;
 
         console.log(req.body);
@@ -165,7 +165,7 @@ exports.updateProject = (req, res) => {
                 contact_email = ?,
                 contact_phone = ?,
                 created_by = ?,
-                submitted_by_cm = ?,   -- ✅ Updated field
+                submitted_by_cm = ?, 
                 updated_at = NOW()
             WHERE project_id = ?
         `;

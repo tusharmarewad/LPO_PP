@@ -42,6 +42,9 @@ export class CMOnboardingNewDataComponent implements OnInit {
     const selectElement = event.target as HTMLSelectElement;
     const projectId = selectElement.value;
     this.selectedProject = this.projects.find((project: any) => project.project_id === projectId);
+    this.selectedProjectId = this.selectedProject.project_id;
+    // console.log("selecteddddddddddddd",this.selectedProjectId);
+    
 }
 
   setActiveTab(tab: string): void {
@@ -98,6 +101,7 @@ export class CMOnboardingNewDataComponent implements OnInit {
   submitBuilding(phaseIndex: number, buildingIndex: number): void {
     const building = this.phases[phaseIndex].buildings[buildingIndex];
     const csvFile = building.csvFile;
+
 
     if (!csvFile) {
       console.error('No CSV file selected for this building.');

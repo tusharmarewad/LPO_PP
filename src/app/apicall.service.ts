@@ -246,9 +246,18 @@ uploadCsv(
  * (Optional) Fetch all records by project ID
  * If you want to show or refresh data after upload
  */
-fetchAllRecords(project_id: string): Observable<any> {
-  return this.http.get(`${this.baseUrl}/project-details/fetch-all/${project_id}`);
+fetchAllProjectDetailsRecords(): Observable<any> {
+  return this.http.get(`${this.baseUrl}/project-details/fetch-all-project-details`);
 }
+
+downloadProjectExcel(projectId: string): Observable<Blob> {
+  return this.http.get(`${this.baseUrl}/project-details/download-excel/${projectId}`, {
+    responseType: 'blob'  // Do NOT cast as 'json'
+  });
+}
+
+
+
 
 /**
  * (Optional) Update a record by its ID
@@ -256,7 +265,14 @@ fetchAllRecords(project_id: string): Observable<any> {
 updateRecord(id: string, data: any): Observable<any> {
   return this.http.put(`${this.baseUrl}/project-details/update/${id}`, data);
 }
+
+updateProjectStatusByAdmin(data: any): Observable<any> {
+  return this.http.put(`${this.baseUrl}/project-details/updateStatus`, data);
 }
+}
+
+
+
 
 
 
